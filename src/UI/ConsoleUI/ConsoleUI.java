@@ -1,53 +1,184 @@
 package UI.ConsoleUI;
 
 import Logic.MachineDescriptor.MachineComponents.Position;
+import Logic.MachineDescriptor.MachineComponents.Rotor;
+import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
+import ProgramManger.MenuItem;
 import UI.UI;
 
-public class ConsoleUI implements UI {
+import java.util.HashSet;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
 
+public class ConsoleUI implements UI {
+    private static final int k_width = 100;
+    private static final Scanner mInput = new Scanner(System.in);
+    private static final String[] k_RefletorEncoding = {"I", "II", "III", "IV", "V"};
     @Override
     public void print(String content) {
-
+            new BorderConsole(k_width,content)
+                    .setAutoSizeOneLine(true)
+                    .print();
     }
 
     @Override
     public void print(String title, String content) {
-
+            new BorderConsole(k_width)
+                    .setContent(content)
+                    .setTitle(title)
+                    .print();
     }
 
     @Override
-    public void printMachineDetails(MachineDescriptor machineDescriptor) {
+    public void print(String title, String content, List<MenuItem> menu) {
+        new BorderConsole(k_width)
+                .setContent(content)
+                .setTitle(title)
+                .setMenu(menu)
+                .print();
+    }
 
+    @Override
+    public void printMachineDetails(MachineDescriptor machineDescriptor, int msgsPassedSoFar) {
+        createMachineDescriptorUI(machineDescriptor,msgsPassedSoFar).print();
+    }
+
+    @Override
+    public void printMachineDetails(MachineDescriptor machineDescriptor, int msgsPassedSoFar, Secret secret) {
+        BorderConsole machineUIelement = createMachineDescriptorUI(machineDescriptor,msgsPassedSoFar)
+                .insertNewLine("\nThe current secret: " + secret.toString()).print();
     }
 
     @Override
     public String getXMLPath() {
-        return null;
+        System.out.println("Please enter the path for the XML file which represent Enigma Machine:");
+        return mInput.nextLine();
+    }
+
+    //validations: (1)in range 1 to i_maxRotorID (2)rotorID not showing twice
+    @Override
+    public int[] getSecretRotorsInUse(int rotorsInUse, int maxRotorID) {
+        int[] userRotorsChoise = new int[rotorsInUse];
+        HashSet duplicationSet = new HashSet();
+        int userChoice;
+        boolean validInput;
+
+        for (int i = 0; i < rotorsInUse; i++)
+        {
+            do { //validation scope
+                validInput = true;
+                System.out.print("Rotor #" + i + " - Please enter rotorID: ");
+                userChoice = getIntFromUser();
+                if (userChoice  < 1|| userChoice > maxRotorID) {
+                    System.out.println("You should choose number between 1 to " + maxRotorID+ ". Please try again..");
+                    validInput = false;
+                }
+                if(!duplicationSet.add(userChoice)) //this rotor already selected
+                {
+                    System.out.println("The rotor ID: " + userChoice + " already selected. There is only one rotor like this.." +
+                            "Please try again");
+                    validInput = false;
+                }
+            }while(!validInput);
+            userRotorsChoise[i] = userChoice;
+        }
+        return userRotorsChoise;
+    }
+
+    private int getIntFromUser(){
+        do {
+            try {
+                return mInput.nextInt();
+            } catch (InputMismatchException exception) {
+                System.out.print(mInput.nextLine() + " isn't number.\nPlease try again: ");
+            }
+        } while (true);
+    }
+
+    //validations: one of the Rome Digits
+    @Override
+    public int getSecretReflectorInUse() {
+        boolean validInput;
+        System.out.print("Please choose reflection (I,II,III,IV,V): ");
+        do {
+            String inputReflector = mInput.nextLine();
+            for (int i = 1; i < k_RefletorEncoding.length + 1; i++){
+                if (inputReflector.equals(k_RefletorEncoding[i]))
+                    return i;
+            }
+            System.out.print("You enterd invalid value.\nPlease try again: ");
+        }while(true);
     }
 
     @Override
-    public int[] getSecretRotorsInUse() {
-        return new int[0];
-    }
+    public Position getSecretRotorPosition(int rotorID) {
+        Position rotorPosition = new Position();
+        boolean valid;
+        do {
+            valid = true;
+            System.out.print("Select position for rotor id #" + rotorID + ": ");
 
-    @Override
-    public int getReflectorInUse() {
-        return 0;
-    }
-
-    @Override
-    public Position[] getRotorsPosition() {
-        return new Position[0];
+            try {
+                int intInput = mInput.nextInt();
+                rotorPosition.setIsLetter(false);
+                rotorPosition.setPositionAsInt(intInput);
+            } catch (InputMismatchException ex) {
+                char charInput = mInput.next(".").charAt(0);
+                if (Character.isLetter(charInput)) {
+                    rotorPosition.setPositionAsChar(Character.toUpperCase(charInput));
+                    rotorPosition.setIsLetter(true);
+                }
+                else
+                {
+                    System.out.println("It's not a letter and not a number.. what did you entered?! pleas try again.");
+                    valid = false;
+                }
+            }
+        }while(!valid);
+        return rotorPosition;
     }
 
     @Override
     public String getTextToProccess() {
-        return null;
+        boolean valid;
+        String input;
+        do {
+            valid = true;
+            System.out.print("Please enter some text to proccess (no spaces): ");
+            input = mInput.nextLine().trim();
+            for (char c : input.toCharArray())
+                if (Character.isWhitespace(c)){
+                    System.out.println("ahm ahm (no spaces). Please try again...");
+                    valid = false;
+                }
+        }while(!valid);
+        return input;
     }
 
     @Override
     public void printError(String errorMsg) {
+        System.out.println(errorMsg);
+    }
 
+    private BorderConsole createMachineDescriptorUI(MachineDescriptor machineDescriptor, int msgsPassedSoFar) {
+        List<Rotor> availableRotors = machineDescriptor.getAvaliableRotors();
+        StringBuilder notchStrBuilder = new StringBuilder();
+
+        for (Rotor rotor : availableRotors) {
+            notchStrBuilder.append('[').append(rotor.getID()).append("](").append(rotor.getNotch()).append("), ");
+        }
+        notchStrBuilder.deleteCharAt(notchStrBuilder.length() - 1);
+        notchStrBuilder.append('\n');
+
+        return new BorderConsole(k_width)
+                .setTitle("Loaded Machine Description")
+                .insertNewLine("Alphabet: " + machineDescriptor.getAlphabet())
+                .insertNewLine("Rotors: " + machineDescriptor.getRotorsInUseCount() + "/" + availableRotors.size())
+                .insertNewLine("Notchs: [ID](Notch Position")
+                .insertNewLine(notchStrBuilder.toString())
+                .insertNewLine("Reflectors: " + machineDescriptor.getAvaliableReflector().size())
+                .insertNewLine("This lovely machine proccessed " + msgsPassedSoFar + " so far!");
     }
 }

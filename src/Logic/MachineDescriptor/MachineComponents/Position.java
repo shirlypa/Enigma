@@ -1,19 +1,32 @@
 package Logic.MachineDescriptor.MachineComponents;
 
 public class Position {
-    private Object Position;
+    private char PositionAsChar;
+    private int PositionAsInt;
     private boolean IsLetter;
 
-    public Position(Object position, boolean isLetter) {
-        Position = position;
-        IsLetter = isLetter;
+    public char getPositionAsChar() {
+        return PositionAsChar;
     }
 
-    public Object getPosition() {
-        return Position;
+    public void setPositionAsChar(char positionAsChar) {
+        PositionAsChar = positionAsChar;
+    }
+
+    public int getPositionAsInt() {
+        return PositionAsInt;
+    }
+
+    public void setPositionAsInt(int positionAsInt) {
+        PositionAsInt = positionAsInt;
     }
 
     public boolean isLetter() {
+        return IsLetter;
+    }
+
+    public boolean setIsLetter(boolean letter) {
+        IsLetter = letter;
         return IsLetter;
     }
 }
