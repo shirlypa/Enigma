@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3f6d2ea8-c234-4880-8e83-4f4188553b31" name="MyServer" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\Users\user\IdeaProjects\Enigma" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
