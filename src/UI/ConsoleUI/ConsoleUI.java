@@ -36,6 +36,7 @@ public class ConsoleUI implements UI {
         new BorderConsole(k_width)
                 .setContent(content)
                 .setTitle(title)
+                .setCenterConetent(true)
                 .setMenu(menu)
                 .print();
     }
@@ -105,7 +106,7 @@ public class ConsoleUI implements UI {
         do {
             String inputReflector = mInput.nextLine();
             for (int i = 1; i < k_RefletorEncoding.length + 1; i++){
-                if (inputReflector.equals(k_RefletorEncoding[i]))
+                if (inputReflector.equals(k_RefletorEncoding[i-1]))
                     return i;
             }
             System.out.print("You enterd invalid value.\nPlease try again: ");
@@ -115,28 +116,19 @@ public class ConsoleUI implements UI {
     @Override
     public Position getSecretRotorPosition(int rotorID) {
         Position rotorPosition = new Position();
-        boolean valid;
-        do {
-            valid = true;
-            System.out.print("Select position for rotor id #" + rotorID + ": ");
 
-            try {
-                int intInput = mInput.nextInt();
-                rotorPosition.setIsLetter(false);
-                rotorPosition.setPositionAsInt(intInput);
-            } catch (InputMismatchException ex) {
-                char charInput = mInput.next(".").charAt(0);
-                if (Character.isLetter(charInput)) {
-                    rotorPosition.setPositionAsChar(Character.toUpperCase(charInput));
-                    rotorPosition.setIsLetter(true);
-                }
-                else
-                {
-                    System.out.println("It's not a letter and not a number.. what did you entered?! pleas try again.");
-                    valid = false;
-                }
-            }
-        }while(!valid);
+        System.out.print("Select position for rotor id #" + rotorID + ": ");
+        String userInput = mInput.nextLine();
+
+        if (Character.isDigit(userInput.charAt(0))){
+            rotorPosition.setPositionAsInt(new Scanner(userInput).nextInt());
+            rotorPosition.setIsLetter(false);
+        }
+        else
+        {
+            rotorPosition.setPositionAsChar(Character.toUpperCase(userInput.charAt(0)));
+            rotorPosition.setIsLetter(true);
+        }
         return rotorPosition;
     }
 
