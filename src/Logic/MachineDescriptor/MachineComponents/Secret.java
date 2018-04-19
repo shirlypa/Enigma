@@ -2,27 +2,11 @@ package Logic.MachineDescriptor.MachineComponents;
 
 import javafx.geometry.Pos;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
+import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
 
 import java.util.List;
 
 public class Secret {
-    private class RotorInSecret{
-        private int RotorId;
-        private Position Position;
-
-        private RotorInSecret(int rotorId, Position position) {
-            RotorId = rotorId;
-            Position = position;
-        }
-
-        public int getRotorId() {
-            return RotorId;
-        }
-
-        public Position getPosition() {
-            return Position;
-        }
-    }
 
     private List<RotorInSecret> RotorsInUse;
     private int ReflectorId;
@@ -52,7 +36,7 @@ public class Secret {
 
         stringBuilder.append('<');
         for (RotorInSecret rotor: RotorsInUse)
-            stringBuilder.append(rotor.RotorId + ",");
+            stringBuilder.append(rotor.getRotorId()+ ",");
 
         stringBuilder
                 .deleteCharAt(stringBuilder.length() - 1)

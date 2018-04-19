@@ -70,7 +70,7 @@ public class ConsoleUI implements UI {
         {
             do { //validation scope
                 validInput = true;
-                System.out.print("Rotor #" + i + " - Please enter rotorID: ");
+                System.out.print("Rotor in position " + (i + 1) + "/" + rotorsInUse + " - Please enter rotorID: ");
                 userChoice = getIntFromUser();
                 if (userChoice  < 1|| userChoice > maxRotorID) {
                     System.out.println("You should choose number between 1 to " + maxRotorID+ ". Please try again..");
@@ -104,7 +104,7 @@ public class ConsoleUI implements UI {
         boolean validInput;
         System.out.print("Please choose reflection (I,II,III,IV,V): ");
         do {
-            String inputReflector = mInput.nextLine();
+            String inputReflector = mInput.nextLine().trim();
             for (int i = 1; i < k_RefletorEncoding.length + 1; i++){
                 if (inputReflector.equals(k_RefletorEncoding[i-1]))
                     return i;
@@ -162,13 +162,14 @@ public class ConsoleUI implements UI {
             notchStrBuilder.append('[').append(rotor.getID()).append("](").append(rotor.getNotch()).append("), ");
         }
         notchStrBuilder.deleteCharAt(notchStrBuilder.length() - 1);
+        notchStrBuilder.deleteCharAt(notchStrBuilder.length() - 1);
         notchStrBuilder.append('\n');
 
         return new BorderConsole(k_width)
                 .setTitle("Loaded Machine Description")
                 .insertNewLine("Alphabet: " + machineDescriptor.getAlphabet())
                 .insertNewLine("Rotors: " + machineDescriptor.getRotorsInUseCount() + "/" + availableRotors.size())
-                .insertNewLine("Notchs: [ID](Notch Position")
+                .insertNewLine("Notchs --[ID](Notch Position)-- :")
                 .insertNewLine(notchStrBuilder.toString())
                 .insertNewLine("Reflectors: " + machineDescriptor.getAvaliableReflector().size())
                 .insertNewLine("This lovely machine proccessed " + msgsPassedSoFar + " so far!");

@@ -1,6 +1,7 @@
 package Logic;
 
 import Logic.History.History;
+import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.MachineXMLParsser;
@@ -27,16 +28,18 @@ public class Logic {
     }
 
     // need to keep history updated!!!!
-    public String Proccess(String source)
-    {
-        return null;
+    public String Proccess(String source) {
+        String dest = mMachine.process(source);
+        int time = 00000000000123456; //                 Add time calculation!!!!!!!!!!!!!!!!!!!!!!!!!@#$#@!$#%@##!!
+        mHistory.insertRecord(mSecret,new ProcessString(source,dest,00000123456));
+        return dest;
     }
 
     public MachineDescriptor getMachineDescriptor() {
         return mMachineDescriptor;
     }
 
-    public Secret createRandomMachine(){
+    public Secret createRandomSecret(){
         return null;
     }
 

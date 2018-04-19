@@ -21,6 +21,4 @@ public interface UI {
                                     //fill the character of each position-object where .IsLetter = false
     String getTextToProccess();
     void printError(String errorMsg);
-
-
 }
