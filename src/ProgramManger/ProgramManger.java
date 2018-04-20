@@ -3,8 +3,12 @@ package ProgramManger;
 import UI.ConsoleUI.ConsoleUI;
 import UI.UI;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProgramManger {
     UI appUI = new ConsoleUI();
+    eAppState appState;
 
 
 
@@ -24,4 +28,29 @@ public class ProgramManger {
             }while(!valid)
         }*/
     }
+
+    private List<MenuItem> buildMenuStateDependency(){
+        List<MenuItem> newMenu = new ArrayList<>();
+
+        if (appState == eAppState.Initial){
+            //add new MenuItem -> "load machine from xml"
+            return newMenu;
+        }
+        //add new MenuItem -> "load new Machine" (Set State = initial; and start from beginning)
+        //add new MenuItem -> "show machine description"
+        //add new MenuItem -> "select initial secret"
+        //add new MenuItem -> "select Random initial secret"
+        if (appState == eAppState.SecretLoaded){
+            //add new MenuItem -> "process text"
+            //add new MenuItem -> "reset to initial secret"
+        }
+        if (appState == eAppState.Started){
+            //add new MenuItem -> "Show History"
+        }
+        //add new MenuItem -> "Exit"
+        return newMenu;
+    }
+
+
+
 }

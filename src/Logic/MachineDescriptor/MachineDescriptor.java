@@ -3,20 +3,15 @@ package Logic.MachineDescriptor;
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import java.util.List;
+import java.util.Map;
 
 public class MachineDescriptor {
     private int RotorsInUseCount;
     private String Alphabet;
-    private List<Rotor> AvaliableRotors;  //should be map (rotorID, rotor)
-    private List<Reflector> AvaliableReflector; //should be map (reflectorID,reflector)
+    private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
+    private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
 
 
-    public MachineDescriptor(int rotorsInUseCount, String alphabet, List<Rotor> avaliableRotors, List<Reflector> avaliableReflector) {
-        RotorsInUseCount = rotorsInUseCount;
-        Alphabet = alphabet;
-        AvaliableRotors = avaliableRotors;
-        AvaliableReflector = avaliableReflector;
-    }
 
     public int getRotorsInUseCount() {
         return RotorsInUseCount;
@@ -26,11 +21,27 @@ public class MachineDescriptor {
         return Alphabet;
     }
 
-    public List<Rotor> getAvaliableRotors() {
+    public Map<Integer, Rotor> getAvaliableRotors() {
         return AvaliableRotors;
     }
 
-    public List<Reflector> getAvaliableReflector() {
+    public Map<Integer, Reflector> getAvaliableReflector() {
         return AvaliableReflector;
+    }
+
+    public void setRotorsInUseCount(int rotorsInUseCount) {
+        RotorsInUseCount = rotorsInUseCount;
+    }
+
+    public void setAlphabet(String alphabet) {
+        Alphabet = alphabet;
+    }
+
+    public void setAvaliableRotors(Map<Integer, Rotor> avaliableRotors) {
+        AvaliableRotors = avaliableRotors;
+    }
+
+    public void setAvaliableReflector(Map<Integer, Reflector> avaliableReflector) {
+        AvaliableReflector = avaliableReflector;
     }
 }

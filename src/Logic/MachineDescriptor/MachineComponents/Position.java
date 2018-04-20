@@ -9,16 +9,18 @@ public class Position {
         return PositionAsChar;
     }
 
-    public void setPositionAsChar(char positionAsChar) {
+    public Position setPositionAsChar(char positionAsChar) {
         PositionAsChar = positionAsChar;
+        return this;
     }
 
     public int getPositionAsInt() {
         return PositionAsInt;
     }
 
-    public void setPositionAsInt(int positionAsInt) {
+    public Position setPositionAsInt(int positionAsInt) {
         PositionAsInt = positionAsInt;
+        return this;
     }
 
     public boolean isLetter() {
