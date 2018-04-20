@@ -18,9 +18,13 @@ public class Logic {
     private EnigmaMachine mMachine;
     private History mHistory;
 
-    public void setmSecret(Secret mSecret) {
+    public void setSecret(Secret mSecret) {
         this.mSecret = mSecret;
         mSecret.createEnigmaMachineSecret(mMachine);
+    }
+
+    public Secret getSecret() {
+        return mSecret;
     }
 
     public void loadMachineFromXML(String path){
@@ -90,4 +94,11 @@ public class Logic {
     public History getyHistory() {
         return mHistory;
     }
+
+    public boolean loadMachineFromXml(String path){
+        //On Success return true, else return false
+        return true;
+    }
+
+    public int getProccesedMsgCount(){return mHistory.getProccesedMsgCount();}
 }

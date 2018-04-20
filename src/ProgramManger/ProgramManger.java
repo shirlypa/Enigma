@@ -1,5 +1,8 @@
 package ProgramManger;
 
+import Logic.Logic;
+import Logic.MachineDescriptor.MachineComponents.Secret;
+import Logic.MachineDescriptor.MachineDescriptor;
 import UI.ConsoleUI.ConsoleUI;
 import UI.UI;
 
@@ -8,7 +11,8 @@ import java.util.List;
 
 public class ProgramManger {
     UI appUI = new ConsoleUI();
-    eAppState appState;
+    eAppState appState = eAppState.Initial;
+    Logic mLogic = new Logic();
 
 
 
@@ -26,17 +30,16 @@ public class ProgramManger {
                 if(!valid)
                     appUI.printError("Not valid Please Try Again");
             }while(!valid)
+
         }*/
     }
 
     private List<MenuItem> buildMenuStateDependency(){
         List<MenuItem> newMenu = new ArrayList<>();
+        String firstCommandString = appState == eAppState.Initial? "Load machine from xml file" : "Load new machine";
 
-        if (appState == eAppState.Initial){
-            //add new MenuItem -> "load machine from xml"
-            return newMenu;
-        }
-        //add new MenuItem -> "load new Machine" (Set State = initial; and start from beginning)
+
+        //add new MenuItem -> title: firstCommandString
         //add new MenuItem -> "show machine description"
         //add new MenuItem -> "select initial secret"
         //add new MenuItem -> "select Random initial secret"
@@ -49,6 +52,34 @@ public class ProgramManger {
         }
         //add new MenuItem -> "Exit"
         return newMenu;
+    }
+
+    private void menuCmd_loadMachindFromXML(){
+        String userInputPath;
+        boolean valid;
+        do {
+            valid = true;
+            userInputPath = appUI.getXMLPath();
+            if (!mLogic.loadMachineFromXml(userInputPath)){
+                appUI.printError("Error: you entered invalid path. Please try again");
+                valid = false;
+            }
+        }while(!valid);
+        appUI.print("The machine loaded successfully from the XML file!");
+        this.appState = eAppState.MachineLoaded;
+    }
+
+    private void menuCmd_showMachineDescription(){
+        MachineDescriptor machineToPrint = mLogic.getMachineDescriptor();
+        int msgProccessSoFar = mLogic.getProccesedMsgCount();
+        if (appState == eAppState.SecretLoaded) //There is Secret
+            appUI.printMachineDetails(machineToPrint,msgProccessSoFar,mLogic.getSecret());
+        else
+            appUI.printMachineDetails(machineToPrint,msgProccessSoFar);
+    }
+
+    private void menuCmd_selectInitialSecret(){
+
     }
 
 

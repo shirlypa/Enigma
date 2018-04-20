@@ -7,10 +7,7 @@ import Logic.MachineDescriptor.MachineDescriptor;
 import ProgramManger.MenuItem;
 import UI.UI;
 
-import java.util.HashSet;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ConsoleUI implements UI {
     private static final int k_width = 100;
@@ -155,10 +152,10 @@ public class ConsoleUI implements UI {
     }
 
     private BorderConsole createMachineDescriptorUI(MachineDescriptor machineDescriptor, int msgsPassedSoFar) {
-        List<Rotor> availableRotors = machineDescriptor.getAvaliableRotors();
+        Map<Integer,Rotor> availableRotors = machineDescriptor.getAvaliableRotors();
         StringBuilder notchStrBuilder = new StringBuilder();
 
-        for (Rotor rotor : availableRotors) {
+        for (Rotor rotor : availableRotors.values()) {
             notchStrBuilder.append('[').append(rotor.getID()).append("](").append(rotor.getNotch()).append("), ");
         }
         notchStrBuilder.deleteCharAt(notchStrBuilder.length() - 1);
