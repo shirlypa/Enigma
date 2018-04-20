@@ -33,11 +33,29 @@ public class Logic {
     }
 
     private void createMachine() {
+        /*
 
+
+        #### Not Implemented ###
+
+
+
+        */
     }
 
-    // need to keep history updated!!!!
-    public String Proccess(String source) {
+    public void restoreMachineToInitialSecret(){
+        /*
+
+
+        #### Not Implemented ###
+
+
+
+        */
+    }
+
+    // keep history updated :)
+    public String proccess(String source) {
         String dest = mMachine.process(source);
         int time = 00000000000123456; //                 Add time calculation!!!!!!!!!!!!!!!!!!!!!!!!!@#$#@!$#%@##!!
         mHistory.insertRecord(mSecret,new ProcessString(source,dest,00000123456));
@@ -67,7 +85,9 @@ public class Logic {
         }
         List<RotorInSecret> rotorInSecretList = new ArrayList<RotorInSecret>(rotorInSecretMap.values());
         reflectorGuess = new Random().nextInt(mMachineDescriptor.getAvaliableReflector().size()) + 1;
-        return new Secret(rotorInSecretList,reflectorGuess);
+        Secret guessSecret = new Secret(rotorInSecretList,reflectorGuess);
+        setSecret(guessSecret);
+        return guessSecret;
     }
 
     private int guessValidRotorID(Map<Integer, RotorInSecret> rotorInSecretMap) {
@@ -87,12 +107,37 @@ public class Logic {
     }
 
     public void initSecret(){
+        /*
 
+
+        #### Not Implemented ###
+
+
+
+        */
     }
 
 
-    public History getyHistory() {
-        return mHistory;
+
+    public int getRotorsInUseCount(){
+        return mMachineDescriptor.getRotorsInUseCount();
+    }
+
+    public int getMaxRotorID(){
+        return mMachineDescriptor.getAvaliableRotors().size();
+    }
+
+    public String getAlphabet(){
+        return mMachineDescriptor.getAlphabet();
+    }
+
+    public Map<Integer,Rotor> getAvailableRotorMap(){
+        return mMachineDescriptor.getAvaliableRotors();
+    }
+
+
+    public Map<Secret, List<ProcessString>> getHistory() {
+        return mHistory.getHistoryDB();
     }
 
     public boolean loadMachineFromXml(String path){

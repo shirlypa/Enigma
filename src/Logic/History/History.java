@@ -14,6 +14,10 @@ public class History {
             return counter;
     }
 
+    public Map<Secret, List<ProcessString>> getHistoryDB() {
+        return historyDB;
+    }
+
     public int insertRecord(Secret currentSecret, ProcessString processString){
         List<ProcessString> inputSecretMathcesStringList = historyDB.get(currentSecret);
         if (inputSecretMathcesStringList == null){

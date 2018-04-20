@@ -1,5 +1,6 @@
 package UI.ConsoleUI;
 
+import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.Secret;
@@ -17,6 +18,8 @@ public class ConsoleUI implements UI {
     public void print(String content) {
             new BorderConsole(k_width,content)
                     .setAutoSizeOneLine(true)
+                    .setHorizontalBorderChar('*')
+                    .setVerticalBorderChar('*')
                     .print();
     }
 
@@ -149,6 +152,28 @@ public class ConsoleUI implements UI {
     @Override
     public void printError(String errorMsg) {
         System.out.println(errorMsg);
+    }
+
+    @Override
+    public void showHistory(Map<Secret, List<ProcessString>> history) {
+        StringBuilder recordBuilder = new StringBuilder();
+        BorderConsole borderConsole = new BorderConsole(k_width);
+        borderConsole
+                .setTitle("Enigma Machine History")
+                .setPadding(6)
+                .setVerticalBorderChar('+')
+                .setHorizontalBorderChar('.');
+        for (Secret currentSecret : history.keySet()) {
+            borderConsole.insertNewLine("-- Secret: " + currentSecret);
+            for (ProcessString historyRecord : history.get(currentSecret)){
+                recordBuilder
+                        .append("\tFrom: ").append(historyRecord.getSourceStr())
+                        .append(" To: ").append(historyRecord.getDestStr())
+                        .append(" <").append(historyRecord.getTime()).append(" nS>");
+                borderConsole.insertNewLine(recordBuilder.toString());
+            }
+        }
+        borderConsole.print();
     }
 
     private BorderConsole createMachineDescriptorUI(MachineDescriptor machineDescriptor, int msgsPassedSoFar) {

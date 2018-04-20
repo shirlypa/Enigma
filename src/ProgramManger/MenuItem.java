@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 public class MenuItem {
-    private final String stringRepresentation;
+    private String stringRepresentation;
     private final Callable<Void> methodToInvokeOnSelected;
 
     public MenuItem(String i_string, Callable<Void> i_method){
@@ -17,6 +17,9 @@ public class MenuItem {
         } catch (Exception e) {
             throw new RuntimeException("Exception: menuItem >> Invoke: " + e.getMessage());
         }
+    }
+    public void setString(String string) {
+        stringRepresentation = string;
     }
     @Override
     public String toString() {
