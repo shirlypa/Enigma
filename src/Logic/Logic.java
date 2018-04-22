@@ -27,28 +27,7 @@ public class Logic {
         return mSecret;
     }
 
-    public void loadMachineFromXML(String path){
-        try {
-            mMachineDescriptor = MachineXMLParsser.parseMachineFromXML(path);
-        } catch (notXMLException e) {
-            e.printStackTrace();
-        } catch (DoubleMappingException e) {
-            e.printStackTrace();
-        } catch (InvalidNotchLocationException e) {
-            e.printStackTrace();
-        } catch (InvalidReflectorMappingException e) {
-            e.printStackTrace();
-        } catch (InvalidRotorsIdException e) {
-            e.printStackTrace();
-        } catch (InvalidReflectorIdException e) {
-            e.printStackTrace();
-        } catch (AlphabetIsOddException e) {
-            e.printStackTrace();
-        } catch (InvalidRotorsCountException e) {
-            e.printStackTrace();
-        }
-        createMachine();
-    }
+
 
     private void createMachine() {
         /*
@@ -112,7 +91,7 @@ public class Logic {
         boolean valid;
         int rotorIdGuess;
         RotorInSecret rotorInSecret;
-        do { //pick
+        do {
             valid = true;
             rotorIdGuess = new Random().nextInt(mMachineDescriptor.getAvaliableRotors().size()) + 1;
             rotorInSecret = new RotorInSecret();
@@ -158,9 +137,9 @@ public class Logic {
         return mHistory.getHistoryDB();
     }
 
-    public boolean loadMachineFromXml(String path){
-        //On Success return true, else return false
-        return true;
+    public void loadMachineFromXml(String path) throws InvalidReflectorIdException, InvalidReflectorMappingException, notXMLException, InvalidRotorsIdException, InvalidNotchLocationException, AlphabetIsOddException, InvalidRotorsCountException, DoubleMappingException {
+        mMachineDescriptor = MachineXMLParsser.parseMachineFromXML(path);
+        createMachine();
     }
 
     public int getProccesedMsgCount(){return mHistory.getProccesedMsgCount();}

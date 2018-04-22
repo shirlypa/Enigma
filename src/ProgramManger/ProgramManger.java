@@ -6,6 +6,7 @@ import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
+import Logic.MachineXMLParsser.*;
 import UI.ConsoleUI.ConsoleUI;
 import UI.UI;
 
@@ -127,8 +128,31 @@ public class ProgramManger {
         do {
             valid = true;
             userInputPath = appUI.getXMLPath();
-            if (!mLogic.loadMachineFromXml(userInputPath)){
-                appUI.printError("Error: you entered invalid path. Please try again");
+            try {
+                mLogic.loadMachineFromXml(userInputPath);
+            } catch (InvalidReflectorIdException e) {
+                appUI.printError("Invalid XML: ____. Please try again.");
+                valid = false;
+            } catch (InvalidReflectorMappingException e) {
+                appUI.printError("Invalid XML: ");
+                valid = false;
+            } catch (notXMLException e) {
+                appUI.printError("Invalid XML: ");
+                valid = false;
+            } catch (InvalidRotorsIdException e) {
+                appUI.printError("Invalid XML: ");
+                valid = false;
+            } catch (InvalidNotchLocationException e) {
+                appUI.printError("Invalid XML: ");
+                valid = false;
+            } catch (AlphabetIsOddException e) {
+                appUI.printError("Invalid XML: ");
+                valid = false;
+            } catch (InvalidRotorsCountException e) {
+                appUI.printError("Invalid XML: ");
+                valid = false;
+            } catch (DoubleMappingException e) {
+                appUI.printError("Invalid XML: ");
                 valid = false;
             }
         }while(!valid);
