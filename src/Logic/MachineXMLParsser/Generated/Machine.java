@@ -101,7 +101,7 @@ public class Machine {
      *     
      */
     public void setRotors(Rotors value) {
-        this.rotors = value;
+        rotors = value;
     }
 
     /**
@@ -125,7 +125,7 @@ public class Machine {
      *     
      */
     public void setReflectors(Reflectors value) {
-        this.reflectors = value;
+        reflectors = value;
     }
 
     /**

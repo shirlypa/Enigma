@@ -13,6 +13,8 @@ public class Rotor {
         Notch = notch;
     }
 
+
+
     public int getID() {
         return ID;
     }

@@ -1,11 +1,13 @@
 package Logic.MachineDescriptor.MachineComponents;
 
+import java.util.List;
+
 public class Reflector {
     private int ID;
-    private byte[] Source;
-    private byte[] Dest;
+    private List<Integer> Source;
+    private List<Integer> Dest;
 
-    public Reflector(int id, byte[] source, byte[] dest) {
+    public Reflector(int id, List<Integer> source, List<Integer> dest) {
         ID = id;
         Source = source;
         Dest = dest;
@@ -15,11 +17,11 @@ public class Reflector {
         return ID;
     }
 
-    public byte[] getSource() {
+    public List<Integer> getSource() {
         return Source;
     }
 
-    public byte[] getDest() {
+    public List<Integer> getDest() {
         return Dest;
     }
 }

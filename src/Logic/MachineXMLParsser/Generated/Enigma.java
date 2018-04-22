@@ -73,7 +73,7 @@ public class Enigma {
      *     
      */
     public void setMachine(Machine value) {
-        this.machine = value;
+        machine = value;
     }
 
     /**
@@ -97,7 +97,7 @@ public class Enigma {
      *     
      */
     public void setDecipher(Decipher value) {
-        this.decipher = value;
+        decipher = value;
     }
 
     /**
@@ -121,7 +121,7 @@ public class Enigma {
      *     
      */
     public void setBattlefield(Battlefield value) {
-        this.battlefield = value;
+        battlefield = value;
     }
 
 }

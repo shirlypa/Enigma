@@ -69,7 +69,7 @@ public class Decipher {
      *     
      */
     public void setDictionary(Dictionary value) {
-        this.dictionary = value;
+        dictionary = value;
     }
 
     /**

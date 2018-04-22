@@ -3,11 +3,15 @@ package Logic.MachineXMLParsser;
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineDescriptor;
+import Logic.MachineXMLParsser.Generated.Enigma;
+import Logic.MachineXMLParsser.Generated.Mapping;
+import Logic.MachineXMLParsser.Generated.Reflect;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 
+import javax.annotation.Generated;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -17,16 +21,12 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+//import Logic.MachineXMLParsser.Generated.Enigma;
 
 public class MachineXMLParsser {
-    public static MachineDescriptor parseMachineFromXML(String path) throws notXMLException {
-
-        MachineDescriptor machine = new MachineDescriptor();
-
+    public static MachineDescriptor parseMachineFromXML(String path) throws notXMLException, DoubleMappingException, InvalidNotchLocationException, InvalidReflectorMappingException, InvalidRotorsIdException, InvalidReflectorIdException, AlphabetIsOddException, InvalidRotorsCountException {
+        Enigma enigmaMachine;
         if(!path.endsWith(".XML")) {
             throw new notXMLException();
         }
@@ -34,58 +34,134 @@ public class MachineXMLParsser {
        try{
             File file= new File(path);
             JAXBContext jc = JAXBContext.newInstance(Enigma.class);
-            Unmarshaller u= JAXBContext.createUnmarsheller();
-            Enigma enigmaMachine= (Enigma)u.unmarshal(file);
+            Unmarshaller u= jc.createUnmarshaller();
+            enigmaMachine= (Enigma)u.unmarshal(file);
        }
        catch (JAXBException e){
             e.printStackTrace();
             return null;
        }
-        checkMachine(machine);
+        checkMachine(enigmaMachine);
+        return createMachine(enigmaMachine);
+
+    }
+
+    private static MachineDescriptor createMachine(Enigma enigmaMachine) {
+        MachineDescriptor machine=new MachineDescriptor(enigmaMachine);
         return machine;
     }
 
-    private static void checkMachine(MachineDescriptor machine) throws AlphabetIsOddException, InvalidRotorsInUseException, InvalidRotorsIdException, InvalidNotchLocationException, InvalidReflectorIdException {
-        if(machine.getAlphabet().length() %2 !=0) {
+    private static void checkMachine(Enigma enigma) throws AlphabetIsOddException, InvalidRotorsCountException, InvalidRotorsIdException, DoubleMappingException, InvalidReflectorIdException, InvalidNotchLocationException, InvalidReflectorMappingException {
+        if(enigma.getMachine().getABC().length() %2 !=0){
             throw new AlphabetIsOddException();
         }
-        else if(machine.getRotorsInUseCount()>machine.getAvaliableRotors().size()){
-            throw new InvalidRotorsInUseException();
+        else if(enigma.getMachine().getRotorsCount() > enigma.getMachine().getRotors().getRotor().size()){
+            throw new InvalidRotorsCountException();
         }
-        else if(machine.getRotorsInUseCount() <2){
-            throw new InvalidRotorsInUseException();
+        else if (enigma.getMachine().getRotorsCount()<2){
+            throw new InvalidRotorsCountException();
         }
-        else if(!checkRotorsIdValidation(machine)){
+        else if (checkRotorsIdValidation(enigma.getMachine().getRotors().getRotor())){
             throw new InvalidRotorsIdException();
         }
-        else if(checkDoubleMapping(machine)!=0){
-
+        else if (checkDoubleMapping(enigma.getMachine().getRotors().getRotor())!=0){
+            throw new DoubleMappingException();
         }
-        else if(checkNotchLocation(machine)!=0){
+        else if(checkNotchLocation(enigma.getMachine().getRotors().getRotor(),enigma.getMachine().getABC().length())!=0){
             throw new InvalidNotchLocationException();
         }
-        else if (checkReflctorsId(machine.getAvaliableReflector())!=0){
+        else if(checkReflectorsId(enigma.getMachine().getReflectors().getReflector())){
             throw new InvalidReflectorIdException();
         }
-        else if (checkReflectorsMapping(machine.getAvaliableReflector().values())!=0){
-
+        else if (checkReflectorsMapping(enigma.getMachine().getReflectors().getReflector())!=0){
+            throw new InvalidReflectorMappingException();
         }
     }
 
-    private static int checkReflectorsMapping(Collection<Reflector> avaliableReflector) {
-        for (Reflector ref: avaliableReflector) {
-            for(i=0;i<ref.getDest().length;i++){
-                if(ref.ge)
+    private static int checkReflectorsMapping(List<Logic.MachineXMLParsser.Generated.Reflector> reflector) {
+        for (Logic.MachineXMLParsser.Generated.Reflector ref: reflector) {
+            if(isReflectSameChar(ref.getReflect()))
+                return romeToInt(ref.getId());
+
+        }
+        return 0;
+    }
+
+    private static boolean isReflectSameChar(List<Reflect> reflect) {
+        for (Reflect ref:reflect) {
+            if(ref.getInput()==ref.getOutput())
+            {
+                return false;
             }
-
         }
+        return true;
     }
 
-    private static int checkReflctorsId(Map<Integer, Reflector> avaliableReflector) {
-
+    private static int checkNotchLocation(List<Logic.MachineXMLParsser.Generated.Rotor> rotorList,int abcSize) {
+        for (Logic.MachineXMLParsser.Generated.Rotor r: rotorList) {
+            if(r.getNotch()>abcSize){
+                return r.getId();
+            }
+        }
+        return 0;
     }
 
-    private static int romeToInt(String romeDig){
+    private static int checkDoubleMapping(List<Logic.MachineXMLParsser.Generated.Rotor> rotorList
+    ) {
+        for (Logic.MachineXMLParsser.Generated.Rotor r: rotorList) {
+            if(isDoubleMapping(r.getMapping())){
+                return r.getId();
+            }
+        }
+        return 0;
+    }
+
+    private static boolean isDoubleMapping(List<Mapping> mapping) {
+        for (Mapping map : mapping) {
+            for (Mapping secondMap : mapping) {
+                if (!map.equals(secondMap) && map.getTo().equals(secondMap.getTo())) {
+                    return false;
+                }
+                if (!map.equals(secondMap) && map.getFrom().equals(secondMap.getFrom())) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private static boolean checkRotorsIdValidation(List<Logic.MachineXMLParsser.Generated.Rotor> rotorList) {
+        ArrayList<Integer> rotorsId = new ArrayList<Integer>();
+        for (Logic.MachineXMLParsser.Generated.Rotor r: rotorList) {
+            if(rotorsId.contains(r.getId())) {
+                return false;
+            }
+            rotorsId.add(r.getId());
+        }
+        rotorsId.sort(Integer::compareTo);
+        if(rotorsId.get(rotorList.size())!=rotorList.size()){
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean checkReflectorsId(List<Logic.MachineXMLParsser.Generated.Reflector> reflectors) {
+        ArrayList<Integer> refId=new ArrayList<Integer>();
+        for (Logic.MachineXMLParsser.Generated.Reflector ref:reflectors) {
+            int id = romeToInt(ref.getId());
+            if(refId.contains(id)) {
+                return false;
+            }
+            refId.add(id);
+        }
+        refId.sort(Integer::compareTo);
+        if(refId.get(reflectors.size())!=reflectors.size()){
+            return false;
+        }
+        return true;
+    }
+
+    public static int romeToInt(String romeDig){
         if(romeDig.equals("I")){
             return 1;
         }
@@ -103,40 +179,4 @@ public class MachineXMLParsser {
         }
         return 0;
     }
-
-    private static int checkNotchLocation(MachineDescriptor machine) {
-        Collection<Rotor> rotors = machine.getAvaliableRotors().values();
-        for (Rotor r: rotors) {
-            if(r.getNotch()>machine.getAlphabet().length()){
-                return r.getID();
-            }
-        }
-        return 0;
-    }
-
-    // return 0 where there is no double mapping in any rotor, otherwise return the id of the rotor
-    private static int checkDoubleMapping(MachineDescriptor machine) {
-        Collection<Rotor> rotors = machine.getAvaliableRotors().values();
-        for (Rotor r: rotors) {
-            for(int i =0;i<r.getDest().length(); i++)
-            {
-                //if(r.getDest().toCharArray()[i]==)
-            }
-        }
-        return 0;
-    }
-
-    private static boolean checkRotorsIdValidation(MachineDescriptor machine) {
-        Set<Integer> avaliableRotorsId = machine.getAvaliableRotors().keySet();
-        ArrayList<Integer> arr=new ArrayList<Integer>();
-        for (int i = 1;i<=avaliableRotorsId.size();i++)
-        {
-            if(!avaliableRotorsId.contains(i)){
-                return false;
-            }
-        }
-        return true;
-    }
-
-
 }

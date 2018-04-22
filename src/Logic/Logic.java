@@ -7,7 +7,7 @@ import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
-import Logic.MachineXMLParsser.MachineXMLParsser;
+import Logic.MachineXMLParsser.*;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 
 import java.util.*;
@@ -28,7 +28,25 @@ public class Logic {
     }
 
     public void loadMachineFromXML(String path){
-        mMachineDescriptor = MachineXMLParsser.parseMachineFromXML(path);
+        try {
+            mMachineDescriptor = MachineXMLParsser.parseMachineFromXML(path);
+        } catch (notXMLException e) {
+            e.printStackTrace();
+        } catch (DoubleMappingException e) {
+            e.printStackTrace();
+        } catch (InvalidNotchLocationException e) {
+            e.printStackTrace();
+        } catch (InvalidReflectorMappingException e) {
+            e.printStackTrace();
+        } catch (InvalidRotorsIdException e) {
+            e.printStackTrace();
+        } catch (InvalidReflectorIdException e) {
+            e.printStackTrace();
+        } catch (AlphabetIsOddException e) {
+            e.printStackTrace();
+        } catch (InvalidRotorsCountException e) {
+            e.printStackTrace();
+        }
         createMachine();
     }
 
