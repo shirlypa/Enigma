@@ -131,28 +131,28 @@ public class ProgramManger {
             try {
                 mLogic.loadMachineFromXml(userInputPath);
             } catch (InvalidReflectorIdException e) {
-                appUI.printError("Invalid XML: ____. Please try again.");
+                appUI.printError("Invalid XML: Each reflector must have unique id (I-V). Please try again.");
                 valid = false;
             } catch (InvalidReflectorMappingException e) {
-                appUI.printError("Invalid XML: ");
+                appUI.printError("Invalid XML: One of the reflectors reflect the same character");
                 valid = false;
             } catch (notXMLException e) {
-                appUI.printError("Invalid XML: ");
+                appUI.printError("Invalid XML: Must load XML file");
                 valid = false;
             } catch (InvalidRotorsIdException e) {
-                appUI.printError("Invalid XML: ");
+                appUI.printError("Invalid XML: Each rotor must have unique id, start from 1");
                 valid = false;
             } catch (InvalidNotchLocationException e) {
-                appUI.printError("Invalid XML: ");
+                appUI.printError("Invalid XML: Notch can't be bigger then rotor size");
                 valid = false;
             } catch (AlphabetIsOddException e) {
-                appUI.printError("Invalid XML: ");
+                appUI.printError("Invalid XML: Alphabet length must be even");
                 valid = false;
             } catch (InvalidRotorsCountException e) {
-                appUI.printError("Invalid XML: ");
+                appUI.printError("Invalid XML: Rotors count can't be bigger than total amount of rotors, and can't be smaller than 2");
                 valid = false;
             } catch (DoubleMappingException e) {
-                appUI.printError("Invalid XML: ");
+                appUI.printError("Invalid XML: One of the rotors Mapping the same character twice or more");
                 valid = false;
             }
         }while(!valid);
