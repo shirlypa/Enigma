@@ -3,10 +3,10 @@ package Logic.History;
 public class ProcessString {
     private String SourceStr;
     private String DestStr;
-    private int Time;
+    private long Time;
 
 
-    public ProcessString(String sourceStr, String destStr, int time) {
+    public ProcessString(String sourceStr, String destStr, long time) {
         SourceStr = sourceStr;
         DestStr = destStr;
         Time = time;
@@ -20,7 +20,7 @@ public class ProcessString {
         return DestStr;
     }
 
-    public int getTime() {
+    public long getTime() {
         return Time;
     }
 }

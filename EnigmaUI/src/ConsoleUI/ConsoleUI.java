@@ -1,4 +1,4 @@
-package UI.ConsoleUI;
+package ConsoleUI;
 
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
@@ -6,11 +6,14 @@ import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
 import ProgramManger.MenuItem;
-import UI.UI;
+import
+
 
 import java.util.*;
 
-public class ConsoleUI implements UI {
+
+
+public class ConsoleUI implements UI_interface {
     private static final int k_width = 100;
     private static final Scanner mInput = new Scanner(System.in);
     private static final String[] k_RefletorEncoding = {"I", "II", "III", "IV", "V"};

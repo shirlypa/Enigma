@@ -1,4 +1,4 @@
-package UI;
+
 
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
@@ -9,7 +9,7 @@ import ProgramManger.MenuItem;
 import java.util.List;
 import java.util.Map;
 
-public interface UI {
+public interface UI_interface {
     void print(String content);
     void print(String title, String content);
     void print(String title, String content, List<MenuItem> menu);

@@ -1,4 +1,4 @@
-package UI.ConsoleUI;
+package ConsoleUI;
 
 
 

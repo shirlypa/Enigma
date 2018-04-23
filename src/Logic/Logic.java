@@ -9,6 +9,8 @@ import pukteam.enigma.component.machine.api.EnigmaMachine;
 import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
 import pukteam.enigma.factory.EnigmaComponentFactory;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 
 public class Logic {
@@ -49,9 +51,11 @@ public class Logic {
 
     // keep history updated :)
     public String proccess(String source) {
+        Instant start = Instant.now();
         String dest = mMachine.process(source);
-        int time = 00000000000123456; //                 Add time calculation!!!!!!!!!!!!!!!!!!!!!!!!!@#$#@!$#%@##!!
-        mHistory.insertRecord(mSecret,new ProcessString(source,dest,00000123456));
+        Instant end = Instant.now();
+        long time = Duration.between(start,end).toMillis();
+        mHistory.insertRecord(mSecret,new ProcessString(source,dest,time));
         return dest;
     }
 
@@ -99,11 +103,9 @@ public class Logic {
         return rotorIdGuess;
     }
 
-    public void resetToInitialPosition{
+    public void resetToInitialPosition(){
         mMachine.resetToInitialPosition();
     }
-
-
 
     public int getRotorsInUseCount(){
         return mMachineDescriptor.getRotorsInUseCount();
