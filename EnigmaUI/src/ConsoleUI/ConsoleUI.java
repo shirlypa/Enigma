@@ -5,8 +5,7 @@ import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
-import ProgramManger.MenuItem;
-import
+
 
 
 import java.util.*;
@@ -58,7 +57,7 @@ public class ConsoleUI implements UI_interface {
     @Override
     public String getXMLPath() {
         System.out.println("Please enter the path for the XML file which represent Enigma Machine:");
-        return mInput.nextLine();
+        return mInput.nextLine().toUpperCase();
     }
 
     //validations: (1)in range 1 to i_maxRotorID (2)rotorID not showing twice
@@ -107,7 +106,7 @@ public class ConsoleUI implements UI_interface {
         boolean validInput;
         System.out.print("Please choose reflection (I,II,III,IV,V): ");
         do {
-            String inputReflector = mInput.nextLine().trim();
+            String inputReflector = mInput.nextLine().trim().toUpperCase();
             for (int i = 1; i < k_RefletorEncoding.length + 1; i++){
                 if (inputReflector.equals(k_RefletorEncoding[i-1]))
                     return i;

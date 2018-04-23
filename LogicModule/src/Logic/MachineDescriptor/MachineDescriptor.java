@@ -19,7 +19,7 @@ public class MachineDescriptor {
 
     public MachineDescriptor(Enigma enigmaMachine) {
         this.RotorsInUseCount=enigmaMachine.getMachine().getRotorsCount();
-        this.Alphabet = enigmaMachine.getMachine().getABC();
+        this.Alphabet = enigmaMachine.getMachine().getABC().trim();
         for (Logic.MachineXMLParsser.Generated.Rotor r: enigmaMachine.getMachine().getRotors().getRotor()) {
             AvaliableRotors.put(r.getId(),new Rotor(r.getId(),getSource(r.getMapping()),getDest(r.getMapping()),r.getNotch()));
         }

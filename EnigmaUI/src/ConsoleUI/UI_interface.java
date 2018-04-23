@@ -1,10 +1,10 @@
-
+package ConsoleUI;
 
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
-import ProgramManger.MenuItem;
+
 
 import java.util.List;
 import java.util.Map;

@@ -47,12 +47,12 @@ public class MachineXMLParsser {
     }
 
     private static MachineDescriptor createMachine(Enigma enigmaMachine) {
-        MachineDescriptor machine=new MachineDescriptor(enigmaMachine);
+        MachineDescriptor machine = new MachineDescriptor(enigmaMachine);
         return machine;
     }
 
     private static void checkMachine(Enigma enigma) throws AlphabetIsOddException, InvalidRotorsCountException, InvalidRotorsIdException, DoubleMappingException, InvalidReflectorIdException, InvalidNotchLocationException, InvalidReflectorMappingException {
-        if(enigma.getMachine().getABC().length() %2 !=0){
+        if(enigma.getMachine().getABC().trim().length() %2 !=0){
             throw new AlphabetIsOddException();
         }
         else if(enigma.getMachine().getRotorsCount() > enigma.getMachine().getRotors().getRotor().size()){
@@ -67,7 +67,7 @@ public class MachineXMLParsser {
         else if (checkDoubleMapping(enigma.getMachine().getRotors().getRotor())!=0){
             throw new DoubleMappingException();
         }
-        else if(checkNotchLocation(enigma.getMachine().getRotors().getRotor(),enigma.getMachine().getABC().length())!=0){
+        else if(checkNotchLocation(enigma.getMachine().getRotors().getRotor(),enigma.getMachine().getABC().trim().length())!=0){
             throw new InvalidNotchLocationException();
         }
         else if(checkReflectorsId(enigma.getMachine().getReflectors().getReflector())){
@@ -79,22 +79,23 @@ public class MachineXMLParsser {
     }
 
     private static int checkReflectorsMapping(List<Logic.MachineXMLParsser.Generated.Reflector> reflector) {
+
+
         for (Logic.MachineXMLParsser.Generated.Reflector ref: reflector) {
             if(isReflectSameChar(ref.getReflect()))
                 return romeToInt(ref.getId());
-
         }
         return 0;
     }
 
     private static boolean isReflectSameChar(List<Reflect> reflect) {
-        for (Reflect ref:reflect) {
-            if(ref.getInput()==ref.getOutput())
+        for (Reflect ref : reflect) {
+            if(ref.getInput() == ref.getOutput())
             {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     private static int checkNotchLocation(List<Logic.MachineXMLParsser.Generated.Rotor> rotorList,int abcSize) {
@@ -117,45 +118,42 @@ public class MachineXMLParsser {
     }
 
     private static boolean isDoubleMapping(List<Mapping> mapping) {
+        Set<String> from = new HashSet<>();
+        Set<String> to = new HashSet<>();
         for (Mapping map : mapping) {
-            for (Mapping secondMap : mapping) {
-                if (!map.equals(secondMap) && map.getTo().equals(secondMap.getTo())) {
-                    return false;
-                }
-                if (!map.equals(secondMap) && map.getFrom().equals(secondMap.getFrom())) {
-                    return false;
-                }
+            if(from.add(map.getFrom())){
+                return false;
+            }
+            if(to.add(map.getTo())){
+                return false;
             }
         }
         return true;
     }
 
     private static boolean checkRotorsIdValidation(List<Logic.MachineXMLParsser.Generated.Rotor> rotorList) {
-        ArrayList<Integer> rotorsId = new ArrayList<Integer>();
+        Set<Integer> rotorsId = new HashSet<>();
         for (Logic.MachineXMLParsser.Generated.Rotor r: rotorList) {
-            if(rotorsId.contains(r.getId())) {
+            if(rotorsId.add(r.getId())) {
                 return false;
             }
-            rotorsId.add(r.getId());
         }
-        rotorsId.sort(Integer::compareTo);
-        if(rotorsId.get(rotorList.size())!=rotorList.size()){
+        int maxId = rotorsId.stream().mapToInt(Integer::intValue).max().getAsInt();
+        if(maxId!=rotorList.size()){
             return false;
         }
         return true;
     }
 
     private static boolean checkReflectorsId(List<Logic.MachineXMLParsser.Generated.Reflector> reflectors) {
-        ArrayList<Integer> refId=new ArrayList<Integer>();
-        for (Logic.MachineXMLParsser.Generated.Reflector ref:reflectors) {
-            int id = romeToInt(ref.getId());
-            if(refId.contains(id)) {
+        Set<Integer> refId = new HashSet<>();
+        for (Logic.MachineXMLParsser.Generated.Reflector r: reflectors) {
+            if(refId.add(romeToInt(r.getId()))) {
                 return false;
             }
-            refId.add(id);
         }
-        refId.sort(Integer::compareTo);
-        if(refId.get(reflectors.size())!=reflectors.size()){
+        int maxId = refId.stream().mapToInt(Integer::intValue).max().getAsInt();
+        if(maxId!=reflectors.size()){
             return false;
         }
         return true;
