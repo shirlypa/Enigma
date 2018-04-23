@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Reflector {
     private int ID;
-    private List<Integer> Source;
-    private List<Integer> Dest;
+    private byte[] Source;
+    private byte[] Dest;
 
-    public Reflector(int id, List<Integer> source, List<Integer> dest) {
+    public Reflector(int id, byte[] source, byte[] dest) {
         ID = id;
         Source = source;
         Dest = dest;
@@ -17,11 +17,11 @@ public class Reflector {
         return ID;
     }
 
-    public List<Integer> getSource() {
+    public byte[] getSource() {
         return Source;
     }
 
-    public List<Integer> getDest() {
+    public byte[] getDest() {
         return Dest;
     }
 }

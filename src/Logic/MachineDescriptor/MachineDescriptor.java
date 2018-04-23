@@ -24,22 +24,31 @@ public class MachineDescriptor {
             AvaliableRotors.put(r.getId(),new Rotor(r.getId(),getSource(r.getMapping()),getDest(r.getMapping()),r.getNotch()));
         }
         for (Logic.MachineXMLParsser.Generated.Reflector r: enigmaMachine.getMachine().getReflectors().getReflector()) {
-            AvaliableReflector.put(MachineXMLParsser.romeToInt(r.getId()),new Reflector(MachineXMLParsser.romeToInt(r.getId()),getReflectorSource(r.getReflect()),getReflectorDest(r.getReflect())));
+            AvaliableReflector.put(MachineXMLParsser.romeToInt(r.getId()),
+                    new Reflector(MachineXMLParsser.romeToInt(r.getId()),
+                            getReflectorSource(r.getReflect(),
+                                    enigmaMachine.getMachine().getABC().length()),
+                            getReflectorDest(r.getReflect(),
+                                    enigmaMachine.getMachine().getABC().length())));
         }
     }
-    private List getReflectorSource(List<Reflect> reflects){
-        List<Integer> res = new ArrayList<Integer>();
+    private byte[] getReflectorSource(List<Reflect> reflects,int alphabetSize){
+        byte[] arr = new byte[alphabetSize / 2];
+        int i=0;
         for (Reflect r:reflects) {
-            res.add(r.getInput());
+            arr[i]=(byte)r.getInput();
+            i++;
         }
-        return res;
+        return arr;
     }
-    private List getReflectorDest(List<Reflect> reflects){
-        List<Integer> res = new ArrayList<Integer>();
+    private byte[] getReflectorDest(List<Reflect> reflects, int alphabetSize){
+        byte[] arr = new byte[alphabetSize / 2];
+        int i=0;
         for (Reflect r:reflects) {
-            res.add(r.getOutput());
+            arr[i]=(byte)r.getOutput();
+            i++;
         }
-        return res;
+        return arr;
     }
     private String getSource(List<Mapping> map){
         String res="";

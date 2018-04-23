@@ -2,13 +2,12 @@ package Logic;
 
 import Logic.History.History;
 import Logic.History.ProcessString;
-import Logic.MachineDescriptor.MachineComponents.Position;
-import Logic.MachineDescriptor.MachineComponents.Rotor;
-import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import Logic.MachineDescriptor.MachineComponents.*;
 import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
+import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
+import pukteam.enigma.factory.EnigmaComponentFactory;
 
 import java.util.*;
 
@@ -30,25 +29,22 @@ public class Logic {
 
 
     private void createMachine() {
-        /*
+       EnigmaMachineBuilder machineBuilder = EnigmaComponentFactory.INSTANCE.buildMachine(mMachineDescriptor.getRotorsInUseCount(),mMachineDescriptor.getAlphabet());
+       Map<Integer,Rotor> availableRotors = mMachineDescriptor.getAvaliableRotors();
+       Map<Integer,Reflector> availableReflectors = mMachineDescriptor.getAvaliableReflector();
+        for (Rotor r:availableRotors.values()) {
+            machineBuilder.defineRotor(r.getID(),r.getSource(),r.getDest(),r.getNotch());
+        }
 
-
-        #### Not Implemented ###
-
-
-
-        */
+        for (Reflector r:availableReflectors.values()) {
+            machineBuilder.defineReflector(r.getID(),r.getSource(),r.getDest());
+        }
+        mMachine= machineBuilder.create();
     }
 
     public void restoreMachineToInitialSecret(){
-        /*
+        mMachine.resetToInitialPosition();
 
-
-        #### Not Implemented ###
-
-
-
-        */
     }
 
     // keep history updated :)
@@ -103,15 +99,8 @@ public class Logic {
         return rotorIdGuess;
     }
 
-    public void initSecret(){
-        /*
-
-
-        #### Not Implemented ###
-
-
-
-        */
+    public void resetToInitialPosition{
+        mMachine.resetToInitialPosition();
     }
 
 
