@@ -7,10 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/3rd party Enigma Machine/EnigmaMachine.jar!/" />
+          <root url="jar://$MODULE_DIR$/../EnigmaMachine.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

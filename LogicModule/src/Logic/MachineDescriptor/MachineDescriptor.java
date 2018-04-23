@@ -8,6 +8,7 @@ import Logic.MachineXMLParsser.Generated.Reflect;
 import Logic.MachineXMLParsser.MachineXMLParsser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,18 +19,22 @@ public class MachineDescriptor {
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
 
     public MachineDescriptor(Enigma enigmaMachine) {
+        AvaliableRotors = new HashMap<>();
+        AvaliableReflector = new HashMap<>();
+
         this.RotorsInUseCount=enigmaMachine.getMachine().getRotorsCount();
         this.Alphabet = enigmaMachine.getMachine().getABC().trim();
         for (Logic.MachineXMLParsser.Generated.Rotor r: enigmaMachine.getMachine().getRotors().getRotor()) {
-            AvaliableRotors.put(r.getId(),new Rotor(r.getId(),getSource(r.getMapping()),getDest(r.getMapping()),r.getNotch()));
+            Rotor newRotor = new Rotor(r.getId(),getSource(r.getMapping()),getDest(r.getMapping()),r.getNotch());
+            AvaliableRotors.put(r.getId(),newRotor);
         }
         for (Logic.MachineXMLParsser.Generated.Reflector r: enigmaMachine.getMachine().getReflectors().getReflector()) {
             AvaliableReflector.put(MachineXMLParsser.romeToInt(r.getId()),
                     new Reflector(MachineXMLParsser.romeToInt(r.getId()),
                             getReflectorSource(r.getReflect(),
-                                    enigmaMachine.getMachine().getABC().length()),
+                                    enigmaMachine.getMachine().getABC().trim().length()),
                             getReflectorDest(r.getReflect(),
-                                    enigmaMachine.getMachine().getABC().length())));
+                                    enigmaMachine.getMachine().getABC().trim().length())));
         }
     }
     private byte[] getReflectorSource(List<Reflect> reflects,int alphabetSize){
@@ -51,18 +56,18 @@ public class MachineDescriptor {
         return arr;
     }
     private String getSource(List<Mapping> map){
-        String res="";
-        for (Mapping m:map) {
-            res.concat(m.getFrom());
+        StringBuilder stringBuilder = new StringBuilder(map.size());
+        for (Mapping m : map) {
+            stringBuilder.append(m.getFrom());
         }
-        return res;
+        return stringBuilder.toString();
     }
     private String getDest(List<Mapping> map){
-        String res="";
-        for (Mapping m:map) {
-            res.concat(m.getTo());
+        StringBuilder stringBuilder = new StringBuilder(map.size());
+        for (Mapping m : map) {
+            stringBuilder.append(m.getTo());
         }
-        return res;
+        return stringBuilder.toString();
     }
 
     public int getRotorsInUseCount() {

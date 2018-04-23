@@ -4,11 +4,12 @@ package Logic.History;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
 public class History {
-    private Map<Secret, List<ProcessString>> historyDB;
+    private Map<Secret, List<ProcessString>> historyDB = new HashMap<>();
     private int counter = 0;
     public int getProccesedMsgCount(){
             return counter;

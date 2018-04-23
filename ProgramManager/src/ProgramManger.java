@@ -17,12 +17,19 @@ import java.util.concurrent.Callable;
 
 public class ProgramManger {
 
-    private UI_interface appUI = new ConsoleUI();
+    private UI_interface appUI;
     private eAppState appState;
-    private Logic mLogic = new Logic();
-    private List<MenuItem> mMenu = new ArrayList<>();
+    private Logic mLogic;
+    private List<MenuItem> mMenu;
 
     public ProgramManger(){
+        init();
+    }
+
+    private void init() {
+        appUI = new ConsoleUI();
+        mLogic = new Logic();
+        mMenu = new ArrayList<>();
         setAppState(eAppState.Initial);
     }
 
@@ -33,8 +40,10 @@ public class ProgramManger {
     }
 
     private void setAppState(eAppState newState){
-        appState = newState;
-        updateMenu();
+        if (appState != newState) {
+            appState = newState;
+            updateMenu();
+        }
     }
 
     private void updateMenu(){
@@ -46,6 +55,8 @@ public class ProgramManger {
             mMenu.add(new MenuItem(firstCommandString, new Callable<Void>() {
                 @Override
                 public Void call() throws Exception {
+                    if (!appState.equals(eAppState.Initial))
+                        init();
                     menuCmd_loadMachindFromXML();
                     setAppState(eAppState.MachineLoaded);
                     return null;
@@ -68,7 +79,8 @@ public class ProgramManger {
                 @Override
                 public Void call() throws Exception {
                     menuCmd_selectInitialSecret();
-                    setAppState(eAppState.SecretLoaded);
+                    if (appState.equals(eAppState.MachineLoaded))
+                        setAppState(eAppState.SecretLoaded);
                     return null;
                 }
             }));
@@ -77,7 +89,8 @@ public class ProgramManger {
                 @Override
                 public Void call() throws Exception {
                     menuCmd_randomInitialSecret();
-                    setAppState(eAppState.SecretLoaded);
+                    if (appState.equals(eAppState.MachineLoaded))
+                        setAppState(eAppState.SecretLoaded);
                     return null;
                 }
             }));
@@ -156,9 +169,12 @@ public class ProgramManger {
                 appUI.printError("Invalid XML: One of the rotors Mapping the same character twice or more");
                 valid = false;
             }
+            catch (FileDoesntExistsException e){
+                appUI.printError("Invalid XML: File does not exists");
+                valid = false;
+            }
         }while(!valid);
         appUI.print("The machine loaded successfully from the XML file!");
-        this.appState = eAppState.MachineLoaded;
         return null;
     }
 
@@ -175,7 +191,7 @@ public class ProgramManger {
     private Void menuCmd_selectInitialSecret(){
         int[] rotorsIDSelectArr = appUI.getSecretRotorsInUse(mLogic.getRotorsInUseCount(),mLogic.getMaxRotorID());
         List<RotorInSecret> rotorInSecretList = getRotorsPositionFromUser(rotorsIDSelectArr);
-        int reflectorID = appUI.getSecretReflectorInUse();
+        int reflectorID = appUI.getSecretReflectorInUse(mLogic.getReflectorsCount());
         mLogic.setSecret(new Secret(rotorInSecretList,reflectorID));
         return null;
     }
@@ -187,7 +203,7 @@ public class ProgramManger {
     }
 
     private Void menuCmd_processText(){
-        String txtToProcess = appUI.getTextToProccess();
+        String txtToProcess = appUI.getTextToProccess(mLogic.getAlphabet()).toUpperCase();
         String result = mLogic.proccess(txtToProcess);
         appUI.print("processed text","From:\t" + txtToProcess +"\nTo:\t" + result);
         return null;
@@ -212,7 +228,7 @@ public class ProgramManger {
                 if (selectedPos.isLetter())
                     validPosition = selectedRotor.fillNumberWhileValidCharacter(selectedPos);
                 else
-                    validPosition = selectedRotor.fillNumberWhileValidCharacter(selectedPos);
+                    validPosition = selectedRotor.fillCharacterWhileValidNumber(selectedPos);
 
                 if(!validPosition)
                     appUI.printError("Not valid position. Please Try Again");
@@ -236,6 +252,7 @@ public class ProgramManger {
 
     private Void menuCmd_exit(){
         this.setAppState(eAppState.Ended);
+        appUI.print("GoodBye!");
         return null;
     }
 }

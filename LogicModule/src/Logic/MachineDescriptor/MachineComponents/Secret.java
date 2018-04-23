@@ -3,6 +3,7 @@ package Logic.MachineDescriptor.MachineComponents;
 import javafx.geometry.Pos;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
+import pukteam.enigma.component.machine.secret.SecretBuilder;
 
 import java.util.List;
 
@@ -26,7 +27,12 @@ public class Secret {
 
     //page 31
     public pukteam.enigma.component.machine.api.Secret createEnigmaMachineSecret(EnigmaMachine machine){
-      return null;
+      SecretBuilder secretBuilder = machine.createSecret();
+        for (int i = RotorsInUse.size() - 1; i >= 0; i--) {
+            secretBuilder.selectRotor(RotorsInUse.get(i).getRotorId(),RotorsInUse.get(i).getPosition().getPositionAsChar());
+        }
+        secretBuilder.selectReflector(ReflectorId);
+        return secretBuilder.create();
     }
 
     @Override

@@ -17,7 +17,7 @@ public class Logic {
     private Secret mSecret;
     private MachineDescriptor mMachineDescriptor;
     private EnigmaMachine mMachine;
-    private History mHistory;
+    private History mHistory = new History();
 
     public void setSecret(Secret mSecret) {
         this.mSecret = mSecret;
@@ -73,7 +73,7 @@ public class Logic {
         for (int i = 0; i < mMachineDescriptor.getRotorsInUseCount(); i++){
             guessedRotorId = guessValidRotorID(rotorInSecretMap);
             positionGuess = new Random().nextInt(mMachineDescriptor.getAlphabet().length()) + 1;
-            char theCharInThePositionOfRotor = mMachineDescriptor.getAvaliableRotors().get(guessedRotorId).getSource().charAt(positionGuess);
+            char theCharInThePositionOfRotor = mMachineDescriptor.getAvaliableRotors().get(guessedRotorId).getSource().charAt(positionGuess -1);
             rotorInSecret = rotorInSecretMap.get(guessedRotorId);
             rotorInSecret.setPosition(new Position()
                     .setPositionAsChar(theCharInThePositionOfRotor)
@@ -94,11 +94,14 @@ public class Logic {
         do {
             valid = true;
             rotorIdGuess = new Random().nextInt(mMachineDescriptor.getAvaliableRotors().size()) + 1;
-            rotorInSecret = new RotorInSecret();
-            if (rotorInSecretMap.put(rotorIdGuess,rotorInSecret) == null){
+            if (rotorInSecretMap.get(rotorIdGuess) != null){
                 valid = false;
             }
-            rotorInSecret.setRotorId(rotorIdGuess);
+            else{
+                rotorInSecret = new RotorInSecret();
+                rotorInSecret.setRotorId(rotorIdGuess);
+                rotorInSecretMap.put(rotorIdGuess,rotorInSecret);
+            }
         }while (!valid);
         return rotorIdGuess;
     }
@@ -128,10 +131,14 @@ public class Logic {
         return mHistory.getHistoryDB();
     }
 
-    public void loadMachineFromXml(String path) throws InvalidReflectorIdException, InvalidReflectorMappingException, notXMLException, InvalidRotorsIdException, InvalidNotchLocationException, AlphabetIsOddException, InvalidRotorsCountException, DoubleMappingException {
+    public void loadMachineFromXml(String path) throws InvalidReflectorIdException, InvalidReflectorMappingException, notXMLException, InvalidRotorsIdException, InvalidNotchLocationException, AlphabetIsOddException, InvalidRotorsCountException, DoubleMappingException, FileDoesntExistsException {
         mMachineDescriptor = MachineXMLParsser.parseMachineFromXML(path);
         createMachine();
     }
 
     public int getProccesedMsgCount(){return mHistory.getProccesedMsgCount();}
+
+    public int getReflectorsCount() {
+        return mMachineDescriptor.getAvaliableRotors().size();
+    }
 }

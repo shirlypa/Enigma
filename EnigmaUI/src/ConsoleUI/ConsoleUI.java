@@ -14,7 +14,7 @@ import java.util.*;
 
 public class ConsoleUI implements UI_interface {
     private static final int k_width = 100;
-    private static final Scanner mInput = new Scanner(System.in);
+    private static Scanner mInput = new Scanner(System.in);
     private static final String[] k_RefletorEncoding = {"I", "II", "III", "IV", "V"};
     @Override
     public void print(String content) {
@@ -102,16 +102,22 @@ public class ConsoleUI implements UI_interface {
 
     //validations: one of the Rome Digits
     @Override
-    public int getSecretReflectorInUse() {
-        boolean validInput;
-        System.out.print("Please choose reflection (I,II,III,IV,V): ");
+    public int getSecretReflectorInUse(int availableReflectorsCount) {
+        mInput = new Scanner(System.in);
+        StringBuilder stringBuilder = new StringBuilder(availableReflectorsCount);
+        for (int i = 0; i < availableReflectorsCount; i++)
+            stringBuilder.append(k_RefletorEncoding[i]).append(", ");
+
+        stringBuilder.deleteCharAt(stringBuilder.length()-2);
+
         do {
+            System.out.print("Please choose reflection (" + stringBuilder.toString() +"): ");
             String inputReflector = mInput.nextLine().trim().toUpperCase();
-            for (int i = 1; i < k_RefletorEncoding.length + 1; i++){
-                if (inputReflector.equals(k_RefletorEncoding[i-1]))
-                    return i;
+            for (int i = 1; i <= availableReflectorsCount; i++){
+                if (inputReflector.equals(k_RefletorEncoding[i-1]) && i <= availableReflectorsCount)
+                        return i;
             }
-            System.out.print("You enterd invalid value.\nPlease try again: ");
+            System.out.print("You enterd invalid value. Please try again. ");
         }while(true);
     }
 
@@ -120,7 +126,7 @@ public class ConsoleUI implements UI_interface {
         Position rotorPosition = new Position();
 
         System.out.print("Select position for rotor id #" + rotorID + ": ");
-        String userInput = mInput.nextLine();
+        String userInput = new Scanner(System.in).nextLine();
 
         if (Character.isDigit(userInput.charAt(0))){
             rotorPosition.setPositionAsInt(new Scanner(userInput).nextInt());
@@ -135,17 +141,23 @@ public class ConsoleUI implements UI_interface {
     }
 
     @Override
-    public String getTextToProccess() {
+    public String getTextToProccess(String alphabet) {
         boolean valid;
         String input;
         do {
             valid = true;
             System.out.print("Please enter some text to proccess (no spaces): ");
             input = mInput.nextLine().trim();
-            for (char c : input.toCharArray())
+            for (char c : input.toUpperCase().toCharArray())
                 if (Character.isWhitespace(c)){
                     System.out.println("ahm ahm (no spaces). Please try again...");
                     valid = false;
+                    break;
+                }
+                else if (alphabet.indexOf(c) < 0){
+                    System.out.println("Error: " + c + " not appear in the alphabet: " + alphabet);
+                    valid = false;
+                    break;
                 }
         }while(!valid);
         return input;
@@ -169,10 +181,11 @@ public class ConsoleUI implements UI_interface {
             borderConsole.insertNewLine("-- Secret: " + currentSecret);
             for (ProcessString historyRecord : history.get(currentSecret)){
                 recordBuilder
-                        .append("\tFrom: ").append(historyRecord.getSourceStr())
-                        .append(" To: ").append(historyRecord.getDestStr())
-                        .append(" <").append(historyRecord.getTime()).append(" nS>");
+                        .append("       From: '").append(historyRecord.getSourceStr())
+                        .append("', To: '").append(historyRecord.getDestStr())
+                        .append("' <").append(historyRecord.getTime()).append(" nS>");
                 borderConsole.insertNewLine(recordBuilder.toString());
+                recordBuilder = new StringBuilder();
             }
         }
         borderConsole.print();

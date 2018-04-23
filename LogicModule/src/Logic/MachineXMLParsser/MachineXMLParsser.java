@@ -25,7 +25,7 @@ import java.util.*;
 //import Logic.MachineXMLParsser.Generated.Enigma;
 
 public class MachineXMLParsser {
-    public static MachineDescriptor parseMachineFromXML(String path) throws notXMLException, DoubleMappingException, InvalidNotchLocationException, InvalidReflectorMappingException, InvalidRotorsIdException, InvalidReflectorIdException, AlphabetIsOddException, InvalidRotorsCountException {
+    public static MachineDescriptor parseMachineFromXML(String path) throws notXMLException, DoubleMappingException, InvalidNotchLocationException, InvalidReflectorMappingException, InvalidRotorsIdException, InvalidReflectorIdException, AlphabetIsOddException, InvalidRotorsCountException, FileDoesntExistsException {
         Enigma enigmaMachine;
         if(!path.endsWith(".XML")) {
             throw new notXMLException();
@@ -33,6 +33,8 @@ public class MachineXMLParsser {
 
        try{
             File file= new File(path);
+            if (!file.exists())
+                throw new FileDoesntExistsException();
             JAXBContext jc = JAXBContext.newInstance(Enigma.class);
             Unmarshaller u= jc.createUnmarshaller();
             enigmaMachine= (Enigma)u.unmarshal(file);
@@ -121,14 +123,14 @@ public class MachineXMLParsser {
         Set<String> from = new HashSet<>();
         Set<String> to = new HashSet<>();
         for (Mapping map : mapping) {
-            if(from.add(map.getFrom())){
-                return false;
-            }
-            if(to.add(map.getTo())){
-                return false;
-            }
+            if (from.contains(map.getFrom()))
+                return true;
+            from.add(map.getFrom());
+            if (to.contains(map.getTo()))
+                return true;
+            to.add(map.getTo());
         }
-        return true;
+        return false;
     }
 
     private static boolean checkRotorsIdValidation(List<Logic.MachineXMLParsser.Generated.Rotor> rotorList) {

@@ -18,10 +18,10 @@ public interface UI_interface {
     String getXMLPath();
     int[] getSecretRotorsInUse(int rotorsInUse, int maxRotorID);
 
-    int getSecretReflectorInUse();
+    int getSecretReflectorInUse(int availableReflectorsCount);
     Position getSecretRotorPosition(int rotorID); //when ProgramManager get the Position it should use the logic to
                                     //fill the character of each position-object where .IsLetter = false
-    String getTextToProccess();
+    String getTextToProccess(String alphabet);
     void printError(String errorMsg);
 
     void showHistory(Map<Secret, List<ProcessString>> history);
