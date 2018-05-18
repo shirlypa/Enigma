@@ -1,5 +1,6 @@
 
 
+import Logic.Dm.DM;
 import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
@@ -247,6 +248,16 @@ public class ProgramManger {
 
     private Void menuCmd_showHistory(){
         appUI.showHistory(mLogic.getHistory());
+        return null;
+    }
+
+    private Void menuCmd_bruteForceProcess(){
+        //TODO
+        //get from user processLevel, missionSize, agentsNumber
+        //DM dmThread = new DM(this,...);
+        //show user: dmThread.
+
+
         return null;
     }
 
