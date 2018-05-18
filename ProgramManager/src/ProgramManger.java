@@ -169,6 +169,9 @@ public class ProgramManger {
             } catch (DoubleMappingException e) {
                 appUI.printError("Invalid XML: One of the rotors Mapping the same character twice or more");
                 valid = false;
+            } catch (InvalidAgentsNumberException e) {
+                appUI.printError("Invalid XML: The agent number must be between 2 to 50");
+                valid = false;
             }
             catch (FileDoesntExistsException e){
                 appUI.printError("Invalid XML: File does not exists");

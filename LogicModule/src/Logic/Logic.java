@@ -126,7 +126,7 @@ public class Logic {
         return mHistory.getHistoryDB();
     }
 
-    public void loadMachineFromXml(String path) throws InvalidReflectorIdException, InvalidReflectorMappingException, notXMLException, InvalidRotorsIdException, InvalidNotchLocationException, AlphabetIsOddException, InvalidRotorsCountException, DoubleMappingException, FileDoesntExistsException {
+    public void loadMachineFromXml(String path) throws InvalidReflectorIdException, InvalidReflectorMappingException, notXMLException, InvalidRotorsIdException, InvalidNotchLocationException, AlphabetIsOddException, InvalidRotorsCountException, DoubleMappingException, FileDoesntExistsException, InvalidAgentsNumberException {
         mMachineDescriptor = MachineXMLParsser.parseMachineFromXML(path);
         createMachine();
     }

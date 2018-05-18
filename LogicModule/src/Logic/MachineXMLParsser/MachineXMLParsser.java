@@ -25,7 +25,7 @@ import java.util.*;
 //import Logic.MachineXMLParsser.Generated.Enigma;
 
 public class MachineXMLParsser {
-    public static MachineDescriptor parseMachineFromXML(String path) throws notXMLException, DoubleMappingException, InvalidNotchLocationException, InvalidReflectorMappingException, InvalidRotorsIdException, InvalidReflectorIdException, AlphabetIsOddException, InvalidRotorsCountException, FileDoesntExistsException {
+    public static MachineDescriptor parseMachineFromXML(String path) throws notXMLException, DoubleMappingException, InvalidNotchLocationException, InvalidReflectorMappingException, InvalidRotorsIdException, InvalidReflectorIdException, AlphabetIsOddException, InvalidRotorsCountException, FileDoesntExistsException, InvalidAgentsNumberException {
         Enigma enigmaMachine;
         if(!path.endsWith(".XML")) {
             throw new notXMLException();
@@ -53,7 +53,7 @@ public class MachineXMLParsser {
         return machine;
     }
 
-    private static void checkMachine(Enigma enigma) throws AlphabetIsOddException, InvalidRotorsCountException, InvalidRotorsIdException, DoubleMappingException, InvalidReflectorIdException, InvalidNotchLocationException, InvalidReflectorMappingException {
+    private static void checkMachine(Enigma enigma) throws AlphabetIsOddException, InvalidRotorsCountException, InvalidRotorsIdException, DoubleMappingException, InvalidReflectorIdException, InvalidNotchLocationException, InvalidReflectorMappingException, InvalidAgentsNumberException {
         if(enigma.getMachine().getABC().trim().length() %2 !=0){
             throw new AlphabetIsOddException();
         }
@@ -77,6 +77,9 @@ public class MachineXMLParsser {
         }
         else if (checkReflectorsMapping(enigma.getMachine().getReflectors().getReflector())!=0){
             throw new InvalidReflectorMappingException();
+        }
+        else if (enigma.getDecipher().getAgents()<=2 ||enigma.getDecipher().getAgents()>=50){
+            throw new InvalidAgentsNumberException();
         }
     }
 
