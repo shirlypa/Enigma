@@ -25,7 +25,7 @@ public class Secret {
         return ReflectorId;
     }
 
-    //page 31
+
     public pukteam.enigma.component.machine.api.Secret createEnigmaMachineSecret(EnigmaMachine machine){
       SecretBuilder secretBuilder = machine.createSecret();
         for (int i = RotorsInUse.size() - 1; i >= 0; i--) {
@@ -55,5 +55,15 @@ public class Secret {
                 .append("><").append(ReflectorId).append(">");
 
         return stringBuilder.toString();
+    }
+
+    //Ex02
+    public pukteam.enigma.component.machine.api.Secret advanceSecretAndSetOnMachine(String alphabet, EnigmaMachine machine){
+        advanceRotors(alphabet);
+        return createEnigmaMachineSecret(machine);
+    }
+
+    private void advanceRotors(String alphabet) {
+        //TODO count on (alphabet.length)-base
     }
 }

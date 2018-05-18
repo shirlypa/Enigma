@@ -28,8 +28,6 @@ public class Logic {
         return mSecret;
     }
 
-
-
     private void createMachine() {
        EnigmaMachineBuilder machineBuilder = EnigmaComponentFactory.INSTANCE.buildMachine(mMachineDescriptor.getRotorsInUseCount(),mMachineDescriptor.getAlphabet());
        Map<Integer,Rotor> availableRotors = mMachineDescriptor.getAvaliableRotors();
@@ -106,9 +104,6 @@ public class Logic {
         return rotorIdGuess;
     }
 
-    public void resetToInitialPosition(){
-        mMachine.resetToInitialPosition();
-    }
 
     public int getRotorsInUseCount(){
         return mMachineDescriptor.getRotorsInUseCount();
@@ -141,4 +136,5 @@ public class Logic {
     public int getReflectorsCount() {
         return mMachineDescriptor.getAvaliableRotors().size();
     }
+
 }
