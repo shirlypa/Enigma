@@ -5,7 +5,7 @@ public class Dictionary {
     private String SpecialChar;
 
     public Dictionary(String words, String specialChar) {
-        Words = words;
+        Words = removeSpecialChars(words);
         SpecialChar = specialChar;
     }
 
@@ -25,17 +25,22 @@ public class Dictionary {
         SpecialChar = specialChar;
     }
 
-    private void removeSpecialChars(){
+    private String removeSpecialChars(String words){
         for (Character c : SpecialChar.toCharArray()) {
-            Words= Words.replace(c.toString(),"");
+            words= words.replace(c.toString(),"");
         }
+        return words;
     }
 
-    public boolean isExists (String word)
+    public boolean isExistsInDictionary (String words)
     {
-        if(Words.contains(word)) {
-            return true;
+        words = removeSpecialChars(words);
+        String [] wordsArr = words.split(" ");
+        for (String word:wordsArr) {
+            if (!Words.contains(word)) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 }

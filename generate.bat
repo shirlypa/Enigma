@@ -1,0 +1,1 @@
+xjc -p Logic.MachineXMLParsser.generated Enigma.xsd
