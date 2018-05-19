@@ -126,12 +126,12 @@ public class MachineXMLParsser {
         Set<String> from = new HashSet<>();
         Set<String> to = new HashSet<>();
         for (Mapping map : mapping) {
-            if (from.contains(map.getFrom()))
+            if (from.contains(map.getLeft()))
                 return true;
-            from.add(map.getFrom());
-            if (to.contains(map.getTo()))
+            from.add(map.getLeft());
+            if (to.contains(map.getRight()))
                 return true;
-            to.add(map.getTo());
+            to.add(map.getRight());
         }
         return false;
     }
