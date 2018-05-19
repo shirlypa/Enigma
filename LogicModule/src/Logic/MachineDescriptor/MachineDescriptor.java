@@ -1,16 +1,14 @@
 package Logic.MachineDescriptor;
 
-import Logic.MachineDescriptor.MachineComponents.Decipher;
 import Logic.MachineDescriptor.MachineComponents.Dictionary;
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
+import Logic.MachineXMLParsser.Generated.Decipher;
 import Logic.MachineXMLParsser.Generated.Enigma;
-import Logic.MachineXMLParsser.Generated.Machine;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
 import Logic.MachineXMLParsser.MachineXMLParsser;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +39,7 @@ public class MachineDescriptor {
                                     enigmaMachine.getMachine().getABC().trim().length())));
         }
 
-        MachineDecipher= new Decipher(enigmaMachine.getDecipher().getAgents(),
+        MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
                 new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
 
