@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="LogicModule:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LogicModule_jar</output-path>
+    <root id="root">
+      <element id="archive" name="LogicModule.jar">
+        <element id="module-output" name="LogicModule" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/EnigmaMachine.jar" />
+    </root>
+  </artifact>
+</component>
