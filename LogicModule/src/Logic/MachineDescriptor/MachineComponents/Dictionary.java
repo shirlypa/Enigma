@@ -25,8 +25,17 @@ public class Dictionary {
         SpecialChar = specialChar;
     }
 
+    private void removeSpecialChars(){
+        for (Character c : SpecialChar.toCharArray()) {
+            Words= Words.replace(c.toString(),"");
+        }
+    }
+
     public boolean isExists (String word)
     {
-        return true;
+        if(Words.contains(word)) {
+            return true;
+        }
+        return false;
     }
 }
