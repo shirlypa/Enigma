@@ -67,14 +67,14 @@ public class MachineDescriptor {
     private String getSource(List<Mapping> map){
         StringBuilder stringBuilder = new StringBuilder(map.size());
         for (Mapping m : map) {
-            stringBuilder.append(m.getFrom());
+            stringBuilder.append(m.getLeft());
         }
         return stringBuilder.toString();
     }
     private String getDest(List<Mapping> map){
         StringBuilder stringBuilder = new StringBuilder(map.size());
         for (Mapping m : map) {
-            stringBuilder.append(m.getTo());
+            stringBuilder.append(m.getRight());
         }
         return stringBuilder.toString();
     }
