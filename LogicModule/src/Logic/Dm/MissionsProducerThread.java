@@ -28,7 +28,12 @@ public class MissionsProducerThread implements Runnable {
         Mission mission;
         for (int i = 0; i < missionsNumber; i++) {
             mission = createOneMission();
-            missionsQueue.add(mission);
+            try {
+                missionsQueue.put(mission);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                //TODO Noy
+            }
         }
     }
 

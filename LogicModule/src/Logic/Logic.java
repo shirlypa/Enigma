@@ -52,7 +52,7 @@ public class Logic {
         Instant start = Instant.now();
         String dest = mMachine.process(source);
         Instant end = Instant.now();
-        long time = Duration.between(start,end).toMillis();
+        long time = ;
         mHistory.insertRecord(mSecret,new ProcessString(source,dest,time));
         return dest;
     }
