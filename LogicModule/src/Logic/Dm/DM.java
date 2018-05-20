@@ -145,8 +145,9 @@ public class DM extends Thread implements Runnable {
         return machineBuilder.create();
     }
 
+    //worksize/onemissionsize/10
     private void calcMissionToCreateBeforeAgentsStart() {
-
+        //TODO
     }
 
     public long getWorkSize() {
