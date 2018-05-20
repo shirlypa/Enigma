@@ -167,6 +167,9 @@ public class DM extends Thread implements Runnable {
         this.missionSize = missionSize;
     }
 
+    public static void accomplishedMissionsPlusPlus() {
+    }
+
     public void setKnown_RotorsIDs(int[] rotorsIDSelectArr) {
         secretGenerator.setCurrentRotorsInUse(rotorsIDSelectArr);
     }

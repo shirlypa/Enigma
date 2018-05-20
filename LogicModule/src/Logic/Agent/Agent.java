@@ -1,5 +1,7 @@
 package Logic.Agent;
+import Logic.Dm.DM;
 import Logic.Dm.Mission;
+import Logic.Dm.eDM_State;
 import Logic.MachineDescriptor.MachineComponents.Dictionary;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
@@ -8,17 +10,22 @@ import java.util.concurrent.BlockingQueue;
 
 public class  Agent extends Thread implements Runnable {
     private BlockingQueue<Mission> toDoMissionsQueue;
-    private BlockingQueue<Mission> accomplishedMissionsQueue;
+    private BlockingQueue<SuccessString> accomplishedMissionsQueue;
     private EnigmaMachine machineInst;
     private String source;
     private Dictionary dictionary;
-    public Agent(BlockingQueue<Mission> toDoMissionsQueue, BlockingQueue<Mission> accomplishedMissionsQueue, EnigmaMachine machine, String source, Dictionary dictionary)
+    private String alphabet;
+    private int agentID;
+    private DM dm;
+    public Agent(BlockingQueue<Mission> toDoMissionsQueue, BlockingQueue<SuccessString> accomplishedMissionsQueue, EnigmaMachine machine, String source, Dictionary dictionary,String alphabet, int agentID)
     {
         this.toDoMissionsQueue=toDoMissionsQueue;
         this.accomplishedMissionsQueue =accomplishedMissionsQueue;
         this.machineInst=machine;
         this.source = source;
         this.dictionary = dictionary;
+        this.alphabet = alphabet;
+        this.agentID = agentID;
     }
     @Override
     public void run() {
@@ -28,16 +35,28 @@ public class  Agent extends Thread implements Runnable {
             try {
                 mission = toDoMissionsQueue.take();
                 runMission(mission);
+                DM.accomplishedMissionsPlusPlus();
             }
             catch(InterruptedException e)
             {
-                // TODO check if this is Exit or Pause
+                if (dm.getDm_state().equals(eDM_State.DONE)) {
+                    //TODO stop running
+
+                }
+                while (!dm.getDm_state().equals(eDM_State.RUNNING)){
+                    try {
+                        dm.getDm_state().wait();
+                    } catch (InterruptedException e1) {
+                        throw new RuntimeException("Erro: Agent got interrupt while wait for resume");
+                    }
+                }
             }
         }
     }
 
-    private void runMission(Mission mission) {
+    private void runMission(Mission mission) throws InterruptedException {
         String result;
+        SuccessString successString;
         Secret currentSecret = mission.getInitialSecret();
         for(int i=0;i<mission.getMissionSize();i++)
         {
@@ -46,9 +65,10 @@ public class  Agent extends Thread implements Runnable {
             if (dictionary.isExistsInDictionary(result))
             {
                 //TODO put the string in the sec queue
+                successString= new SuccessString(result,currentSecret,agentID);
+                accomplishedMissionsQueue.put(successString);
             }
-            //currentSecret++
-            //currentSecret= getNextSecret(currentSecret);
+           currentSecret.advanceSecretAndSetOnMachine(alphabet,machineInst);
         }
     }
 
