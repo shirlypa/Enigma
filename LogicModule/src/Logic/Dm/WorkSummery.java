@@ -12,15 +12,15 @@ public class WorkSummery {
     private List<SuccessString> successStrings;
     private String timeFromStart; //mm:ss or hh:mm:ss if there is hours
 
-    public WorkSummery(int accomplishMissions, long workSize, Map<Integer, Mission> agentCurrentMissionMap, List<SuccessString> successStrings, long timeFromStart) {
+    public WorkSummery(int accomplishMissions, long workSize, Map<Integer, Mission> agentCurrentMissionMap, List<SuccessString> successStrings,long startTime, long timeFromStart) {
         this.accomplishMissions = accomplishMissions;
         this.workSize = workSize;
         this.agentCurrentMissionMap = agentCurrentMissionMap;
         this.successStrings = successStrings;
-        this.timeFromStart = timeToStr(timeFromStart);
+        this.timeFromStart = timeToStr(startTime, timeFromStart);
     }
 
-    private String timeToStr(long timeFromStart) {
+    private String timeToStr(long startTime, long timeFromStart) {
         //TODO
         return null;
     }
