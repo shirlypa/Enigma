@@ -40,8 +40,7 @@ public class  Agent extends Thread implements Runnable {
             catch(InterruptedException e)
             {
                 if (dm.getDm_state().equals(eDM_State.DONE)) {
-                    //TODO stop running
-
+                    return;
                 }
                 while (!dm.getDm_state().equals(eDM_State.RUNNING)){
                     try {
@@ -64,7 +63,6 @@ public class  Agent extends Thread implements Runnable {
             result = machineInst.process(source);
             if (dictionary.isExistsInDictionary(result))
             {
-                //TODO put the string in the sec queue
                 successString= new SuccessString(result,currentSecret,agentID);
                 accomplishedMissionsQueue.put(successString);
             }
