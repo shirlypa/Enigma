@@ -5,18 +5,7 @@ import Logic.Agent.SuccessString;
 import java.util.List;
 import java.util.Map;
 
-//******************************
-//intance of this class will be passed to ProgramManager by the DM, when DM done all of the missions (done the work).
-//******************************
-//should have contain (exposed as public functions):
-//the time of the work (all missions)
-//number of missions in the work
-//number of accomplished missions
-//for each agent: the number of mission that remain and the current mission
-//list of successed string. each item should have:
-//      Object(String successedString, Secret secretWhenSuccessed)
 public class WorkSummery {
-    //TODO this class
     private int accomplishMissions;
     private long workSize;
     Map<Integer,Mission> agentCurrentMissionMap;
@@ -32,7 +21,7 @@ public class WorkSummery {
     }
 
     private String timeToStr(long timeFromStart) {
-        //TODO NOY
+        //TODO
         return null;
     }
 

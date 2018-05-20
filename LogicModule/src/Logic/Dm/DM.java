@@ -53,7 +53,6 @@ public class DM extends Thread implements Runnable {
         this.validStringList = new ArrayList<>();
         this.agentCurrentMissionMap = new HashMap<>();
         this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount());
-        //TODO calc mWorkSize
         mWorkSize = calcWorkSize();
         agentList = new ArrayList<>();
 
@@ -126,7 +125,8 @@ public class DM extends Thread implements Runnable {
 
     private void createAgentsList() {
         for (int i = 0; i < agentNumber; i++) {
-             agentList.add(new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance()),machineDescriptor.getDictionary());
+             agentList.add(new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance(),txtToDecipher,machineDescriptor.getDictionary(),
+                     machineDescriptor.getAlphabet(),i+1));
         }
     }
 

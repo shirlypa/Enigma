@@ -5,6 +5,7 @@ import pukteam.enigma.component.machine.api.EnigmaMachine;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
 import pukteam.enigma.component.machine.secret.SecretBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Secret {
@@ -67,7 +68,6 @@ public class Secret {
     //this function called by the MissionProducer:
     // advance the instance of the secret and return true if the code was reset
     public boolean advanceRotors(String alphabet) {
-        //TODO count on (alphabet.length)-base
         for (RotorInSecret r:RotorsInUse) {
             r.getPosition().setPositionAsChar(getNextAlphabet(alphabet ,r.getPosition().getPositionAsChar()));
             if (r.getPosition().getPositionAsChar() != alphabet.toCharArray()[0]){
@@ -93,6 +93,10 @@ public class Secret {
     }
 
     public Secret cloneSecret(){
-        //TODO deep clone (clone rotorsInUse also so when agent advance his secret it doesn't advance another agent secret
+        List<RotorInSecret> newRotorinSecretList = new ArrayList<>();
+        for (RotorInSecret rotor : this.RotorsInUse){
+            newRotorinSecretList.add(new RotorInSecret(rotor.getRotorId(),new Position().setPositionAsInt(rotor.getPosition().getPositionAsInt())));
+        }
+        return new Secret(newRotorinSecretList,this.ReflectorId);
     }
 }
