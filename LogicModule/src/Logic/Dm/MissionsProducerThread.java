@@ -6,7 +6,7 @@ import Logic.MachineDescriptor.MachineDescriptor;
 
 import java.util.concurrent.BlockingQueue;
 
-public class MissionsProducerThread implements Runnable {
+public class MissionsProducerThread extends Thread implements Runnable {
     private BlockingQueue<Mission> missionsQueue;
     private eProccessLevel proccessLevel;
     private int missionsNumber;

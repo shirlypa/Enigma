@@ -38,9 +38,10 @@ public class DM extends Thread implements Runnable {
     private Secret knownSecret;
     private int accomplishedMissions;
     private Instant startWorkInstant;
-    private Map<Integer,Mission> agentCurrentMissionMap;
+    private Map<Integer,Secret> agentCurrentMissionMap;
     private eDM_State dm_state;
     private SecretGenerator secretGenerator;
+    private MissionsProducerThread missionProd;
 
     public DM(String txtToDecipher, hasUItoShowMissions programManager, eProccessLevel processLevel, int agentNumber, MachineDescriptor machineDescriptor){
         this.txtToDecipher = txtToDecipher;
@@ -83,7 +84,7 @@ public class DM extends Thread implements Runnable {
         startWorkInstant = Instant.now();
         calcMissionToCreateBeforeAgentsStart();
         createAgentsList();
-        MissionsProducerThread missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor,knownSecret);
+        missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor,knownSecret);
         new Thread(missionProd).start();
         //Start listening to accomplishedMissions
         while (accomplishedMissions < missionProd.getMissionsNumber()){
@@ -92,7 +93,6 @@ public class DM extends Thread implements Runnable {
                 synchronized (validStringList) {
                     validStringList.add(successString);
                 }
-                accomplishedMissions++;
             } catch (InterruptedException e) {
                 interruptAllAgents();
                 if (this.dm_state.equals(eDM_State.DONE)){
@@ -116,6 +116,7 @@ public class DM extends Thread implements Runnable {
         for (Agent agent : agentList) {
             agent.interrupt();
         }
+        missionProd.interrupt();
     }
 
     public WorkSummery createWorkSummery() {
@@ -145,6 +146,7 @@ public class DM extends Thread implements Runnable {
     }
 
     private void calcMissionToCreateBeforeAgentsStart() {
+
     }
 
     public long getWorkSize() {
@@ -167,7 +169,13 @@ public class DM extends Thread implements Runnable {
         this.missionSize = missionSize;
     }
 
-    public static void accomplishedMissionsPlusPlus() {
+    public synchronized void accomplishedMissionsPlusPlus() {
+        accomplishedMissions++;
+    }
+
+    public synchronized void updateAgentCurrentMission(int agentID, Secret currentInitialSecret){
+        //TODO update (put may not success because it already exist)
+        agentCurrentMissionMap.put(agentID,currentInitialSecret);
     }
 
     public void setKnown_RotorsIDs(int[] rotorsIDSelectArr) {
