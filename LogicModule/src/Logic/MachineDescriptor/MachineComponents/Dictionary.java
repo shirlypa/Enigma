@@ -45,8 +45,6 @@ public class Dictionary {
     }
 
     public boolean isTextValid(String userInputTxt) {
-        //TODO Shirly
-        //this method called by ProgramManager when get text to bruteForce from the user
-        //the method should clean the parameter from special chars & return isExistInDictionary(cleanText)
+        return isExistsInDictionary(removeSpecialChars(userInputTxt));
     }
 }

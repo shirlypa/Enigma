@@ -1,5 +1,7 @@
 package ConsoleUI;
 
+import Logic.Agent.SuccessString;
+import Logic.Dm.WorkSummery;
 import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
@@ -249,29 +251,88 @@ public class ConsoleUI implements UI_interface {
     @Override
     public int getAgentsNumber(int maxAgents) {
         boolean validInput;
-        int userChoice;
+        int userChoice = -1;
         do {
             validInput = true;
             System.out.println("Please Enter the number of agents (number from 2 to " + maxAgents);
+            try {
+                userChoice = mInput.nextInt();
+            } catch (InputMismatchException expection){
+                System.out.print(mInput.nextLine() + " isn't number. Please try again");
+                validInput = false;
+            }
 
-        }
-        try {
-            userChoice = mInput.nextInt();
-        } catch (InputMismatchException expection){
-            System.out.print(mInput.nextLine() + " isn't number. Please try again");
-            validInput = false;
-        }
-
-        if (userChoice < 1 || userChoice > maxAgents){
-            System.out.println("Invalid input: You should enter a number between 1 to " + maxAgents);
-            System.out.println("Please try again.");
-            validInput = false;
-        }
+            if (userChoice < 1 || userChoice > maxAgents){
+                System.out.println("Invalid input: You should enter a number between 1 to " + maxAgents);
+                System.out.println("Please try again.");
+                validInput = false;
+            }
+        }while(!validInput);
+        return userChoice;
     }
 
     @Override
-    public int getMissionSize(long workSize) {
-        System.out.println("Please pick one mission size");
-        System.out.println("Hint: The number of combinations for this ");
+    public int getMissionSize(long workSize, int agentNumber) {
+        boolean validInput;
+        int userChoice = -1;
+        System.out.println("Please select one mission size");
+        System.out.println("Hint: The number of possible combinations is: " + workSize);
+
+        do {
+            validInput = true;
+            System.out.println("Enter your choice: ");
+            try {
+                userChoice = mInput.nextInt();
+            } catch (InputMismatchException exception) {
+                System.out.print(mInput.nextLine() + " isn't number. Please try again");
+                validInput = false;
+            }
+            if (workSize / userChoice < agentNumber) {
+                System.out.println("Invalid: If " + userChoice + " will be the mission size, not all agents will work");
+                System.out.println("Please try again");
+            }
+        }while(!validInput);
+        return userChoice;
+    }
+
+    @Override
+    public void askUserForStartDesipher() {
+        System.out.println("All set to start the process");
+        System.out.println("Press any key to continue...");
+        mInput.nextLine();
+    }
+
+    public void showDesipherStatus(WorkSummery workSummery) {
+        final int STRINGS_TO_SHOW = 10;
+        String[] validString_info = new String[STRINGS_TO_SHOW];
+        String timeForMission;
+        long precent;
+
+        synchronized (workSummery.getSuccessStrings()) {
+            timeForMission = workSummery.getTimeFromStart();
+            precent = (workSummery.getAccomplishMissions() / workSummery.getWorkSize()) * 100;
+            int successStringNumber = workSummery.getSuccessStrings().size();
+            for (int i = 0; i < validString_info.length; i++) {
+                SuccessString successString = workSummery.getSuccessStrings().get(successStringNumber - 1 - i);
+                validString_info[i] = ". " + successString.getSucessString()
+                        + "\t" + successString.getSecretWithLuck() + "\t" + successString.getAgentID();
+            }
+        }
+        BorderConsole borderConsole = new BorderConsole(k_width);
+        borderConsole
+                .setTitle("Decipher Information")
+                .setPadding(6)
+                .setVerticalBorderChar('+')
+                .setHorizontalBorderChar('.');
+        borderConsole
+                .insertNewLine("Time from start the process: " + timeForMission)
+                .insertNewLine("Percentage of progress: " + (int)precent + "%")
+                .insertNewLine("")
+                .insertNewLine("  String\tSecret\tAgent ID")
+                .insertNewLine("  ======\t======\t========");
+        for (int i = 0; i < validString_info.length; i++) {
+            borderConsole.insertNewLine(validString_info[i]);
+        }
+        borderConsole.print();
     }
 }

@@ -1,9 +1,7 @@
 
 
-import Logic.Dm.DM;
-import Logic.Dm.WorkSummery;
-import Logic.Dm.eProccessLevel;
-import Logic.Dm.hasUItoShowMissions;
+import ConsoleUI.MenuItem;
+import Logic.Dm.*;
 import Logic.MachineDescriptor.MachineComponents.*;
 import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
@@ -22,6 +20,7 @@ public class ProgramManger implements hasUItoShowMissions {
     private eAppState appState;
     private Logic mLogic;
     private List<MenuItem> mMenu;
+    private DM dmThread;
 
     public ProgramManger(){
         init();
@@ -122,6 +121,14 @@ public class ProgramManger implements hasUItoShowMissions {
                 @Override
                 public Void call() throws Exception {
                     return menuCmd_showHistory();
+                }
+            }));
+            mMenu.add(mMenu.size() -1,new MenuItem("Automatic decoding", new Callable<Void>() {
+                @Override
+                public Void call() throws Exception {
+                    menuCmd_bruteForceProcess();
+                    setAppState(eAppState.Started);
+                    return null;
                 }
             }));
         }
@@ -255,19 +262,102 @@ public class ProgramManger implements hasUItoShowMissions {
     }
 
     private Void menuCmd_bruteForceProcess(){
-        //TODO
-        //get from user processLevel, missionSize, agentsNumber
-        //DM dmThread = new DM(this,...);
-        //show user: dmThread.
         String inputTxtToProccess = getTextToBruteForce();
+        String encryptedTxt = mLogic.proccess(inputTxtToProccess);
         eProccessLevel proccessLevel = appUI.getProccessLevel();
+        if (!proccessLevel.equals(eProccessLevel.IMPOSSIBLE)) {
+            getKnownSecretFromUser(proccessLevel);
+        }
         int agentsNum = appUI.getAgentsNumber(mLogic.getMaxAgents());
-        DM dmThread = new DM(this,proccessLevel,agentsNum,mLogic.getMachineDescriptor());
-        int missionSize = appUI.getMissionSize(dmThread.getWorkSize())
-
+        dmThread = new DM(encryptedTxt, this,proccessLevel,agentsNum,mLogic.getMachineDescriptor());
+        int missionSize = appUI.getMissionSize(dmThread.getWorkSize(),agentsNum);
+        dmThread.setMissionSize(missionSize);
+        appUI.askUserForStartDesipher();
+        dmThread.start();
+        showBruteForceMenu();
         return null;
     }
 
+    private void getKnownSecretFromUser(eProccessLevel proccessLevel) {
+        int[] currentSecretRotorsIDs = new int[mLogic.getRotorsInUseCount()];
+        for (int i = 0; i < currentSecretRotorsIDs.length; i++) {
+            currentSecretRotorsIDs[i] = mLogic.getSecret().getRotorsInUse().get(i).getRotorId();
+        }
+        dmThread.setKnown_RotorsIDs(currentSecretRotorsIDs);
+        if (!proccessLevel.equals(eProccessLevel.HARD)) {
+            dmThread.setKnown_RotorsOrder(true);
+            if (!proccessLevel.equals(eProccessLevel.MEDIUM)){
+                dmThread.setKnown_Reflector(mLogic.getSecret().getReflectorId());
+            }
+        }
+    }
+
+    private void showBruteForceMenu() {
+        List<MenuItem> menu = new ArrayList<>();
+
+        menu.add(new MenuItem("Get decipher status", new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                WorkSummery workSummery = dmThread.createWorkSummery();
+                appUI.showDesipherStatus(workSummery);
+                return null;
+            }
+        }));
+
+        menu.add(new MenuItem("Pause decipher process", new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                pauseDesipherProcess();
+                return null;
+            }
+        }));
+
+        menu.add(new MenuItem("Stop decipher process", new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                stopDecipherProcess();
+                return null;
+            }
+        }));
+        appUI.print("Desipher In process","Meanwhile, you can select one of this options",menu);
+    }
+
+    private void stopDecipherProcess() {
+        dmThread.setDm_state(eDM_State.DONE);
+        dmThread.interrupt();
+    }
+
+    private void pauseDesipherProcess() {
+        dmThread.setDm_state(eDM_State.PAUSE);
+        dmThread.getDm_state().notifyAll();
+        dmThread.interrupt();
+
+        WorkSummery workSummery = dmThread.createWorkSummery();
+        appUI.showDesipherStatus(workSummery);
+
+        List<MenuItem> menu = new ArrayList<>();
+        menu.add(new MenuItem("Resume decipher process", new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                resumeDecipherProcess();
+                return null;
+            }
+        }));
+        menu.add(new MenuItem("Stop decipher process", new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+                stopDecipherProcess();
+                return null;
+            }
+        }));
+
+        appUI.print("Decipher Process Paused","You can select one of that options",menu);
+    }
+
+    private void resumeDecipherProcess() {
+        dmThread.setDm_state(eDM_State.RUNNING);
+        dmThread.getDm_state().notifyAll();
+    }
 
     private Void menuCmd_exit(){
         this.setAppState(eAppState.Ended);
@@ -291,14 +381,4 @@ public class ProgramManger implements hasUItoShowMissions {
         return userInputTxt;
     }
 
-    @Override
-    public int inProcessingUpdates(int missionsAccomplishedNumber, int successedStringsNumber) {
-        return 0;
-        //TODO noy
-    }
-
-    @Override
-    public void dmDoneWorking(WorkSummery workSummery) {
-    //TODO noy
-    }
 }

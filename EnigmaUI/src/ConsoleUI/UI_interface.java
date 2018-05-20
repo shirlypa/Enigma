@@ -1,5 +1,6 @@
 package ConsoleUI;
 
+import Logic.Dm.WorkSummery;
 import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
@@ -31,5 +32,8 @@ public interface UI_interface {
     eProccessLevel getProccessLevel();
     int getAgentsNumber(int maxAgents);
 
-    int getMissionSize(long workSize);
+    int getMissionSize(long workSize, int agentNum);
+    void askUserForStartDesipher();
+    void showDesipherStatus(WorkSummery workSummery);
+
 }

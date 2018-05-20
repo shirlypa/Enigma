@@ -40,7 +40,7 @@ public class Logic {
         for (Reflector r:availableReflectors.values()) {
             machineBuilder.defineReflector(r.getID(),r.getSource(),r.getDest());
         }
-        mMachine= machineBuilder.create();
+        mMachine = machineBuilder.create();
     }
 
     public void restoreMachineToInitialSecret(){
@@ -53,7 +53,7 @@ public class Logic {
         Instant start = Instant.now();
         String dest = mMachine.process(source);
         Instant end = Instant.now();
-        long time = ;
+        long time = Duration.between(start,end).toMillis();
         mHistory.insertRecord(mSecret,new ProcessString(source,dest,time));
         return dest;
     }
@@ -138,7 +138,7 @@ public class Logic {
         return mMachineDescriptor.getAvaliableRotors().size();
     }
 
-    public Dictionary getDictionary() {return mMachineDescriptor.getDictionary()}
+    public Dictionary getDictionary() {return mMachineDescriptor.getDictionary();}
 
     public int getMaxAgents() {return mMachineDescriptor.getMaxAgents();}
 

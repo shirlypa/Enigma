@@ -14,22 +14,28 @@ public class MissionsProducerThread implements Runnable {
     private MachineDescriptor machineDescriptor;
     private Secret knownSecret;
     private long workSize;
+    private SecretGenerator secretGenerator;
+    private DM mDM;
 
-    public MissionsProducerThread(BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, Secret knownSecret) {
+    public MissionsProducerThread(DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, Secret knownSecret) {
         this.missionsQueue = missionsQueue;
         this.proccessLevel = proccessLevel;
         this.missionsNumber = 0;
         this.mMissionSize = mMissionSize;
         this.machineDescriptor = machineDescriptor;
         this.knownSecret = knownSecret;
+        this.mDM = dm;
     }
 
     @Override
     public void run() {
         Mission mission;
         String alphabet = machineDescriptor.getAlphabet();
-        boolean codeWasReset;
-        Secret currentMissionInitialSecret, advancedSecret;
+        boolean codeWasReset,shouldSendMission;
+        Secret currentMissionInitialSecret = secretGenerator.getInitialSecret();
+        Secret advancedSecret = currentMissionInitialSecret.cloneSecret();
+
+
         int currentMissionSize = 1;
         for (long i = 0; i < workSize; i++,currentMissionSize++){
             codeWasReset = advancedSecret.advanceRotors(alphabet);
@@ -39,7 +45,7 @@ public class MissionsProducerThread implements Runnable {
                 }
                 currentMissionSize = 1;
                 if (codeWasReset) {
-                    currentMissionInitialSecret = getNextSecretByProccessLevel();
+                    currentMissionInitialSecret = secretGenerator.advanceRotorsAndReflectorByLevel();
                     advancedSecret = currentMissionInitialSecret.cloneSecret();
                 } else {
                     currentMissionInitialSecret = advancedSecret.cloneSecret();
@@ -49,20 +55,19 @@ public class MissionsProducerThread implements Runnable {
                     missionsQueue.put(mission);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                    //TODO NOY
+                    if (mDM.getDm_state().equals(eDM_State.DONE)){
+                        return;
+                    }
+                    while (!mDM.getDm_state().equals(eDM_State.RUNNING)){
+                        try {
+                            mDM.getDm_state().wait();
+                        } catch (InterruptedException e1) {
+                            throw new RuntimeException("Erro: MissionProducerThread got interrupt while wait for resume");
+                        }
+                    }
                 }
             }
         }
-    }
-
-    private Secret getNextSecretByProccessLevel(){
-
-    }
-
-    private Mission createOneMission() {
-        //TODO
-
-        return null;
     }
 
     public BlockingQueue<Mission> getMissionsQueue() {
@@ -87,5 +92,9 @@ public class MissionsProducerThread implements Runnable {
 
     public Secret getKnownSecret() {
         return knownSecret;
+    }
+
+    public void setSecretGenerator(SecretGenerator secretGenerator) {
+        this.secretGenerator = secretGenerator;
     }
 }
