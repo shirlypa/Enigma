@@ -68,7 +68,28 @@ public class Secret {
     // advance the instance of the secret and return true if the code was reset
     public boolean advanceRotors(String alphabet) {
         //TODO count on (alphabet.length)-base
+        for (RotorInSecret r:RotorsInUse) {
+            r.getPosition().setPositionAsChar(getNextAlphabet(alphabet ,r.getPosition().getPositionAsChar()));
+            if (r.getPosition().getPositionAsChar() != alphabet.toCharArray()[0]){
+                break;
+            }
+        }
+
+        for (RotorInSecret r:RotorsInUse) {
+            if(r.getPosition().getPositionAsChar()!=alphabet.toCharArray()[0]){
+                return false;
+            }
+        }
         return true;
+    }
+
+    private char getNextAlphabet (String alphabet, char currChar)
+    {
+        int next = alphabet.indexOf(currChar);
+        if (next==alphabet.length() -1) {
+            next = 0;
+        }
+        return alphabet.toCharArray()[next];
     }
 
     public Secret cloneSecret(){

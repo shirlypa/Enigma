@@ -124,4 +124,7 @@ public class DM extends Thread implements Runnable {
     public void setMissionSize(int missionSize) {
         this.missionSize = missionSize;
     }
+
+    public static void accomplishedMissionsPlusPlus() {
+    }
 }
