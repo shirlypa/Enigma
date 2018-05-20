@@ -1,10 +1,10 @@
 
 
 import Logic.Dm.DM;
-import Logic.MachineDescriptor.MachineComponents.Position;
-import Logic.MachineDescriptor.MachineComponents.Rotor;
-import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import Logic.Dm.WorkSummery;
+import Logic.Dm.eProccessLevel;
+import Logic.Dm.hasUItoShowMissions;
+import Logic.MachineDescriptor.MachineComponents.*;
 import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
 import Logic.Logic;
@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-public class ProgramManger {
+public class ProgramManger implements hasUItoShowMissions {
 
     private UI_interface appUI;
     private eAppState appState;
@@ -259,14 +259,46 @@ public class ProgramManger {
         //get from user processLevel, missionSize, agentsNumber
         //DM dmThread = new DM(this,...);
         //show user: dmThread.
-
+        String inputTxtToProccess = getTextToBruteForce();
+        eProccessLevel proccessLevel = appUI.getProccessLevel();
+        int agentsNum = appUI.getAgentsNumber(mLogic.getMaxAgents());
+        DM dmThread = new DM(this,proccessLevel,agentsNum,mLogic.getMachineDescriptor());
+        int missionSize = appUI.getMissionSize(dmThread.getWorkSize())
 
         return null;
     }
+
 
     private Void menuCmd_exit(){
         this.setAppState(eAppState.Ended);
         appUI.print("GoodBye!");
         return null;
+    }
+
+    private String getTextToBruteForce() { //valid = all the words in the dictionary
+        Dictionary dictionary = mLogic.getDictionary();
+        boolean valid = true;
+        String userInputTxt;
+        do {
+            userInputTxt = appUI.getTextToBruteForce();
+            if (!dictionary.isTextValid(userInputTxt)){
+                appUI.printError("Invali input");
+                appUI.printError("You can only enter words from the dictionry (with special characters)");
+                appUI.printError("Please try again");
+                valid = false;
+            }
+        }while(!valid);
+        return userInputTxt;
+    }
+
+    @Override
+    public int inProcessingUpdates(int missionsAccomplishedNumber, int successedStringsNumber) {
+        return 0;
+        //TODO noy
+    }
+
+    @Override
+    public void dmDoneWorking(WorkSummery workSummery) {
+    //TODO noy
     }
 }

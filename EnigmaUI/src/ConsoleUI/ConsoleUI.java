@@ -1,12 +1,11 @@
 package ConsoleUI;
 
+import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
-
-
 
 import java.util.*;
 
@@ -146,15 +145,10 @@ public class ConsoleUI implements UI_interface {
         String input;
         do {
             valid = true;
-            System.out.print("Please enter some text to proccess (no spaces): ");
+            System.out.print("Please enter some text to proccess: ");
             input = mInput.nextLine().trim();
             for (char c : input.toUpperCase().toCharArray())
-                if (Character.isWhitespace(c)){
-                    System.out.println("ahm ahm (no spaces). Please try again...");
-                    valid = false;
-                    break;
-                }
-                else if (alphabet.indexOf(c) < 0){
+                if (alphabet.indexOf(c) < 0){
                     System.out.println("Error: " + c + " not appear in the alphabet: " + alphabet);
                     valid = false;
                     break;
@@ -191,6 +185,12 @@ public class ConsoleUI implements UI_interface {
         borderConsole.print();
     }
 
+    @Override
+    public String getTextToBruteForce() {
+        System.out.println("Please enter string to desipher (by brute force):");
+        return mInput.nextLine().trim();
+    }
+
     private BorderConsole createMachineDescriptorUI(MachineDescriptor machineDescriptor, int msgsPassedSoFar) {
         Map<Integer,Rotor> availableRotors = machineDescriptor.getAvaliableRotors();
         StringBuilder notchStrBuilder = new StringBuilder();
@@ -210,5 +210,68 @@ public class ConsoleUI implements UI_interface {
                 .insertNewLine(notchStrBuilder.toString())
                 .insertNewLine("Reflectors: " + machineDescriptor.getAvaliableReflector().size())
                 .insertNewLine("This lovely machine proccessed " + msgsPassedSoFar + " so far!");
+
+    }
+
+    //Ex02
+    public eProccessLevel getProccessLevel(){
+        int i = 1;
+        boolean validInput;
+        int userChoice = -1;
+        System.out.println("Please select the difficulty of decryption");
+        for (eProccessLevel proccessLevelValue : eProccessLevel.values()) {
+            System.out.print(i++);
+            System.out.print(". ");
+            System.out.println(proccessLevelValue.toString().toLowerCase());
+        }
+
+        int optionsSize = eProccessLevel.values().length;
+
+        do {
+            validInput = true;
+            System.out.print("Your choice: ");
+            try {
+                userChoice = mInput.nextInt();
+            } catch (InputMismatchException expection){
+                System.out.print(mInput.nextLine() + " isn't number. Please try again");
+                validInput = false;
+            }
+
+            if (userChoice < 1 || userChoice > optionsSize){
+                System.out.println("Invalid input: You should enter a number between 1 to " + optionsSize);
+                System.out.println("Please try again.");
+                validInput = false;
+            }
+        }while(!validInput);
+        return eProccessLevel.getProccesLevelByInt(userChoice);
+    }
+
+    @Override
+    public int getAgentsNumber(int maxAgents) {
+        boolean validInput;
+        int userChoice;
+        do {
+            validInput = true;
+            System.out.println("Please Enter the number of agents (number from 2 to " + maxAgents);
+
+        }
+        try {
+            userChoice = mInput.nextInt();
+        } catch (InputMismatchException expection){
+            System.out.print(mInput.nextLine() + " isn't number. Please try again");
+            validInput = false;
+        }
+
+        if (userChoice < 1 || userChoice > maxAgents){
+            System.out.println("Invalid input: You should enter a number between 1 to " + maxAgents);
+            System.out.println("Please try again.");
+            validInput = false;
+        }
+    }
+
+    @Override
+    public int getMissionSize(long workSize) {
+        System.out.println("Please pick one mission size");
+        System.out.println("Hint: The number of combinations for this ");
     }
 }

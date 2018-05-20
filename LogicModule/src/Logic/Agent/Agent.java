@@ -6,7 +6,7 @@ import pukteam.enigma.component.machine.api.EnigmaMachine;
 
 import java.util.concurrent.BlockingQueue;
 
-public class  Agent implements Runnable {
+public class  Agent extends Thread implements Runnable {
     private BlockingQueue<Mission> toDoMissionsQueue;
     private BlockingQueue<Mission> accomplishedMissionsQueue;
     private EnigmaMachine machineInst;

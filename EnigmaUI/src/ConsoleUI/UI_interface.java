@@ -1,5 +1,6 @@
 package ConsoleUI;
 
+import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Secret;
@@ -25,4 +26,10 @@ public interface UI_interface {
     void printError(String errorMsg);
 
     void showHistory(Map<Secret, List<ProcessString>> history);
+
+    String getTextToBruteForce();
+    eProccessLevel getProccessLevel();
+    int getAgentsNumber(int maxAgents);
+
+    int getMissionSize(long workSize);
 }

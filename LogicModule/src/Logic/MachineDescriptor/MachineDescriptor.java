@@ -1,5 +1,6 @@
 package Logic.MachineDescriptor;
 
+import Logic.MachineDescriptor.MachineComponents.Decipher;
 import Logic.MachineDescriptor.MachineComponents.Dictionary;
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
@@ -108,5 +109,13 @@ public class MachineDescriptor {
 
     public void setAvaliableReflector(Map<Integer, Reflector> avaliableReflector) {
         AvaliableReflector = avaliableReflector;
+    }
+
+    public Dictionary getDictionary(){
+        return this.MachineDecipher.getWords();
+    }
+
+    public int getMaxAgents() {
+        return this.MachineDecipher.getAgents();
     }
 }

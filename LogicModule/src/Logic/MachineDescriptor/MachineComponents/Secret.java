@@ -58,12 +58,20 @@ public class Secret {
     }
 
     //Ex02
+    //this function called by the agents
     public pukteam.enigma.component.machine.api.Secret advanceSecretAndSetOnMachine(String alphabet, EnigmaMachine machine){
         advanceRotors(alphabet);
         return createEnigmaMachineSecret(machine);
     }
 
-    private void advanceRotors(String alphabet) {
+    //this function called by the MissionProducer:
+    // advance the instance of the secret and return true if the code was reset
+    public boolean advanceRotors(String alphabet) {
         //TODO count on (alphabet.length)-base
+        return true;
+    }
+
+    public Secret cloneSecret(){
+        //TODO deep clone (clone rotorsInUse also so when agent advance his secret it doesn't advance another agent secret
     }
 }

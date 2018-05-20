@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-public class DM implements Runnable {
+public class DM extends Thread implements Runnable {
     private List<Agent> agentList;
     private long mWorkSize;
     private int agentNumber;
@@ -26,28 +26,28 @@ public class DM implements Runnable {
     private BlockingQueue<SuccessString> validStringQueue;
     private List<SuccessString> validStringList;
     private MachineDescriptor machineDescriptor;
-    private final int k_missionsNumber;
+    private final int K_QUEUE_SIZE = 100;
     private Secret knownSecret;
     private int accomplishedMissions;
     private Instant startWorkInstant;
     private Map<Integer,Mission> agentCurrentMissionMap;
+    private eDM_State dm_state;
 
-    public DM(hasUItoShowMissions programManager, eProccessLevel processLevel, int oneMissionSize, int agentNumber, MachineDescriptor machineDescriptor){
+    public DM(hasUItoShowMissions programManager, eProccessLevel processLevel, int agentNumber, MachineDescriptor machineDescriptor){
         this.machineDescriptor = machineDescriptor;
         this.agentNumber = agentNumber;
-        this.missionSize = oneMissionSize;
         this.programManager = programManager;
         this.processLevel = processLevel;
         this.accomplishedMissions = 0;
+        this.dm_state = eDM_State.RUNNING;
         this.validStringList = new ArrayList<>();
         this.agentCurrentMissionMap = new HashMap<>();
-
         //TODO calc mWorkSize
         mWorkSize = 9999;
         agentList = new ArrayList<>();
-        k_missionsNumber = (int)mWorkSize / oneMissionSize;
-        toDoMissionsQueue = new ArrayBlockingQueue<>(k_missionsNumber);
-        validStringQueue = new ArrayBlockingQueue<>(k_missionsNumber);
+
+        toDoMissionsQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
+        validStringQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
     }
 
     @Override
@@ -56,9 +56,10 @@ public class DM implements Runnable {
         calcMissionToCreateBeforeAgentsStart();
         createAgentsList();
         setKnownSecret();
-        MissionsProducerThread missionProd = new MissionsProducerThread(toDoMissionsQueue,processLevel,k_missionsNumber,missionSize,machineDescriptor,knownSecret);
+        MissionsProducerThread missionProd = new MissionsProducerThread(toDoMissionsQueue,processLevel,missionSize,machineDescriptor,knownSecret);
         new Thread(missionProd).start();
-        while (accomplishedMissions < k_missionsNumber){
+        //Start listening to accomplishedMissions
+        while (accomplishedMissions < missionsNumber){
             try {
                 SuccessString successString = validStringQueue.take();
                 synchronized (validStringList) {
@@ -67,17 +68,28 @@ public class DM implements Runnable {
                 accomplishedMissions++;
                 programManager.inProcessingUpdates(accomplishedMissions,validStringList.size());
             } catch (InterruptedException e) {
-                e.printStackTrace();
-                //TODO NOY
+                interruptAllAgents();
+                if (this.dm_state.equals(eDM_State.DONE)){
+                    programManager.dmDoneWorking(createWorkSummery());
+                }
+                while (!this.dm_state.equals(eDM_State.RUNNING)){
+                    try {
+                        dm_state.wait();
+                    } catch (InterruptedException e1) {
+                        throw new RuntimeException("Erro: DM got interrupt while wait for resume");
+                    }
+                }
             }
         }
-        WorkSummery workSummery = createWorkSummery();
-        programManager.dmDoneWorking(workSummery);
-        stopAgentsWork();
+        dm_state = eDM_State.DONE;
+        interruptAllAgents();
+        programManager.dmDoneWorking(createWorkSummery());
     }
 
-    private void stopAgentsWork() {
-        //TODO NOY
+    private void interruptAllAgents() {
+        for (Agent agent : agentList) {
+            agent.interrupt();
+        }
     }
 
     private WorkSummery createWorkSummery() {
@@ -103,5 +115,13 @@ public class DM implements Runnable {
 
     public void onAgentStartMission(int agentID, Mission mission){
         agentCurrentMissionMap.put(agentID,mission);
+    }
+
+    public eDM_State getDm_state() {
+        return dm_state;
+    }
+
+    public void setMissionSize(int missionSize) {
+        this.missionSize = missionSize;
     }
 }

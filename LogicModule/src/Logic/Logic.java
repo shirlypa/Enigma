@@ -3,6 +3,7 @@ package Logic;
 import Logic.History.History;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.*;
+import Logic.MachineDescriptor.MachineComponents.Dictionary;
 import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
@@ -136,5 +137,9 @@ public class Logic {
     public int getReflectorsCount() {
         return mMachineDescriptor.getAvaliableRotors().size();
     }
+
+    public Dictionary getDictionary() {return mMachineDescriptor.getDictionary()}
+
+    public int getMaxAgents() {return mMachineDescriptor.getMaxAgents();}
 
 }
