@@ -92,7 +92,6 @@ public class DM extends Thread implements Runnable {
                 synchronized (validStringList) {
                     validStringList.add(successString);
                 }
-                accomplishedMissions++;
             } catch (InterruptedException e) {
                 interruptAllAgents();
                 if (this.dm_state.equals(eDM_State.DONE)){
@@ -144,7 +143,9 @@ public class DM extends Thread implements Runnable {
         return machineBuilder.create();
     }
 
+    //worksize/onemissionsize/10
     private void calcMissionToCreateBeforeAgentsStart() {
+        //TODO
     }
 
     public long getWorkSize() {

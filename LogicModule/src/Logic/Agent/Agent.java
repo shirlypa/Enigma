@@ -33,9 +33,10 @@ public class  Agent extends Thread implements Runnable {
         while (true)
         {
             try {
+                //notify the DM the mission was taken
                 mission = toDoMissionsQueue.take();
                 runMission(mission);
-                DM.accomplishedMissionsPlusPlus();
+                dm.accomplishedMissionsPlusPlus();
             }
             catch(InterruptedException e)
             {
