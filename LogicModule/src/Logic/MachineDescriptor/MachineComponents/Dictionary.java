@@ -5,8 +5,8 @@ public class Dictionary {
     private String SpecialChar;
 
     public Dictionary(String words, String specialChar) {
-        Words = removeSpecialChars(words);
         SpecialChar = specialChar;
+        Words = removeSpecialChars(words);
     }
 
     public String getWords() {
@@ -45,6 +45,6 @@ public class Dictionary {
     }
 
     public boolean isTextValid(String userInputTxt) {
-        return isExistsInDictionary(removeSpecialChars(userInputTxt));
+        return isExistsInDictionary(userInputTxt);
     }
 }

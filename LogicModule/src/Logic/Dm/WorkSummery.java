@@ -1,18 +1,20 @@
 package Logic.Dm;
 
 import Logic.Agent.SuccessString;
+import Logic.MachineDescriptor.MachineComponents.Secret;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class WorkSummery {
     private int accomplishMissions;
     private long workSize;
-    Map<Integer,Mission> agentCurrentMissionMap;
+    Map<Integer,Secret> agentCurrentMissionMap;
     private List<SuccessString> successStrings;
     private String timeFromStart; //mm:ss or hh:mm:ss if there is hours
 
-    public WorkSummery(int accomplishMissions, long workSize, Map<Integer, Mission> agentCurrentMissionMap, List<SuccessString> successStrings,long startTime, long timeFromStart) {
+    public WorkSummery(int accomplishMissions, long workSize, Map<Integer, Secret> agentCurrentMissionMap, List<SuccessString> successStrings,long startTime, long timeFromStart) {
         this.accomplishMissions = accomplishMissions;
         this.workSize = workSize;
         this.agentCurrentMissionMap = agentCurrentMissionMap;
@@ -21,8 +23,11 @@ public class WorkSummery {
     }
 
     private String timeToStr(long startTime, long timeFromStart) {
-        //TODO
-        return null;
+        long seconds, minutes, hours;
+        hours = TimeUnit.MILLISECONDS.toHours(timeFromStart);
+        minutes = TimeUnit.MILLISECONDS.toMinutes(timeFromStart - TimeUnit.HOURS.toMillis(hours));
+        seconds = TimeUnit.MILLISECONDS.toSeconds(timeFromStart- TimeUnit.HOURS.toMillis(hours)- TimeUnit.MINUTES.toMillis(minutes));
+        return String.format("%02d:%02d:%02d",hours,minutes,seconds);
     }
 
     public int getAccomplishMissions() {
@@ -33,7 +38,7 @@ public class WorkSummery {
         return workSize;
     }
 
-    public Map<Integer, Mission> getAgentCurrentMissionMap() {
+    public Map<Integer, Secret> getAgentCurrentMissionMap() {
         return agentCurrentMissionMap;
     }
 

@@ -121,7 +121,7 @@ public class DM extends Thread implements Runnable {
 
     public WorkSummery createWorkSummery() {
         long timeFromStart = Duration.between(startWorkInstant,Instant.now()).toMillis();
-        return new WorkSummery(accomplishedMissions,mWorkSize,agentCurrentMissionMap,validStringList,timeFromStart);
+        return new WorkSummery(accomplishedMissions,mWorkSize,agentCurrentMissionMap,validStringList,startWorkInstant.getEpochSecond(),timeFromStart);
     }
 
     private void createAgentsList() {
@@ -147,7 +147,7 @@ public class DM extends Thread implements Runnable {
 
     //worksize/onemissionsize/10
     private void calcMissionToCreateBeforeAgentsStart() {
-        //TODO
+        missionToCreateBeforeStartAgents = Math.round(mWorkSize/missionSize/10);
     }
 
     public long getWorkSize() {
@@ -155,7 +155,7 @@ public class DM extends Thread implements Runnable {
     }
 
     public void onAgentStartMission(int agentID, Mission mission){
-        agentCurrentMissionMap.put(agentID,mission);
+        agentCurrentMissionMap.put(agentID,mission.getInitialSecret());
     }
 
     public synchronized eDM_State getDm_state() {
@@ -169,6 +169,8 @@ public class DM extends Thread implements Runnable {
     public void setMissionSize(int missionSize) {
         this.missionSize = missionSize;
     }
+
+    public void setAgentNumber(int agentNumber) {this.agentNumber = agentNumber; }
 
     public synchronized void accomplishedMissionsPlusPlus() {
         accomplishedMissions++;

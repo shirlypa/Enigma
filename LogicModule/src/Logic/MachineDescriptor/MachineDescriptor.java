@@ -41,9 +41,12 @@ public class MachineDescriptor {
                                     enigmaMachine.getMachine().getABC().trim().length())));
         }
 
-        MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
-                new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
-                enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
+        Dictionary dic = new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
+                enigmaMachine.getDecipher().getDictionary().getExcludeChars());
+        MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),dic);
+       // MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
+         //       new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
+           //     enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
 
     }
     private byte[] getReflectorSource(List<Reflect> reflects,int alphabetSize){

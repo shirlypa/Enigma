@@ -53,14 +53,20 @@ public class SecretGenerator {
     // advance reflectors, choose rotors and the order
     private void setNewRotorsAndOrder() {
         //TODO
+        currentReflectorInUse++;
     }
 
     // advance reflectors, the order of rotors
     private void setNewRotorsOrder() {
         //TODO
+        currentReflectorInUse++;
+
+
     }
 
     //TODO move the secret advanced to here
+
+
     public void setCurrentRotorsInUse(int[] currentRotorsInUse) {
         this.currentRotorsInUse = currentRotorsInUse;
     }
