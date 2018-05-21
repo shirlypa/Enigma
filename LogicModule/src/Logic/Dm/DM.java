@@ -81,11 +81,16 @@ public class DM extends Thread implements Runnable {
 
     @Override
     public void run() {
+
         startWorkInstant = Instant.now();
         calcMissionToCreateBeforeAgentsStart();
         createAgentsList();
         missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor,knownSecret);
-        new Thread(missionProd).start();
+        missionProd.setSecretGenerator(secretGenerator);
+        missionProd.setAgentList(agentList);
+        missionProd.setName("MissionProducer-Thread");
+        missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
+        missionProd.start();
         //Start listening to accomplishedMissions
         while (accomplishedMissions < missionProd.getMissionsNumber()){
             try {
@@ -126,8 +131,10 @@ public class DM extends Thread implements Runnable {
 
     private void createAgentsList() {
         for (int i = 0; i < agentNumber; i++) {
-             agentList.add(new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance(),txtToDecipher,machineDescriptor.getDictionary(),
-                     machineDescriptor.getAlphabet(),i+1));
+            Agent newAgent = new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance(),txtToDecipher,machineDescriptor.getDictionary(),
+                    machineDescriptor.getAlphabet(),i+1);
+            newAgent.setName("Agent-" + i+1 + "-Thread");
+            agentList.add(newAgent);
         }
     }
 

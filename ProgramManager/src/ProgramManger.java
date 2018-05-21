@@ -106,6 +106,7 @@ public class ProgramManger implements hasUItoShowMissions {
                     return null;
                 }
             }));
+
             //add new MenuItem -> "reset to initial secret"
             mMenu.add(mMenu.size() -1,new MenuItem("Reset to initial secret", new Callable<Void>() {
                 @Override
@@ -113,17 +114,7 @@ public class ProgramManger implements hasUItoShowMissions {
                     return menuCmd_restoreToInitialSecret();
                 }
             }));
-        }
-
-        if (appState.equals(eAppState.Started)){
-            //add new MenuItem -> "Show History"
-            mMenu.add(mMenu.size() -1,new MenuItem("Show history", new Callable<Void>() {
-                @Override
-                public Void call() throws Exception {
-                    return menuCmd_showHistory();
-                }
-            }));
-            mMenu.add(mMenu.size() -1,new MenuItem("Automatic decoding", new Callable<Void>() {
+            mMenu.add(7,new MenuItem("Automatic decoding", new Callable<Void>() {
                 @Override
                 public Void call() throws Exception {
                     menuCmd_bruteForceProcess();
@@ -131,6 +122,17 @@ public class ProgramManger implements hasUItoShowMissions {
                     return null;
                 }
             }));
+        }
+
+        if (appState.equals(eAppState.Started)){
+            //add new MenuItem -> "Show History"
+            mMenu.add(6,new MenuItem("Show history", new Callable<Void>() {
+                @Override
+                public Void call() throws Exception {
+                    return menuCmd_showHistory();
+                }
+            }));
+
         }
 
         //add new MenuItem -> "Exit"
@@ -265,14 +267,16 @@ public class ProgramManger implements hasUItoShowMissions {
         String inputTxtToProccess = getTextToBruteForce();
         String encryptedTxt = mLogic.proccess(inputTxtToProccess);
         eProccessLevel proccessLevel = appUI.getProccessLevel();
-        if (!proccessLevel.equals(eProccessLevel.IMPOSSIBLE)) {
-            getKnownSecretFromUser(proccessLevel);
-        }
+
         int agentsNum = appUI.getAgentsNumber(mLogic.getMaxAgents());
         dmThread = new DM(encryptedTxt, this,proccessLevel,agentsNum,mLogic.getMachineDescriptor());
         int missionSize = appUI.getMissionSize(dmThread.getWorkSize(),agentsNum);
+        if (!proccessLevel.equals(eProccessLevel.IMPOSSIBLE)) {
+            getKnownSecretFromUser(proccessLevel);
+        }
         dmThread.setMissionSize(missionSize);
         appUI.askUserForStartDesipher();
+        dmThread.setName("DM-Thread");
         dmThread.start();
         showBruteForceMenu();
         return null;
@@ -370,6 +374,7 @@ public class ProgramManger implements hasUItoShowMissions {
         boolean valid = true;
         String userInputTxt;
         do {
+            valid = true;
             userInputTxt = appUI.getTextToBruteForce();
             if (!dictionary.isTextValid(userInputTxt)){
                 appUI.printError("Invali input");
