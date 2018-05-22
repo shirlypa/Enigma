@@ -102,7 +102,7 @@ public class DM extends Thread implements Runnable {
                     try {
                         dm_state.wait();
                     } catch (InterruptedException e1) {
-                        throw new RuntimeException("Erro: DM got interrupt while wait for resume");
+                        throw new RuntimeException("Error: DM got interrupt while wait for resume");
                     }
                 }
             }

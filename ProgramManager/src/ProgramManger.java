@@ -123,6 +123,7 @@ public class ProgramManger implements hasUItoShowMissions {
                     return menuCmd_showHistory();
                 }
             }));
+            // TODO : show this option after choosing a secret
             mMenu.add(mMenu.size() -1,new MenuItem("Automatic decoding", new Callable<Void>() {
                 @Override
                 public Void call() throws Exception {
@@ -265,11 +266,12 @@ public class ProgramManger implements hasUItoShowMissions {
         String inputTxtToProccess = getTextToBruteForce();
         String encryptedTxt = mLogic.proccess(inputTxtToProccess);
         eProccessLevel proccessLevel = appUI.getProccessLevel();
+        dmThread = new DM(encryptedTxt, this,proccessLevel,0,mLogic.getMachineDescriptor());
         if (!proccessLevel.equals(eProccessLevel.IMPOSSIBLE)) {
             getKnownSecretFromUser(proccessLevel);
         }
         int agentsNum = appUI.getAgentsNumber(mLogic.getMaxAgents());
-        dmThread = new DM(encryptedTxt, this,proccessLevel,agentsNum,mLogic.getMachineDescriptor());
+        dmThread.setAgentNumber(agentsNum);
         int missionSize = appUI.getMissionSize(dmThread.getWorkSize(),agentsNum);
         dmThread.setMissionSize(missionSize);
         appUI.askUserForStartDesipher();
@@ -370,6 +372,7 @@ public class ProgramManger implements hasUItoShowMissions {
         boolean valid = true;
         String userInputTxt;
         do {
+            valid = true;
             userInputTxt = appUI.getTextToBruteForce();
             if (!dictionary.isTextValid(userInputTxt)){
                 appUI.printError("Invali input");

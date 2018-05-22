@@ -189,7 +189,7 @@ public class ConsoleUI implements UI_interface {
 
     @Override
     public String getTextToBruteForce() {
-        System.out.println("Please enter string to desipher (by brute force):");
+        System.out.println("Please enter string to decipher (by brute force):");
         return mInput.nextLine().trim();
     }
 
