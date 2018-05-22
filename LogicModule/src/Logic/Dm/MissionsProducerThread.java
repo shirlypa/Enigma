@@ -1,9 +1,11 @@
 package Logic.Dm;
 
 
+import Logic.Agent.Agent;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
 
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
 public class MissionsProducerThread extends Thread implements Runnable {
@@ -16,6 +18,8 @@ public class MissionsProducerThread extends Thread implements Runnable {
     private long workSize;
     private SecretGenerator secretGenerator;
     private DM mDM;
+    private List<Agent> agentList;
+    private int missionsToCraateBeforeStartAgents;
 
     public MissionsProducerThread(DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, Secret knownSecret) {
         this.missionsQueue = missionsQueue;
@@ -31,13 +35,16 @@ public class MissionsProducerThread extends Thread implements Runnable {
     public void run() {
         Mission mission;
         String alphabet = machineDescriptor.getAlphabet();
-        boolean codeWasReset,shouldSendMission;
+        boolean codeWasReset;
         Secret currentMissionInitialSecret = secretGenerator.getInitialSecret();
         Secret advancedSecret = currentMissionInitialSecret.cloneSecret();
 
 
         int currentMissionSize = 1;
         for (long i = 0; i < workSize; i++,currentMissionSize++){
+            if (i == missionsToCraateBeforeStartAgents){
+                startAgents();
+            }
             codeWasReset = advancedSecret.advanceRotors(alphabet);
             if (codeWasReset || currentMissionSize == mMissionSize) {
                 synchronized (this) {
@@ -70,6 +77,12 @@ public class MissionsProducerThread extends Thread implements Runnable {
         }
     }
 
+    private void startAgents() {
+        for (Agent agent : agentList){
+            agent.start();
+        }
+    }
+
     public BlockingQueue<Mission> getMissionsQueue() {
         return missionsQueue;
     }
@@ -96,5 +109,13 @@ public class MissionsProducerThread extends Thread implements Runnable {
 
     public void setSecretGenerator(SecretGenerator secretGenerator) {
         this.secretGenerator = secretGenerator;
+    }
+
+    public void setAgentList(List<Agent> agentList) {
+        this.agentList = agentList;
+    }
+
+    public void setMissionsToCraateBeforeStartAgents(int missionsToCraateBeforeStartAgents) {
+        this.missionsToCraateBeforeStartAgents = missionsToCraateBeforeStartAgents;
     }
 }
