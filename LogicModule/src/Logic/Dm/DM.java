@@ -35,7 +35,6 @@ public class DM extends Thread implements Runnable {
     private List<SuccessString> validStringList;
     private MachineDescriptor machineDescriptor;
     private final int K_QUEUE_SIZE = 100;
-    private Secret knownSecret;
     private int accomplishedMissions;
     private Instant startWorkInstant;
     private Map<Integer,Secret> agentCurrentMissionMap;
@@ -53,7 +52,7 @@ public class DM extends Thread implements Runnable {
         setDm_state(eDM_State.RUNNING);
         this.validStringList = new ArrayList<>();
         this.agentCurrentMissionMap = new HashMap<>();
-        this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount());
+        this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount(), machineDescriptor.getAlphabet());
         mWorkSize = calcWorkSize();
         agentList = new ArrayList<>();
 
@@ -85,8 +84,9 @@ public class DM extends Thread implements Runnable {
         startWorkInstant = Instant.now();
         calcMissionToCreateBeforeAgentsStart();
         createAgentsList();
-        missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor,knownSecret, mWorkSize);
+        missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor, mWorkSize);
         missionProd.setSecretGenerator(secretGenerator);
+
         missionProd.setAgentList(agentList);
         missionProd.setName("MissionProducer-Thread");
         missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);

@@ -68,15 +68,18 @@ public class Secret {
     //this function called by the MissionProducer:
     // advance the instance of the secret and return true if the code was reset
     public boolean advanceRotors(String alphabet) {
-        for (RotorInSecret r:RotorsInUse) {
-            r.getPosition().setPositionAsChar(getNextAlphabet(alphabet ,r.getPosition().getPositionAsChar()));
-            if (r.getPosition().getPositionAsChar() != alphabet.toCharArray()[0]){
+        for (int i = RotorsInUse.size() - 1; i >= 0; i--) {
+            RotorInSecret r = RotorsInUse.get(i);
+            int currentPos = r.getPosition().getPositionAsInt();
+            r.getPosition().setPositionAsInt((currentPos + 1) % alphabet.length())
+                    .setPositionAsChar(alphabet.charAt(currentPos + 1));
+            if (r.getPosition().getPositionAsInt() != 0){
                 break;
             }
         }
 
-        for (RotorInSecret r:RotorsInUse) {
-            if(r.getPosition().getPositionAsChar()!=alphabet.toCharArray()[0]){
+        for (RotorInSecret r : RotorsInUse) {
+            if(r.getPosition().getPositionAsInt() != 0){
                 return false;
             }
         }
@@ -95,7 +98,12 @@ public class Secret {
     public Secret cloneSecret(){
         List<RotorInSecret> newRotorinSecretList = new ArrayList<>();
         for (RotorInSecret rotor : this.RotorsInUse){
-            newRotorinSecretList.add(new RotorInSecret(rotor.getRotorId(),new Position().setPositionAsInt(rotor.getPosition().getPositionAsInt())));
+            int rotorPositionInt = rotor.getPosition().getPositionAsInt();
+            char rotorPositionChar = rotor.getPosition().getPositionAsChar();
+            RotorInSecret newRotor = new RotorInSecret(rotor.getRotorId(),new Position());
+            newRotor.getPosition().setPositionAsChar(rotorPositionChar);
+            newRotor.getPosition().setPositionAsInt(rotorPositionInt);
+            newRotorinSecretList.add(newRotor);
         }
         return new Secret(newRotorinSecretList,this.ReflectorId);
     }

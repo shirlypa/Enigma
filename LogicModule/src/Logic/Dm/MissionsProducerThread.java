@@ -14,7 +14,6 @@ public class MissionsProducerThread extends Thread implements Runnable {
     private int missionsNumber;
     private int mMissionSize;
     private MachineDescriptor machineDescriptor;
-    private Secret knownSecret;
     private long workSize;
     private SecretGenerator secretGenerator;
     private DM mDM;
@@ -22,14 +21,13 @@ public class MissionsProducerThread extends Thread implements Runnable {
     private int missionsToCraateBeforeStartAgents;
     private boolean finish = false;
 
-    public MissionsProducerThread(DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, Secret knownSecret, long workSize) {
+    public MissionsProducerThread(DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, long workSize) {
         this.missionsQueue = missionsQueue;
         this.proccessLevel = proccessLevel;
         this.workSize = workSize;
         this.missionsNumber = 0;
         this.mMissionSize = mMissionSize;
         this.machineDescriptor = machineDescriptor;
-        this.knownSecret = knownSecret;
         this.mDM = dm;
     }
 
@@ -106,9 +104,6 @@ public class MissionsProducerThread extends Thread implements Runnable {
         return machineDescriptor;
     }
 
-    public Secret getKnownSecret() {
-        return knownSecret;
-    }
 
     public void setSecretGenerator(SecretGenerator secretGenerator) {
         this.secretGenerator = secretGenerator;

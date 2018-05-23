@@ -12,12 +12,14 @@ public class SecretGenerator {
     private int[] currentRotorsInUse; //and their order
     private int currentReflectorInUse;
     private boolean isRotorsOrdered;
+    private String alphabet;
 
 
-    public SecretGenerator(eProccessLevel proccessLevel, int rotorsInUserNumber) {
+    public SecretGenerator(eProccessLevel proccessLevel, int rotorsInUserNumber, String alphabet) {
         this.proccessLevel = proccessLevel;
 
         currentRotorsInUse = new int[rotorsInUserNumber];
+        this.alphabet = alphabet;
         for (int i = 0; i < currentRotorsInUse.length; i++) {
             currentRotorsInUse[i] = i+1;
         }
@@ -45,7 +47,9 @@ public class SecretGenerator {
     private Secret createNewSecret() {
         List<RotorInSecret> rotorInSecretList = new ArrayList<>();
         for (int i = 0; i < currentRotorsInUse.length; i++) {
-            rotorInSecretList.add(new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(0)));
+            RotorInSecret rotor = new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(0));
+            rotor.getPosition().setPositionAsChar(alphabet.charAt(0));
+            rotorInSecretList.add(rotor);
         }
         return new Secret(rotorInSecretList,currentReflectorInUse);
     }
@@ -78,7 +82,7 @@ public class SecretGenerator {
     public Secret getInitialSecret(){
         List<RotorInSecret> rotorInSecretList = new ArrayList<>();
         for (int i = 0; i < currentRotorsInUse.length; i++) {
-            rotorInSecretList.add(new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(0)));
+            rotorInSecretList.add(new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(0).setPositionAsChar(alphabet.charAt(0))));
         }
         return new Secret(rotorInSecretList,this.currentReflectorInUse);
     }
