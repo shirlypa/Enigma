@@ -20,10 +20,12 @@ public class MissionsProducerThread extends Thread implements Runnable {
     private DM mDM;
     private List<Agent> agentList;
     private int missionsToCraateBeforeStartAgents;
+    private boolean finish = false;
 
-    public MissionsProducerThread(DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, Secret knownSecret) {
+    public MissionsProducerThread(DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, Secret knownSecret, long workSize) {
         this.missionsQueue = missionsQueue;
         this.proccessLevel = proccessLevel;
+        this.workSize = workSize;
         this.missionsNumber = 0;
         this.mMissionSize = mMissionSize;
         this.machineDescriptor = machineDescriptor;
@@ -39,7 +41,6 @@ public class MissionsProducerThread extends Thread implements Runnable {
         Secret currentMissionInitialSecret = secretGenerator.getInitialSecret();
         Secret advancedSecret = currentMissionInitialSecret.cloneSecret();
 
-
         int currentMissionSize = 1;
         for (long i = 0; i < workSize; i++,currentMissionSize++){
             if (i == missionsToCraateBeforeStartAgents){
@@ -49,6 +50,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
             if (codeWasReset || currentMissionSize == mMissionSize) {
                 synchronized (this) {
                     mission = new Mission(missionsNumber++, currentMissionInitialSecret, currentMissionSize);
+                    System.out.println(this.getName() + " >> New mission: missionNumber = " + (missionsNumber - 1));
                 }
                 currentMissionSize = 1;
                 if (codeWasReset) {
@@ -75,6 +77,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
                 }
             }
         }
+        this.finish = true;
     }
 
     private void startAgents() {
@@ -117,5 +120,9 @@ public class MissionsProducerThread extends Thread implements Runnable {
 
     public void setMissionsToCraateBeforeStartAgents(int missionsToCraateBeforeStartAgents) {
         this.missionsToCraateBeforeStartAgents = missionsToCraateBeforeStartAgents;
+    }
+
+    public boolean getFinish() {
+        return finish;
     }
 }

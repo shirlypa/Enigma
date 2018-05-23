@@ -85,14 +85,14 @@ public class DM extends Thread implements Runnable {
         startWorkInstant = Instant.now();
         calcMissionToCreateBeforeAgentsStart();
         createAgentsList();
-        missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor,knownSecret);
+        missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor,knownSecret, mWorkSize);
         missionProd.setSecretGenerator(secretGenerator);
         missionProd.setAgentList(agentList);
         missionProd.setName("MissionProducer-Thread");
         missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
         missionProd.start();
         //Start listening to accomplishedMissions
-        while (accomplishedMissions < missionProd.getMissionsNumber()){
+        while (!missionProd.getFinish()){
             try {
                 SuccessString successString = validStringQueue.take();
                 synchronized (validStringList) {
@@ -100,21 +100,33 @@ public class DM extends Thread implements Runnable {
                 }
             } catch (InterruptedException e) {
                 interruptAllAgents();
-                if (this.dm_state.equals(eDM_State.DONE)){
+                if (this.getDm_state().equals(eDM_State.DONE)){
                     return;
                 }
-                while (!this.dm_state.equals(eDM_State.RUNNING)){
-                    try {
-                        dm_state.wait();
-                    } catch (InterruptedException e1) {
-                        throw new RuntimeException("Erro: DM got interrupt while wait for resume");
+                synchronized (getDm_state()) {
+                    while (!this.dm_state.equals(eDM_State.RUNNING)) {
+                        try {
+                            this.getDm_state().wait();
+                        } catch (InterruptedException e1) {
+                            throw new RuntimeException("Erro: DM got interrupt while wait for resume");
+                        }
                     }
                 }
             }
         }
-        this.setDm_state(eDM_State.DONE);
-        interruptAllAgents();
         System.out.println("\n\n DM END WORK! Select Pause command to see updated information and then stop to go back to Main Menu");
+        this.setDm_state(eDM_State.PAUSE);
+        synchronized (getDm_state()) {
+            while (this.getDm_state().equals(eDM_State.PAUSE))
+                try {
+                    getDm_state().wait();
+                } catch (InterruptedException e1) {
+                    throw new RuntimeException("Erro: DM got interrupt while wait for end");
+                }
+        }
+        interruptAllAgents();
+
+
     }
 
     private void interruptAllAgents() {
