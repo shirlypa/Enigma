@@ -299,7 +299,7 @@ public class ConsoleUI implements UI_interface {
     public void askUserForStartDesipher() {
         System.out.println("All set to start the process");
         System.out.println("Press any key to continue...");
-        mInput.nextLine();
+        mInput.next();
     }
 
     public void showDesipherStatus(WorkSummery workSummery) {
