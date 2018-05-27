@@ -4,6 +4,7 @@ import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +29,9 @@ public class SecretGenerator {
     }
 
     public Secret advanceRotorsAndReflectorByLevel(){
+        //List<Integer[]> combinationList
+        //    if (combinationList == null)
+        //      combinationList = new ArrayList(); //create the list
         switch (proccessLevel) {
             case EASY:
                 return null; //on easy should not get here
@@ -54,9 +58,11 @@ public class SecretGenerator {
         return new Secret(rotorInSecretList,currentReflectorInUse);
     }
 
+
     // advance reflectors, choose rotors and the order
     private void setNewRotorsAndOrder() {
         //TODO
+
         currentReflectorInUse++;
     }
 
