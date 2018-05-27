@@ -20,4 +20,9 @@ public class Mission {
     public int getMissionSize() {
         return missionSize;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + missionID + "/ Initial Secret: " + initialSecret + "/ size: " + missionSize;
+    }
 }

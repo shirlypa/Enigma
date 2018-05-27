@@ -71,8 +71,9 @@ public class Secret {
         for (int i = RotorsInUse.size() - 1; i >= 0; i--) {
             RotorInSecret r = RotorsInUse.get(i);
             int currentPos = r.getPosition().getPositionAsInt();
-            r.getPosition().setPositionAsInt((currentPos + 1) % alphabet.length())
-                    .setPositionAsChar(alphabet.charAt(currentPos));
+            currentPos = currentPos % alphabet.length() + 1;
+            r.getPosition().setPositionAsInt(currentPos)
+                    .setPositionAsChar(alphabet.charAt(currentPos - 1));
             if (r.getPosition().getPositionAsInt() != 0){
                 break;
             }

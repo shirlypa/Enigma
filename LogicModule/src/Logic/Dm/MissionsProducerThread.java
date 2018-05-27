@@ -45,10 +45,9 @@ public class MissionsProducerThread extends Thread implements Runnable {
                 startAgents();
             }
             codeWasReset = advancedSecret.advanceRotors(alphabet);
-            if (codeWasReset || currentMissionSize == mMissionSize) {
+            if (codeWasReset || currentMissionSize == mMissionSize || i == workSize - 1) {
                 synchronized (this) {
                     mission = new Mission(missionsNumber++, currentMissionInitialSecret, currentMissionSize);
-                    System.out.println(this.getName() + " >> New mission: missionNumber = " + (missionsNumber - 1));
                 }
                 currentMissionSize = 1;
                 if (codeWasReset) {
@@ -60,6 +59,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
                 //put mission in missionQueue
                 try {
                     missionsQueue.put(mission);
+                    System.out.println(this.getName() + " >> New mission: " + mission);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     if (mDM.getDm_state().equals(eDM_State.DONE)){
