@@ -59,11 +59,6 @@ public class Secret {
     }
 
     //Ex02
-    //this function called by the agents
-    public pukteam.enigma.component.machine.api.Secret advanceSecretAndSetOnMachine(String alphabet, EnigmaMachine machine){
-        advanceRotors(alphabet);
-        return createEnigmaMachineSecret(machine);
-    }
 
     //this function called by the MissionProducer:
     // advance the instance of the secret and return true if the code was reset
