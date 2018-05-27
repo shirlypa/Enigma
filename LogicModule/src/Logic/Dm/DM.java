@@ -144,7 +144,7 @@ public class DM extends Thread implements Runnable {
     private void createAgentsList() {
         for (int i = 0; i < agentNumber; i++) {
             Agent newAgent = new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance(),txtToDecipher,machineDescriptor.getDictionary(),
-                    machineDescriptor.getAlphabet(),i+1);
+                    machineDescriptor.getAlphabet(),i+1,this);
             newAgent.setName("Agent-" + i+1 + "-Thread");
             agentList.add(newAgent);
         }

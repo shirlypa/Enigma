@@ -17,7 +17,7 @@ public class  Agent extends Thread implements Runnable {
     private String alphabet;
     private int agentID;
     private DM dm;
-    public Agent(BlockingQueue<Mission> toDoMissionsQueue, BlockingQueue<SuccessString> accomplishedMissionsQueue, EnigmaMachine machine, String source, Dictionary dictionary,String alphabet, int agentID)
+    public Agent(BlockingQueue<Mission> toDoMissionsQueue, BlockingQueue<SuccessString> accomplishedMissionsQueue, EnigmaMachine machine, String source, Dictionary dictionary,String alphabet, int agentID, DM dm)
     {
         this.toDoMissionsQueue=toDoMissionsQueue;
         this.accomplishedMissionsQueue =accomplishedMissionsQueue;
@@ -26,6 +26,7 @@ public class  Agent extends Thread implements Runnable {
         this.dictionary = dictionary;
         this.alphabet = alphabet;
         this.agentID = agentID;
+        this.dm = dm;
     }
     @Override
     public void run() {
