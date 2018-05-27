@@ -42,7 +42,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
         int currentMissionSize = 1;
         for (long i = 1; i <= workSize; i++,currentMissionSize++){
             if (i == missionsToCraateBeforeStartAgents){
-                //startAgents();
+                startAgents();
             }
             codeWasReset = advancedSecret.advanceRotors(alphabet);
             if (codeWasReset || currentMissionSize == mMissionSize || i == workSize) {
