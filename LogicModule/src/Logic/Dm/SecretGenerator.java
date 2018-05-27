@@ -47,7 +47,7 @@ public class SecretGenerator {
     private Secret createNewSecret() {
         List<RotorInSecret> rotorInSecretList = new ArrayList<>();
         for (int i = 0; i < currentRotorsInUse.length; i++) {
-            RotorInSecret rotor = new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(0));
+            RotorInSecret rotor = new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(1));
             rotor.getPosition().setPositionAsChar(alphabet.charAt(0));
             rotorInSecretList.add(rotor);
         }
