@@ -41,6 +41,7 @@ public class DM extends Thread implements Runnable {
     private eDM_State dm_state;
     private SecretGenerator secretGenerator;
     private MissionsProducerThread missionProd;
+    private long missionsNumber;
 
     public DM(String txtToDecipher, hasUItoShowMissions programManager, eProccessLevel processLevel, int agentNumber, MachineDescriptor machineDescriptor){
         this.txtToDecipher = txtToDecipher;
@@ -92,17 +93,15 @@ public class DM extends Thread implements Runnable {
         missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
         missionProd.start();
         //Start listening to accomplishedMissions
-        while (!missionProd.getFinish()|| mWorkSize/missionSize != accomplishedMissions){
+        while (!missionProd.getFinish()|| missionsNumber > accomplishedMissions){
             if (this.isInterrupted()){
                 handleInterrupt();
             }
-            try {
-                SuccessString successString = validStringQueue.take();
+            SuccessString successString = validStringQueue.poll();
+            if (successString != null) {
                 synchronized (validStringList) {
                     validStringList.add(successString);
                 }
-            } catch (InterruptedException e) {
-                handleInterrupt();
             }
         }
         System.out.println("\n\n DM END WORK! Select Pause command to see updated information and then stop to go back to Main Menu");
@@ -195,6 +194,7 @@ public class DM extends Thread implements Runnable {
 
     public void setMissionSize(int missionSize) {
         this.missionSize = missionSize;
+        this.missionsNumber = mWorkSize / missionSize;
     }
 
     public void setAgentNumber(int agentNumber) {this.agentNumber = agentNumber; }
@@ -218,5 +218,9 @@ public class DM extends Thread implements Runnable {
 
     public void setKnown_Reflector(int secretReflectorInUse) {
         secretGenerator.setCurrentReflectorInUse(secretReflectorInUse);
+    }
+
+    public void setMissionsNumber(int missionsNumber) {
+        this.missionsNumber = missionsNumber;
     }
 }

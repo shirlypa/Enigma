@@ -2,11 +2,13 @@ package Logic.MachineDescriptor.MachineComponents;
 
 public class Dictionary {
     private String Words;
+    private String[] splittedDictionary;
     private String SpecialChar;
 
     public Dictionary(String words, String specialChar) {
         SpecialChar = specialChar;
-        Words = removeSpecialChars(words);
+        Words = removeSpecialChars(words.trim());
+        splittedDictionary = Words.split(" ");
     }
 
     public String getWords() {
@@ -37,11 +39,19 @@ public class Dictionary {
         words = removeSpecialChars(words);
         String [] wordsArr = words.split(" ");
         for (String word:wordsArr) {
-            if (!Words.contains(" " + word + " ")) {
+            if (!wordInDictionary(word))
                 return false;
-            }
+
         }
         return true;
+    }
+
+    private boolean wordInDictionary(String word) {
+        for (String wordInDictionary: splittedDictionary) {
+            if (wordInDictionary.equals(word))
+                return true;
+        }
+        return false;
     }
 
     public boolean isTextValid(String userInputTxt) {
