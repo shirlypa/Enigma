@@ -82,7 +82,7 @@ public class SecretGenerator {
     public Secret getInitialSecret(){
         List<RotorInSecret> rotorInSecretList = new ArrayList<>();
         for (int i = 0; i < currentRotorsInUse.length; i++) {
-            rotorInSecretList.add(new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(0).setPositionAsChar(alphabet.charAt(0))));
+            rotorInSecretList.add(new RotorInSecret(currentRotorsInUse[i],new Position().setPositionAsInt(1).setPositionAsChar(alphabet.charAt(0))));
         }
         return new Secret(rotorInSecretList,this.currentReflectorInUse);
     }

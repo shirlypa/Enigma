@@ -30,7 +30,7 @@ public class Secret {
     public pukteam.enigma.component.machine.api.Secret createEnigmaMachineSecret(EnigmaMachine machine){
       SecretBuilder secretBuilder = machine.createSecret();
         for (int i = RotorsInUse.size() - 1; i >= 0; i--) {
-            secretBuilder.selectRotor(RotorsInUse.get(i).getRotorId(),RotorsInUse.get(i).getPosition().getPositionAsChar());
+            secretBuilder.selectRotor(RotorsInUse.get(i).getRotorId(),RotorsInUse.get(i).getPosition().getPositionAsInt());
         }
         secretBuilder.selectReflector(ReflectorId);
         return secretBuilder.create();
@@ -80,7 +80,7 @@ public class Secret {
         }
 
         for (RotorInSecret r : RotorsInUse) {
-            if(r.getPosition().getPositionAsInt() != 0){
+            if(r.getPosition().getPositionAsInt() != 1){
                 return false;
             }
         }
