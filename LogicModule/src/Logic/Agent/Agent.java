@@ -54,7 +54,6 @@ public class  Agent extends Thread implements Runnable {
             while (!dm.getDm_state().equals(eDM_State.RUNNING)) {
                 try {
                     dm.wait();
-                    System.out.println("\nAgent resumed!!!!!!\n");
                 } catch (InterruptedException e1) {
                     handleInterrupt();
                 }
