@@ -1,6 +1,7 @@
 
 
 import ConsoleUI.MenuItem;
+import Logic.Agent.SuccessString;
 import Logic.Dm.*;
 import Logic.MachineDescriptor.MachineComponents.*;
 import Logic.MachineDescriptor.MachineDescriptor;
@@ -10,6 +11,7 @@ import Logic.Logic;
 import ConsoleUI.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -304,6 +306,7 @@ public class ProgramManger implements hasUItoShowMissions {
             public Void call() throws Exception {
                 WorkSummery workSummery = dmThread.createWorkSummery();
                 appUI.showDesipherStatus(workSummery);
+                showBruteForceMenu();
                 return null;
             }
         }));
@@ -333,7 +336,10 @@ public class ProgramManger implements hasUItoShowMissions {
 
     private void pauseDesipherProcess() {
         dmThread.setDm_state(eDM_State.PAUSE);
-        dmThread.getDm_state().notifyAll();
+        eDM_State currentState = dmThread.getDm_state();
+        synchronized (currentState){
+            currentState.notifyAll();
+        }
         dmThread.interrupt();
 
         WorkSummery workSummery = dmThread.createWorkSummery();
@@ -360,7 +366,11 @@ public class ProgramManger implements hasUItoShowMissions {
 
     private void resumeDecipherProcess() {
         dmThread.setDm_state(eDM_State.RUNNING);
-        dmThread.getDm_state().notifyAll();
+        eDM_State currentState = dmThread.getDm_state();
+        synchronized (currentState) {
+            currentState.notifyAll();
+        }
+        showBruteForceMenu();
     }
 
     private Void menuCmd_exit(){
