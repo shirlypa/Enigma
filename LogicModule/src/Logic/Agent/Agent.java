@@ -51,6 +51,8 @@ public class  Agent extends Thread implements Runnable {
                         throw new RuntimeException("Erro: Agent got interrupt while wait for resume");
                     }
                 }
+
+                //TODO copy handleInterrupt from DM.handleInterrupt()
             }
         }
     }
@@ -65,7 +67,8 @@ public class  Agent extends Thread implements Runnable {
             result = machineInst.process(source);
             if (dictionary.isExistsInDictionary(result))
             {
-                successString= new SuccessString(result,currentSecret.cloneSecret(),agentID);
+                String cleanResult = dictionary.removeSpecialChars(result);
+                successString = new SuccessString(cleanResult,currentSecret.cloneSecret(),agentID);
                 accomplishedMissionsQueue.put(successString);
             }
             currentSecret.advanceRotors(alphabet);

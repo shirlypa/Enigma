@@ -124,7 +124,7 @@ public class DM extends Thread implements Runnable {
     }
 
     private void handleInterrupt() {
-        //interruptAllAgents();
+        interruptAllAgents();
         if (this.getDm_state().equals(eDM_State.DONE)){
             return;
         }

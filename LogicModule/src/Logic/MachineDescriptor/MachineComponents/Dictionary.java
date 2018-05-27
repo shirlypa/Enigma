@@ -27,7 +27,7 @@ public class Dictionary {
         SpecialChar = specialChar;
     }
 
-    private String removeSpecialChars(String words){
+    public String removeSpecialChars(String words){
         for (Character c : SpecialChar.toCharArray()) {
             words= words.replace(c.toString(),"");
         }
@@ -38,6 +38,9 @@ public class Dictionary {
     {
         words = removeSpecialChars(words);
         String [] wordsArr = words.split(" ");
+        if (wordsArr.length == 0){
+            return false;
+        }
         for (String word:wordsArr) {
             if (!wordInDictionary(word))
                 return false;
