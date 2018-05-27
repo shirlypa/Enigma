@@ -41,18 +41,23 @@ public class  Agent extends Thread implements Runnable {
             }
             catch(InterruptedException e)
             {
-                if (dm.getDm_state().equals(eDM_State.DONE)) {
-                    return;
-                }
-                while (!dm.getDm_state().equals(eDM_State.RUNNING)){
-                    try {
-                        dm.getDm_state().wait();
-                    } catch (InterruptedException e1) {
-                        throw new RuntimeException("Erro: Agent got interrupt while wait for resume");
-                    }
-                }
+                handleInterrupt();
+            }
+        }
+    }
 
-                //TODO copy handleInterrupt from DM.handleInterrupt()
+    private void handleInterrupt() {
+        if (dm.getDm_state().equals(eDM_State.DONE)){
+            return;
+        }
+        synchronized (dm) {
+            while (!dm.getDm_state().equals(eDM_State.RUNNING)) {
+                try {
+                    dm.wait();
+                    System.out.println("\nAgent resumed!!!!!!\n");
+                } catch (InterruptedException e1) {
+                    handleInterrupt();
+                }
             }
         }
     }
