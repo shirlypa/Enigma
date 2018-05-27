@@ -93,25 +93,16 @@ public class DM extends Thread implements Runnable {
         missionProd.start();
         //Start listening to accomplishedMissions
         while (!missionProd.getFinish()){
+            if (this.isInterrupted()){
+                handleInterrupt();
+            }
             try {
                 SuccessString successString = validStringQueue.take();
                 synchronized (validStringList) {
                     validStringList.add(successString);
                 }
             } catch (InterruptedException e) {
-                interruptAllAgents();
-                if (this.getDm_state().equals(eDM_State.DONE)){
-                    return;
-                }
-                synchronized (getDm_state()) {
-                    while (!this.dm_state.equals(eDM_State.RUNNING)) {
-                        try {
-                            this.getDm_state().wait();
-                        } catch (InterruptedException e1) {
-                            throw new RuntimeException("Erro: DM got interrupt while wait for resume");
-                        }
-                    }
-                }
+                handleInterrupt();
             }
         }
         System.out.println("\n\n DM END WORK! Select Pause command to see updated information and then stop to go back to Main Menu");
@@ -127,6 +118,22 @@ public class DM extends Thread implements Runnable {
         interruptAllAgents();
 
 
+    }
+
+    private void handleInterrupt() {
+        //interruptAllAgents();
+        if (this.getDm_state().equals(eDM_State.DONE)){
+            return;
+        }
+        synchronized (getDm_state()) {
+            while (!this.dm_state.equals(eDM_State.RUNNING)) {
+                try {
+                    this.getDm_state().wait();
+                } catch (InterruptedException e1) {
+                    throw new RuntimeException("Erro: DM got interrupt while wait for resume");
+                }
+            }
+        }
     }
 
     private void interruptAllAgents() {

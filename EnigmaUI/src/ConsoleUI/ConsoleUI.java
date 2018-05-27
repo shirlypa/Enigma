@@ -307,12 +307,14 @@ public class ConsoleUI implements UI_interface {
         String[] validString_info = new String[STRINGS_TO_SHOW];
         String timeForMission;
         long precent;
+        int successStringListSize;
 
         synchronized (workSummery.getSuccessStrings()) {
+            successStringListSize = workSummery.getSuccessStrings().size();
             timeForMission = workSummery.getTimeFromStart();
             precent = (workSummery.getAccomplishMissions() / workSummery.getWorkSize()) * 100;
             int successStringNumber = workSummery.getSuccessStrings().size();
-            for (int i = 0; i < validString_info.length; i++) {
+            for (int i = 0; i < validString_info.length && i < successStringListSize; i++) {
                 SuccessString successString = workSummery.getSuccessStrings().get(successStringNumber - 1 - i);
                 validString_info[i] = ". " + successString.getSucessString()
                         + "\t" + successString.getSecretWithLuck() + "\t" + successString.getAgentID();
@@ -330,7 +332,7 @@ public class ConsoleUI implements UI_interface {
                 .insertNewLine("")
                 .insertNewLine("  String\tSecret\tAgent ID")
                 .insertNewLine("  ======\t======\t========");
-        for (int i = 0; i < validString_info.length; i++) {
+        for (int i = 0; i < validString_info.length && i < successStringListSize ; i++) {
             borderConsole.insertNewLine(validString_info[i]);
         }
         borderConsole.print();

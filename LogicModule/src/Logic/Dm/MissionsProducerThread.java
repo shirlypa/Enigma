@@ -61,7 +61,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
                 //put mission in missionQueue
                 try {
                     missionsQueue.put(mission);
-                    System.out.println(this.getName() + " >> New mission: " + mission);
+                    //System.out.println(this.getName() + " >> New mission: " + mission);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     if (mDM.getDm_state().equals(eDM_State.DONE)){
