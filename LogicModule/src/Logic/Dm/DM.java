@@ -107,12 +107,12 @@ public class DM extends Thread implements Runnable {
         }
         System.out.println("\n\n DM END WORK! Select Pause command to see updated information and then stop to go back to Main Menu");
         this.setDm_state(eDM_State.PAUSE);
-        synchronized (getDm_state()) {
+        synchronized (this) {
             while (this.getDm_state().equals(eDM_State.PAUSE))
                 try {
-                    getDm_state().wait();
+                    this.wait();
                 } catch (InterruptedException e1) {
-                    throw new RuntimeException("Erro: DM got interrupt while wait for end");
+                    handleInterrupt();
                 }
         }
         interruptAllAgents();
@@ -125,12 +125,13 @@ public class DM extends Thread implements Runnable {
         if (this.getDm_state().equals(eDM_State.DONE)){
             return;
         }
-        synchronized (getDm_state()) {
+        synchronized (this) {
             while (!this.dm_state.equals(eDM_State.RUNNING)) {
                 try {
-                    this.getDm_state().wait();
+                    eDM_State currentState = getDm_state();
+                    this.wait();
                 } catch (InterruptedException e1) {
-                    throw new RuntimeException("Erro: DM got interrupt while wait for resume");
+                    handleInterrupt();
                 }
             }
         }

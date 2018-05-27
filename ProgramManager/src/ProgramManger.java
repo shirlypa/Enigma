@@ -336,9 +336,8 @@ public class ProgramManger implements hasUItoShowMissions {
 
     private void pauseDesipherProcess() {
         dmThread.setDm_state(eDM_State.PAUSE);
-        eDM_State currentState = dmThread.getDm_state();
-        synchronized (currentState){
-            currentState.notifyAll();
+        synchronized (dmThread){
+            dmThread.notifyAll();
         }
         dmThread.interrupt();
 
@@ -366,9 +365,8 @@ public class ProgramManger implements hasUItoShowMissions {
 
     private void resumeDecipherProcess() {
         dmThread.setDm_state(eDM_State.RUNNING);
-        eDM_State currentState = dmThread.getDm_state();
-        synchronized (currentState) {
-            currentState.notifyAll();
+        synchronized (dmThread) {
+            dmThread.notifyAll();
         }
         showBruteForceMenu();
     }
