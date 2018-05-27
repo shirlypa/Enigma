@@ -101,4 +101,6 @@ public class SecretGenerator {
     public void setRotorsOrdered(boolean rotorsOrdered) {
         isRotorsOrdered = rotorsOrdered;
     }
+
+
 }
