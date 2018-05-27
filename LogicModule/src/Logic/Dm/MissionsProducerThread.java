@@ -52,7 +52,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
                 currentMissionSize = 1;
                 if (codeWasReset) {
                     currentMissionInitialSecret = secretGenerator.advanceRotorsAndReflectorByLevel();
-                    advancedSecret = currentMissionInitialSecret.cloneSecret();
+                     advancedSecret = currentMissionInitialSecret.cloneSecret();
                 } else {
                     i++;
                     advancedSecret.advanceRotors(alphabet);
