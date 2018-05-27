@@ -74,7 +74,7 @@ public class Secret {
             currentPos = currentPos % alphabet.length() + 1;
             r.getPosition().setPositionAsInt(currentPos)
                     .setPositionAsChar(alphabet.charAt(currentPos - 1));
-            if (r.getPosition().getPositionAsInt() != 0){
+            if (r.getPosition().getPositionAsInt() != 1){
                 break;
             }
         }
