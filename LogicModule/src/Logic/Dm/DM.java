@@ -144,7 +144,9 @@ public class DM extends Thread implements Runnable {
         for (Agent agent : agentList) {
             agent.interrupt();
         }
-        missionProd.interrupt();
+        if (missionProd.getState().equals(State.RUNNABLE)) {
+            missionProd.interrupt();
+        }
     }
 
     public WorkSummery createWorkSummery() {
