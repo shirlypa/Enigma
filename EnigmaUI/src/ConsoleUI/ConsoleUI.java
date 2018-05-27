@@ -305,14 +305,13 @@ public class ConsoleUI implements UI_interface {
     public void showDesipherStatus(WorkSummery workSummery) {
         final int STRINGS_TO_SHOW = 10;
         String[] validString_info = new String[STRINGS_TO_SHOW];
-        String timeForMission;
-        long precent;
+        String timeForMission, precent;
         int successStringListSize;
 
         synchronized (workSummery.getSuccessStrings()) {
             successStringListSize = workSummery.getSuccessStrings().size();
             timeForMission = workSummery.getTimeFromStart();
-            precent = (workSummery.getAccomplishMissions() / workSummery.getWorkSize()) * 100;
+            precent = workSummery.getPrecent();
             int successStringNumber = workSummery.getSuccessStrings().size();
             for (int i = 0; i < validString_info.length && i < successStringListSize; i++) {
                 SuccessString successString = workSummery.getSuccessStrings().get(successStringNumber - 1 - i);
@@ -328,7 +327,7 @@ public class ConsoleUI implements UI_interface {
                 .setHorizontalBorderChar('.');
         borderConsole
                 .insertNewLine("Time from start the process: " + timeForMission)
-                .insertNewLine("Percentage of progress: " + (int)precent + "%")
+                .insertNewLine("Percentage of progress: " + precent)
                 .insertNewLine("")
                 .insertNewLine("  String\tSecret\tAgent ID")
                 .insertNewLine("  ======\t======\t========");

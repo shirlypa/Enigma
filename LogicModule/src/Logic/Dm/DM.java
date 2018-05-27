@@ -42,6 +42,7 @@ public class DM extends Thread implements Runnable {
     private SecretGenerator secretGenerator;
     private MissionsProducerThread missionProd;
     private long missionsNumber;
+    private long workTime;
 
     public DM(String txtToDecipher, hasUItoShowMissions programManager, eProccessLevel processLevel, int agentNumber, MachineDescriptor machineDescriptor){
         this.txtToDecipher = txtToDecipher;
@@ -105,6 +106,7 @@ public class DM extends Thread implements Runnable {
             }
         }
         System.out.println("\n\n DM END WORK! Select Pause command to see updated information and then stop to go back to Main Menu");
+        this.workTime = Duration.between(startWorkInstant,Instant.now()).toMillis();
         this.setDm_state(eDM_State.PAUSE);
         synchronized (this) {
             while (this.getDm_state().equals(eDM_State.PAUSE))
@@ -144,8 +146,13 @@ public class DM extends Thread implements Runnable {
     }
 
     public WorkSummery createWorkSummery() {
-        long timeFromStart = Duration.between(startWorkInstant,Instant.now()).toMillis();
-        return new WorkSummery(accomplishedMissions,mWorkSize,agentCurrentMissionMap,validStringList,startWorkInstant.getEpochSecond(),timeFromStart);
+        long timeFromStart;
+        if (workTime != 0) { //the work was ended
+            timeFromStart = workTime;
+        } else {
+            timeFromStart = Duration.between(startWorkInstant, Instant.now()).toMillis();
+        }
+        return new WorkSummery(accomplishedMissions,missionsNumber,agentCurrentMissionMap,validStringList,timeFromStart);
     }
 
     private void createAgentsList() {
