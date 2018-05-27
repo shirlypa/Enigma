@@ -78,6 +78,8 @@ public class MissionsProducerThread extends Thread implements Runnable {
             }
         }
         this.finish = true;
+        mDM.setMissionsNumber(missionsNumber);
+
     }
 
     private void startAgents() {
