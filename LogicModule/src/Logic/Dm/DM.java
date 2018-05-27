@@ -92,7 +92,7 @@ public class DM extends Thread implements Runnable {
         missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
         missionProd.start();
         //Start listening to accomplishedMissions
-        while (!missionProd.getFinish()){
+        while (!missionProd.getFinish()|| mWorkSize/missionSize != accomplishedMissions){
             try {
                 SuccessString successString = validStringQueue.take();
                 synchronized (validStringList) {
