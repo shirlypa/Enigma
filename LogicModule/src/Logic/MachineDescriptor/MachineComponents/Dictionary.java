@@ -37,7 +37,7 @@ public class Dictionary {
         words = removeSpecialChars(words);
         String [] wordsArr = words.split(" ");
         for (String word:wordsArr) {
-            if (!Words.contains(word)) {
+            if (!Words.contains(" " + word + " ")) {
                 return false;
             }
         }
