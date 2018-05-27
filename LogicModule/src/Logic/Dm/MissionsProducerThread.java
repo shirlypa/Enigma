@@ -35,7 +35,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
     public void run() {
         Mission mission;
         String alphabet = machineDescriptor.getAlphabet();
-        boolean codeWasReset;
+        boolean codeWasReset = false;
         Secret currentMissionInitialSecret = secretGenerator.getInitialSecret();
         Secret advancedSecret = currentMissionInitialSecret.cloneSecret();
 
@@ -44,7 +44,9 @@ public class MissionsProducerThread extends Thread implements Runnable {
             if (i == missionsToCraateBeforeStartAgents){
                 startAgents();
             }
-            codeWasReset = advancedSecret.advanceRotors(alphabet);
+            if (!codeWasReset) {
+                codeWasReset = advancedSecret.advanceRotors(alphabet);
+            }
             if (codeWasReset || currentMissionSize == mMissionSize || i == workSize) {
                 synchronized (this) {
                     mission = new Mission(missionsNumber++, currentMissionInitialSecret, currentMissionSize);
@@ -53,9 +55,10 @@ public class MissionsProducerThread extends Thread implements Runnable {
                 if (codeWasReset && i != workSize) {
                     currentMissionInitialSecret = secretGenerator.advanceRotorsAndReflectorByLevel();
                      advancedSecret = currentMissionInitialSecret.cloneSecret();
+                     codeWasReset = false;
                 } else {
                     i++;
-                    advancedSecret.advanceRotors(alphabet);
+                    codeWasReset = advancedSecret.advanceRotors(alphabet);
                     currentMissionInitialSecret = advancedSecret.cloneSecret();
                 }
                 //put mission in missionQueue

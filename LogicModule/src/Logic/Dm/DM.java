@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+import static java.lang.Math.max;
 import static java.lang.Math.min;
 import static java.lang.Math.pow;
 
@@ -181,7 +182,7 @@ public class DM extends Thread implements Runnable {
 
     //worksize/onemissionsize/10
     private void calcMissionToCreateBeforeAgentsStart() {
-        missionToCreateBeforeStartAgents = min(Math.round(mWorkSize/missionSize/10),K_QUEUE_SIZE);
+        missionToCreateBeforeStartAgents = max(Math.round(mWorkSize/missionSize/10),K_QUEUE_SIZE);
     }
 
     public long getWorkSize() {
