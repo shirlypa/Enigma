@@ -68,7 +68,7 @@ public class  Agent extends Thread implements Runnable {
                 successString= new SuccessString(result,currentSecret.cloneSecret(),agentID);
                 accomplishedMissionsQueue.put(successString);
             }
-           currentSecret.advanceSecretAndSetOnMachine(alphabet,machineInst);
+            currentSecret.advanceSecretAndSetOnMachine(alphabet,machineInst);
         }
     }
 

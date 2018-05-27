@@ -48,7 +48,7 @@ public class Dictionary {
 
     private boolean wordInDictionary(String word) {
         for (String wordInDictionary: splittedDictionary) {
-            if (wordInDictionary.equals(word))
+            if (wordInDictionary.toUpperCase().equals(word.toUpperCase()))
                 return true;
         }
         return false;
