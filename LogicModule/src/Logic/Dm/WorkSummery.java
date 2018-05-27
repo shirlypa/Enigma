@@ -9,20 +9,20 @@ import java.util.concurrent.TimeUnit;
 
 public class WorkSummery {
     private int accomplishMissions;
-    private long workSize;
+    private long missionsNumber;
     Map<Integer,Secret> agentCurrentMissionMap;
     private List<SuccessString> successStrings;
     private String timeFromStart; //mm:ss or hh:mm:ss if there is hours
 
-    public WorkSummery(int accomplishMissions, long workSize, Map<Integer, Secret> agentCurrentMissionMap, List<SuccessString> successStrings,long startTime, long timeFromStart) {
+    public WorkSummery(int accomplishMissions, long missionsNumber, Map<Integer, Secret> agentCurrentMissionMap, List<SuccessString> successStrings, long timeFromStart) {
         this.accomplishMissions = accomplishMissions;
-        this.workSize = workSize;
+        this.missionsNumber = missionsNumber;
         this.agentCurrentMissionMap = agentCurrentMissionMap;
         this.successStrings = successStrings;
-        this.timeFromStart = timeToStr(startTime, timeFromStart);
+        this.timeFromStart = timeToStr(timeFromStart);
     }
 
-    private String timeToStr(long startTime, long timeFromStart) {
+    private String timeToStr(long timeFromStart) {
         long seconds, minutes, hours;
         hours = TimeUnit.MILLISECONDS.toHours(timeFromStart);
         minutes = TimeUnit.MILLISECONDS.toMinutes(timeFromStart - TimeUnit.HOURS.toMillis(hours));
@@ -34,9 +34,6 @@ public class WorkSummery {
         return accomplishMissions;
     }
 
-    public long getWorkSize() {
-        return workSize;
-    }
 
     public Map<Integer, Secret> getAgentCurrentMissionMap() {
         return agentCurrentMissionMap;
@@ -48,5 +45,9 @@ public class WorkSummery {
 
     public String getTimeFromStart() {
         return timeFromStart;
+    }
+
+    public String getPrecent() {
+        return ((float)accomplishMissions / (float)missionsNumber * 100) + "%";
     }
 }

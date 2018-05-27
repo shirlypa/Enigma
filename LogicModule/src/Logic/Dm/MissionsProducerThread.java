@@ -40,7 +40,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
         Secret advancedSecret = currentMissionInitialSecret.cloneSecret();
 
         int currentMissionSize = 1;
-        for (long i = 1; i <= workSize; i++,currentMissionSize++){
+        for (long i = 1; i < workSize; i++,currentMissionSize++){
             if (i == missionsToCraateBeforeStartAgents){
                 startAgents();
             }
@@ -50,7 +50,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
                     mission = new Mission(missionsNumber++, currentMissionInitialSecret, currentMissionSize);
                 }
                 currentMissionSize = 1;
-                if (codeWasReset) {
+                if (codeWasReset && i != workSize) {
                     currentMissionInitialSecret = secretGenerator.advanceRotorsAndReflectorByLevel();
                     advancedSecret = currentMissionInitialSecret.cloneSecret();
                 } else {
