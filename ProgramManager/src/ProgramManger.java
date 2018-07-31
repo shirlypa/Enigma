@@ -1,7 +1,7 @@
 
 
 import ConsoleUI.MenuItem;
-import Logic.Agent.SuccessString;
+import Agent.SuccessString;
 import Logic.Dm.*;
 import Logic.MachineDescriptor.MachineComponents.*;
 import Logic.MachineDescriptor.MachineDescriptor;
@@ -11,7 +11,6 @@ import Logic.Logic;
 import ConsoleUI.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -148,6 +147,8 @@ public class ProgramManger implements hasUItoShowMissions {
         }
     }
 
+
+    //Uboat
     private Void menuCmd_loadMachindFromXML(){
         String userInputPath;
         boolean valid;
@@ -193,6 +194,7 @@ public class ProgramManger implements hasUItoShowMissions {
         return null;
     }
 
+    //not nessecery
     private Void menuCmd_showMachineDescription(){
         MachineDescriptor machineToPrint = mLogic.getMachineDescriptor();
         int msgProccessSoFar = mLogic.getProccesedMsgCount();
@@ -203,6 +205,7 @@ public class ProgramManger implements hasUItoShowMissions {
         return null;
     }
 
+    //Uboat
     private Void menuCmd_selectInitialSecret(){
         int[] rotorsIDSelectArr = appUI.getSecretRotorsInUse(mLogic.getRotorsInUseCount(),mLogic.getMaxRotorID());
         List<RotorInSecret> rotorInSecretList = getRotorsPositionFromUser(rotorsIDSelectArr);
@@ -211,12 +214,14 @@ public class ProgramManger implements hasUItoShowMissions {
         return null;
     }
 
+    //Uboat
     private Void menuCmd_randomInitialSecret(){
         Secret randomSecret = mLogic.createRandomSecret();
         appUI.print("New Secret Generated",randomSecret.toString());
         return null;
     }
 
+    //Uboat and alise
     private Void menuCmd_processText(){
         String txtToProcess = appUI.getTextToProccess(mLogic.getAlphabet()).toUpperCase();
         String result = mLogic.proccess(txtToProcess);
@@ -224,7 +229,7 @@ public class ProgramManger implements hasUItoShowMissions {
         return null;
     }
 
-
+    //not necessery
     private List<RotorInSecret> getRotorsPositionFromUser(int[] rotorsIDSelectArr){
         boolean validPosition;
         int alphabetLen;
@@ -254,17 +259,20 @@ public class ProgramManger implements hasUItoShowMissions {
         return resultList;
     }
 
+    //not necesery
     private Void menuCmd_restoreToInitialSecret(){
         mLogic.restoreMachineToInitialSecret();
         appUI.print("The machine secret set to initial secret successfully");
         return null;
     }
 
+
     private Void menuCmd_showHistory(){
         appUI.showHistory(mLogic.getHistory());
         return null;
     }
 
+    //Alise
     private Void menuCmd_bruteForceProcess(){
         String inputTxtToProccess = getTextToBruteForce();
         String encryptedTxt = mLogic.proccess(inputTxtToProccess);
@@ -284,6 +292,7 @@ public class ProgramManger implements hasUItoShowMissions {
         return null;
     }
 
+    // not necessery
     private void getKnownSecretFromUser(eProccessLevel proccessLevel) {
         int[] currentSecretRotorsIDs = new int[mLogic.getRotorsInUseCount()];
         for (int i = 0; i < currentSecretRotorsIDs.length; i++) {
@@ -298,6 +307,7 @@ public class ProgramManger implements hasUItoShowMissions {
         }
     }
 
+    // not necessery
     private void showBruteForceMenu() {
         List<MenuItem> menu = new ArrayList<>();
 
@@ -334,6 +344,7 @@ public class ProgramManger implements hasUItoShowMissions {
         dmThread.interrupt();
     }
 
+    //Alise
     private void pauseDesipherProcess() {
         dmThread.setDm_state(eDM_State.PAUSE);
         synchronized (dmThread){
@@ -363,6 +374,7 @@ public class ProgramManger implements hasUItoShowMissions {
         appUI.print("Decipher Process Paused","You can select one of that options",menu);
     }
 
+    //Alise
     private void resumeDecipherProcess() {
         dmThread.setDm_state(eDM_State.RUNNING);
         synchronized (dmThread) {
@@ -371,12 +383,14 @@ public class ProgramManger implements hasUItoShowMissions {
         showBruteForceMenu();
     }
 
+    // not necessery
     private Void menuCmd_exit(){
         this.setAppState(eAppState.Ended);
         appUI.print("GoodBye!");
         return null;
     }
 
+    // not necessery
     private String getTextToBruteForce() { //valid = all the words in the dictionary
         Dictionary dictionary = mLogic.getDictionary();
         boolean valid = true;

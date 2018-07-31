@@ -1,6 +1,6 @@
 package Logic.Dm;
 
-import Logic.Agent.SuccessString;
+import Agent.SuccessString;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 
 import java.util.List;

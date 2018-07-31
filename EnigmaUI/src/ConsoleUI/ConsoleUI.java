@@ -1,6 +1,6 @@
 package ConsoleUI;
 
-import Logic.Agent.SuccessString;
+import Agent.SuccessString;
 import Logic.Dm.WorkSummery;
 import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;

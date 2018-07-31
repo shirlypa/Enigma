@@ -1,10 +1,11 @@
-package Logic.Agent;
+package Agent;
 import Logic.Dm.DM;
 import Logic.Dm.Mission;
 import Logic.Dm.eDM_State;
 import Logic.MachineDescriptor.MachineComponents.Dictionary;
 import Logic.MachineDescriptor.MachineComponents.Secret;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
+
 
 import java.util.concurrent.BlockingQueue;
 

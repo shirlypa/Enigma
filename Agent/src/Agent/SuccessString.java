@@ -1,4 +1,4 @@
-package Logic.Agent;
+package Agent;
 
 import Logic.MachineDescriptor.MachineComponents.Secret;
 

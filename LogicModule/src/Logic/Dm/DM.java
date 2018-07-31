@@ -1,7 +1,7 @@
 package Logic.Dm;
 
-import Logic.Agent.Agent;
-import Logic.Agent.SuccessString;
+import Agent.Agent;
+import Agent.SuccessString;
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.Secret;
@@ -234,4 +234,6 @@ public class DM extends Thread implements Runnable {
     public void setMissionsNumber(int missionsNumber) {
         this.missionsNumber = missionsNumber;
     }
+
+    public int gerQueueSize(){return K_QUEUE_SIZE;}
 }

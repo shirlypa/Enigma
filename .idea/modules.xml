@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Agent/Agent.iml" filepath="$PROJECT_DIR$/Agent/Agent.iml" />
       <module fileurl="file://$PROJECT_DIR$/Enigma.iml" filepath="$PROJECT_DIR$/Enigma.iml" />
       <module fileurl="file://$PROJECT_DIR$/EnigmaUI/EnigmaUI.iml" filepath="$PROJECT_DIR$/EnigmaUI/EnigmaUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/LogicModule/LogicModule.iml" filepath="$PROJECT_DIR$/LogicModule/LogicModule.iml" />
