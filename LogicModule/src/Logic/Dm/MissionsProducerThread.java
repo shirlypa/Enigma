@@ -1,8 +1,10 @@
 package Logic.Dm;
 
 
-import Logic.Agent.Agent;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import Agent.Agent;
+import AgentDMParts.Mission;
+import AgentDMParts.Secret;
+import AgentDMParts.eDM_State;
 import Logic.MachineDescriptor.MachineDescriptor;
 
 import java.util.List;
@@ -41,7 +43,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
 
         int currentMissionSize = 1;
         for (long i = 1; i < workSize; i++,currentMissionSize++){
-            if (i == missionsToCraateBeforeStartAgents){
+            if (i == mDM.gerQueueSize()){
                 startAgents();
             }
             if (!codeWasReset) {

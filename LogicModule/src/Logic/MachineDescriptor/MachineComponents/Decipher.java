@@ -1,5 +1,7 @@
 package Logic.MachineDescriptor.MachineComponents;
 
+import AgentDMParts.Dictionary;
+
 public class Decipher {
     private int Agents;
     private Dictionary Words;

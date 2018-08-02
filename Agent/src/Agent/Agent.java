@@ -1,10 +1,8 @@
-package Logic.Agent;
+package Agent;
+import AgentDMParts.*;
 import Logic.Dm.DM;
-import Logic.Dm.Mission;
-import Logic.Dm.eDM_State;
-import Logic.MachineDescriptor.MachineComponents.Dictionary;
-import Logic.MachineDescriptor.MachineComponents.Secret;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
+
 
 import java.util.concurrent.BlockingQueue;
 
@@ -27,6 +25,14 @@ public class  Agent extends Thread implements Runnable {
         this.alphabet = alphabet;
         this.agentID = agentID;
         this.dm = dm;
+    }
+    public Agent()
+    {
+
+    }
+    public void setDictionary(Dictionary dic)
+    {
+        this.dictionary=dic;
     }
     @Override
     public void run() {
@@ -80,5 +86,19 @@ public class  Agent extends Thread implements Runnable {
     }
 
 
+    public void setMachine(EnigmaMachine machine) {
+        this.machineInst = machine;
+    }
 
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public void setAlphaBet(String alphaBet) {
+        this.alphabet = alphaBet;
+    }
+
+    public void setMissionQueue(BlockingQueue<Mission> missionQueue) {
+        this.toDoMissionsQueue = missionQueue;
+    }
 }

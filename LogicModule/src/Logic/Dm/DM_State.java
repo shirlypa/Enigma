@@ -1,5 +1,7 @@
 package Logic.Dm;
 
+import AgentDMParts.eDM_State;
+
 public class DM_State {
     private eDM_State state;
 

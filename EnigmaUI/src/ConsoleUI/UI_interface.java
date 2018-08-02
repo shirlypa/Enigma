@@ -4,7 +4,7 @@ import Logic.Dm.WorkSummery;
 import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import AgentDMParts.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
 
 

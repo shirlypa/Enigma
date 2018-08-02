@@ -1,15 +1,16 @@
 package Logic.MachineDescriptor;
 
 import Logic.MachineDescriptor.MachineComponents.Decipher;
-import Logic.MachineDescriptor.MachineComponents.Dictionary;
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
+import AgentDMParts.Dictionary;
 
-
+//import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
 import Logic.MachineXMLParsser.MachineXMLParsser;
+
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +21,7 @@ public class MachineDescriptor {
     private String Alphabet;
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
-    private Decipher MachineDecipher;
+    private Logic.MachineDescriptor.MachineComponents.Decipher MachineDecipher;
 
     public MachineDescriptor(Enigma enigmaMachine) {
         AvaliableRotors = new HashMap<>();
@@ -43,9 +44,9 @@ public class MachineDescriptor {
 
         Dictionary dic = new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars());
-        MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),dic);
+        MachineDecipher = new Logic.MachineDescriptor.MachineComponents.Decipher(enigmaMachine.getDecipher().getAgents(),dic);
        // MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
-         //       new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
+         //       new AgentDMParts.Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
            //     enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
 
     }

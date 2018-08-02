@@ -1,6 +1,6 @@
-package Logic.MachineDescriptor.MachineComponents;
+package AgentDMParts;//package Logic.MachineDescriptor.MachineComponents;
 
-import javafx.geometry.Pos;
+import Logic.MachineDescriptor.MachineComponents.Position;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
 import pukteam.enigma.component.machine.secret.SecretBuilder;

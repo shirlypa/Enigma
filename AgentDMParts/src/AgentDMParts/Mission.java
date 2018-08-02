@@ -1,6 +1,6 @@
-package Logic.Dm;
+package AgentDMParts;//package Logic.Dm;
 
-import Logic.MachineDescriptor.MachineComponents.Secret;
+//import Logic.MachineDescriptor.MachineComponents.AgentDMParts.Secret;
 
 public class Mission {
     private int missionID;
@@ -23,6 +23,6 @@ public class Mission {
 
     @Override
     public String toString() {
-        return "ID: " + missionID + "/ Initial Secret: " + initialSecret + "/ size: " + missionSize;
+        return "ID: " + missionID + "/ Initial AgentDMParts.Secret: " + initialSecret + "/ size: " + missionSize;
     }
 }

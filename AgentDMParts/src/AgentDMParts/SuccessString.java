@@ -1,8 +1,11 @@
-package Logic.Agent;
+package AgentDMParts;
 
-import Logic.MachineDescriptor.MachineComponents.Secret;
 
-public class SuccessString {
+import AgentDMParts.Secret;
+
+import java.io.Serializable;
+
+public class SuccessString implements Serializable {
     private String sucessString;
     private Secret secretWithLuck; // ;)
     private int agentID;

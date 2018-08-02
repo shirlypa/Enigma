@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "words"
 })
-@XmlRootElement(name = "Dictionary")
+@XmlRootElement(name = "AgentDMParts.Dictionary")
 public class Dictionary {
 
     @XmlElement(name = "Words", required = true)
