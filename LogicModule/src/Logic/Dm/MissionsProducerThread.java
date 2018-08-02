@@ -2,7 +2,9 @@ package Logic.Dm;
 
 
 import Agent.Agent;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import AgentDMParts.Mission;
+import AgentDMParts.Secret;
+import AgentDMParts.eDM_State;
 import Logic.MachineDescriptor.MachineDescriptor;
 
 import java.util.List;

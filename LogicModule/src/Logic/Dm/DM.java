@@ -1,10 +1,13 @@
 package Logic.Dm;
 
-import Agent.Agent;
-import Agent.SuccessString;
+//import Agent.Agent;
+//import AgentDMParts.SuccessString;
+import AgentDMParts.Mission;
+import AgentDMParts.SuccessString;
+import AgentDMParts.eDM_State;
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import AgentDMParts.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
@@ -25,7 +28,7 @@ import static java.lang.Math.pow;
 
 public class DM extends Thread implements Runnable {
     private String txtToDecipher;
-    private List<Agent> agentList;
+    //private List<Agent> agentList;
     private long mWorkSize;
     private int agentNumber;
     private eProccessLevel processLevel;
@@ -39,7 +42,7 @@ public class DM extends Thread implements Runnable {
     private final int K_QUEUE_SIZE = 100;
     private int accomplishedMissions;
     private Instant startWorkInstant;
-    private Map<Integer,Secret> agentCurrentMissionMap;
+    private Map<Integer, Secret> agentCurrentMissionMap;
     private eDM_State dm_state;
     private SecretGenerator secretGenerator;
     private MissionsProducerThread missionProd;
@@ -58,7 +61,7 @@ public class DM extends Thread implements Runnable {
         this.agentCurrentMissionMap = new HashMap<>();
         this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount(), machineDescriptor.getAlphabet());
         mWorkSize = calcWorkSize();
-        agentList = new ArrayList<>();
+      //  agentList = new ArrayList<>();
 
         toDoMissionsQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
         validStringQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
@@ -87,11 +90,11 @@ public class DM extends Thread implements Runnable {
 
         startWorkInstant = Instant.now();
         calcMissionToCreateBeforeAgentsStart();
-        createAgentsList();
+        //createAgentsList();
         missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor, mWorkSize);
         missionProd.setSecretGenerator(secretGenerator);
 
-        missionProd.setAgentList(agentList);
+        //missionProd.setAgentList(agentList);
         missionProd.setName("MissionProducer-Thread");
         missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
         missionProd.start();
@@ -118,13 +121,13 @@ public class DM extends Thread implements Runnable {
                     handleInterrupt();
                 }
         }
-        interruptAllAgents();
+      //  interruptAllAgents();
 
 
     }
 
     private void handleInterrupt() {
-        interruptAllAgents();
+    //    interruptAllAgents();
         if (this.getDm_state().equals(eDM_State.DONE)){
             return;
         }
@@ -140,14 +143,15 @@ public class DM extends Thread implements Runnable {
         }
     }
 
-    private void interruptAllAgents() {
-        for (Agent agent : agentList) {
-            agent.interrupt();
-        }
-        if (missionProd.getState().equals(State.RUNNABLE)) {
-            missionProd.interrupt();
-        }
-    }
+    //DOTO how to interupt!!
+    //private void interruptAllAgents() {
+      //  for (Agent agent : agentList) {
+        //    agent.interrupt();
+       // }
+        //if (missionProd.getState().equals(State.RUNNABLE)) {
+         //   missionProd.interrupt();
+        //}
+    //}
 
     public WorkSummery createWorkSummery() {
         long timeFromStart;
@@ -159,14 +163,15 @@ public class DM extends Thread implements Runnable {
         return new WorkSummery(accomplishedMissions,missionsNumber,agentCurrentMissionMap,validStringList,timeFromStart);
     }
 
-    private void createAgentsList() {
-        for (int i = 0; i < agentNumber; i++) {
-            Agent newAgent = new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance(),txtToDecipher,machineDescriptor.getDictionary(),
-                    machineDescriptor.getAlphabet(),i+1,this);
-            newAgent.setName("Agent-" + (i+1) + "-Thread");
-            agentList.add(newAgent);
-        }
-    }
+    //TODO dont know what to do with the Agents
+    //private void createAgentsList() {
+      //  for (int i = 0; i < agentNumber; i++) {
+      //      Agent newAgent = new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance(),txtToDecipher,machineDescriptor.getDictionary(),
+       //             machineDescriptor.getAlphabet(),i+1,this);
+        //    newAgent.setName("Agent-" + (i+1) + "-Thread");
+         //   agentList.add(newAgent);
+       // }
+    //}
 
     private EnigmaMachine createMachineInstance() {
         EnigmaMachineBuilder machineBuilder = EnigmaComponentFactory.INSTANCE.buildMachine(machineDescriptor.getRotorsInUseCount(),machineDescriptor.getAlphabet());

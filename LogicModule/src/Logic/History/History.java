@@ -1,7 +1,7 @@
 package Logic.History;
 
 
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import AgentDMParts.Secret;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,7 +1,7 @@
 package Logic.Dm;
 
-import Agent.SuccessString;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import AgentDMParts.SuccessString;
+import AgentDMParts.Secret;
 
 import java.util.List;
 import java.util.Map;

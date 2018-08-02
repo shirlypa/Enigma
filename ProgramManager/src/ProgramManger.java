@@ -1,7 +1,9 @@
 
 
+import AgentDMParts.Dictionary;
+import AgentDMParts.Secret;
+import AgentDMParts.eDM_State;
 import ConsoleUI.MenuItem;
-import Agent.SuccessString;
 import Logic.Dm.*;
 import Logic.MachineDescriptor.MachineComponents.*;
 import Logic.MachineDescriptor.MachineDescriptor;
@@ -198,7 +200,7 @@ public class ProgramManger implements hasUItoShowMissions {
     private Void menuCmd_showMachineDescription(){
         MachineDescriptor machineToPrint = mLogic.getMachineDescriptor();
         int msgProccessSoFar = mLogic.getProccesedMsgCount();
-        if (appState.equals(eAppState.SecretLoaded)) //There is Secret
+        if (appState.equals(eAppState.SecretLoaded)) //There is AgentDMParts.Secret
             appUI.printMachineDetails(machineToPrint,msgProccessSoFar,mLogic.getSecret());
         else
             appUI.printMachineDetails(machineToPrint,msgProccessSoFar);
@@ -217,7 +219,7 @@ public class ProgramManger implements hasUItoShowMissions {
     //Uboat
     private Void menuCmd_randomInitialSecret(){
         Secret randomSecret = mLogic.createRandomSecret();
-        appUI.print("New Secret Generated",randomSecret.toString());
+        appUI.print("New AgentDMParts.Secret Generated",randomSecret.toString());
         return null;
     }
 

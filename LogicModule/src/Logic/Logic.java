@@ -3,12 +3,13 @@ package Logic;
 import Logic.History.History;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.*;
-import Logic.MachineDescriptor.MachineComponents.Dictionary;
 import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
 import pukteam.enigma.factory.EnigmaComponentFactory;
+import AgentDMParts.Secret;
+import AgentDMParts.Dictionary;
 
 import java.time.Duration;
 import java.time.Instant;

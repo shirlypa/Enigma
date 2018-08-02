@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{}Dictionary"/>
+ *         &lt;element ref="{}AgentDMParts.Dictionary"/>
  *       &lt;/sequence>
  *       &lt;attribute name="agents" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/restriction>
@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Decipher")
 public class Decipher {
 
-    @XmlElement(name = "Dictionary", required = true)
+    @XmlElement(name = "AgentDMParts.Dictionary", required = true)
     protected Dictionary dictionary;
     @XmlAttribute(name = "agents", required = true)
     protected int agents;

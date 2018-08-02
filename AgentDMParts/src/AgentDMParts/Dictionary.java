@@ -1,4 +1,4 @@
-package Logic.MachineDescriptor.MachineComponents;
+package AgentDMParts;
 
 public class Dictionary {
     private String Words;

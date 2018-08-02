@@ -1,12 +1,12 @@
 package ConsoleUI;
 
-import Agent.SuccessString;
+import AgentDMParts.SuccessString;
 import Logic.Dm.WorkSummery;
 import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
 import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
-import Logic.MachineDescriptor.MachineComponents.Secret;
+import AgentDMParts.Secret;
 import Logic.MachineDescriptor.MachineDescriptor;
 
 import java.util.*;
@@ -174,7 +174,7 @@ public class ConsoleUI implements UI_interface {
                 .setVerticalBorderChar('+')
                 .setHorizontalBorderChar('.');
         for (Secret currentSecret : history.keySet()) {
-            borderConsole.insertNewLine("-- Secret: " + currentSecret);
+            borderConsole.insertNewLine("-- AgentDMParts.Secret: " + currentSecret);
             for (ProcessString historyRecord : history.get(currentSecret)){
                 recordBuilder
                         .append("       From: '").append(historyRecord.getSourceStr())
@@ -329,7 +329,7 @@ public class ConsoleUI implements UI_interface {
                 .insertNewLine("Time from start the process: " + timeForMission)
                 .insertNewLine("Percentage of progress: " + precent)
                 .insertNewLine("")
-                .insertNewLine("  String\tSecret\tAgent ID")
+                .insertNewLine("  String\tAgentDMParts.Secret\tAgent ID")
                 .insertNewLine("  ======\t======\t========");
         for (int i = 0; i < validString_info.length && i < successStringListSize ; i++) {
             borderConsole.insertNewLine(validString_info[i]);

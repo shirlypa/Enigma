@@ -17,5 +17,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="Agent" exported="" />
+    <orderEntry type="module" module-name="AgentDMParts" exported="" />
   </component>
 </module>
