@@ -11,7 +11,7 @@ public interface IRoom {
     boolean isRoomFull(); //for know if show this room
     int addAlies(String userName); //return port
     void setReady(String userName);
-    ProcessStringReturnValue processString(Secret secret, String strToProcess, eProccessLevel proccessLevel);
+    ProcessStringReturnValue processString(Secret secret, String strToProcess);
     AliesUpdate getAliesUpdate(String userName);
     UboatUpdate getUboatUpdate();
     void setMissionSize(String aliesUserName, int missionSize);

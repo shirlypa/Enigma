@@ -7,7 +7,7 @@ import Logic.Logic;
 
 import java.util.List;
 
-public class Alies implements  IAlies {
+public class Alies {
     private Logic mLogic;
     private DM mDm;
     private String mUser;
@@ -29,25 +29,5 @@ public class Alies implements  IAlies {
 
     public void setUser(String mUser) {
         this.mUser = mUser;
-    }
-
-    @Override
-    public List<AgentInfo> getAgentsInfo() {
-        return null;
-    }
-
-    @Override
-    public String[] getSuccessStrings() {
-        return new String[0];
-    }
-
-    @Override
-    public void setMissionSize(int missionSize) {
-
-    }
-
-    @Override
-    public int getPortForAgentsToConnect() {
-        return 0;
     }
 }

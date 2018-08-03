@@ -30,10 +30,8 @@ public class Room implements IRoom{
     private String mSourceString;
     private List<String> winners = new ArrayList<>();
 
-    public ProcessStringReturnValue processString(Secret secret, String str, eProccessLevel proccessLevel){
+    public ProcessStringReturnValue processString(Secret secret, String str){
         ProcessStringReturnValue res = mUboat.processString(secret,str);
-        b.
-        mProccessLevel = proccessLevel;
         if (res.isValid()){
             mStringToProcess = res.getEncodedStr();
             mSourceString = str;
@@ -129,7 +127,8 @@ public class Room implements IRoom{
     public int addAlies(String userName) {
         Alies alies = new Alies();
         alies.setUser(userName);
-        return alies.getPortForAgentsToConnect();
+        //return alies.getPortForAgentsToConnect();
+        return 0;
     }
 
     @Override

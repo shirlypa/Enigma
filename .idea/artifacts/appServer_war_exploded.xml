@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="appServer:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/appServer_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="appServer" />
+          <element id="module-output" name="ProgramManager" />
+          <element id="module-output" name="EnigmaUI" />
+          <element id="module-output" name="Enigma" />
+          <element id="module-output" name="LogicModule" />
+          <element id="module-output" name="Agent" />
+          <element id="module-output" name="AgentDMParts" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="gson-2.8.5" />
+          <element id="file-copy" path="$PROJECT_DIR$/EnigmaMachine.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/gson-2.8.5.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="appServer/web/Web" />
+      <element id="module-output" name="ProgramManager" />
+    </root>
+  </artifact>
+</component>
