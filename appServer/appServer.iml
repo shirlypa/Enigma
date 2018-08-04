@@ -31,5 +31,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="gson-2.8.5" level="project" />
+    <orderEntry type="module" module-name="LogicModule" />
   </component>
 </module>

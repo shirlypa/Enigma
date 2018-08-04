@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="scripts/createRoom.js"></script>
+    <title>UBoat Register</title>
+</head>
+<body>
+<div id="title" class="center" >
+    <h1 class="title"><b>Enigma Machine Game</b></h1>
+</div>
+<div><p id="UserName"></p></div>
+
+<div>
+    <h3 id = "fileName">Select a File to upload:</h3>
+    <form id="uploadXmlForm" method="post" enctype="multipart/form-data">
+        <input id="fileInput" id="fileInput" type="file" name="file1" accept="text/xml">
+        <input type="submit" value="Upload File"/>
+    </form>
+    <div id="validationErrorContainer" style="color: red;display: none;">
+        <h4>There was some validation errors in the file you uploaded</h4>
+        <ul id="errorList">
+
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

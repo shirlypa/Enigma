@@ -7,34 +7,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9cb4e15-e242-481a-869d-237ac1370a1f" name="Default" comment="Merge branch 'master' of https://github.com/shirlypa/Enigma&#10;&#10;# Conflicts:&#10;#&#9;LogicModule/src/Logic/Dm/DM.java">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/appServer_war.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/appServer_war_exploded.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_5.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/appServer.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/SignInServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Utils/Consts.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/LogoutServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/Response.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Uboat/createRoom.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Uboat/scripts/createRoom.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/scripts/index.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/IRoom.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/IRoom.java" />
+      <change beforePath="$PROJECT_DIR$/Enigma.xsd" afterPath="$PROJECT_DIR$/Enigma.xsd" />
+      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Logic.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Logic.java" />
+      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java" />
+      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Decipher.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Decipher.java" />
+      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Dictionary.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Dictionary.java" />
+      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java" />
       <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/EnigmaUI_jar/EnigmaUI.jar" afterPath="$PROJECT_DIR$/out/artifacts/EnigmaUI_jar/EnigmaUI.jar" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/LogicModule_jar/LogicModule.jar" afterPath="$PROJECT_DIR$/out/artifacts/LogicModule_jar/LogicModule.jar" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgramManager_jar/ProgramManager.jar" afterPath="$PROJECT_DIR$/out/artifacts/ProgramManager_jar/ProgramManager.jar" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/SuccessString.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/EnigmaUI/ConsoleUI/ConsoleUI.class" afterPath="$PROJECT_DIR$/out/production/EnigmaUI/ConsoleUI/ConsoleUI.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Agent/Agent.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Agent/SuccessString.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ComManager.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ComManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/Mission.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/WorkSummery.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/WorkSummery.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/eDM_State.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineDescriptor/MachineComponents/Dictionary.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineDescriptor/MachineComponents/Secret.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AgentInfo.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AgentInfo.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/appServer.iml" afterPath="$PROJECT_DIR$/appServer/appServer.iml" />
+      <change beforePath="$PROJECT_DIR$/appServer/src/Servlets/SignInServlet.java" afterPath="$PROJECT_DIR$/appServer/src/Servlets/LoginServlet.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/src/Utils/Consts.java" afterPath="$PROJECT_DIR$/appServer/src/Utils/Consts.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/index.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/AgentInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/AgentInfo.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/AgentInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/AgentInfo.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Logic.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Logic.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineDescriptor/MachineDescriptor.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineDescriptor/MachineDescriptor.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/Generated/Decipher.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/Generated/Decipher.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/Generated/Dictionary.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/Generated/Dictionary.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/MachineXMLParsser.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/MachineXMLParsser.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/SignInServlet.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/Consts.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/Consts.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/index.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Logic.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Logic.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineDescriptor/MachineDescriptor.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineDescriptor/MachineDescriptor.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/Generated/Decipher.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/Generated/Decipher.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/Generated/Dictionary.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/Generated/Dictionary.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/MachineXMLParsser.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/MachineXMLParsser.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/AgentInfo.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/AgentInfo.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/appServer/Servlets/SignInServlet.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/appServer/Utils/Consts.class" afterPath="$PROJECT_DIR$/out/production/appServer/Utils/Consts.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,107 +69,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java">
+      <file leaf-file-name="ServerLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3795#3796#0" expanded="true" />
-                <element signature="e#3869#3870#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Alies.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#433#434#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#527#528#0" expanded="true" />
-                <element signature="e#568#569#0" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignInServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/SignInServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Consts.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appServer/src/Utils/Consts.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+            <state relative-caret-position="185">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcessStringReturnValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/ProcessStringReturnValue.java">
+      <file leaf-file-name="UploadXMLServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-              <folding>
-                <element signature="e#148#149#0" expanded="true" />
-                <element signature="e#176#177#0" expanded="true" />
-                <element signature="e#219#220#0" expanded="true" />
-                <element signature="e#253#254#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UboatUpdate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#403#404#0" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#520#521#0" expanded="true" />
-                <element signature="e#577#578#0" expanded="true" />
-                <element signature="e#619#620#0" expanded="true" />
-                <element signature="e#681#682#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#899#900#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-                <element signature="e#981#982#0" expanded="true" />
-                <element signature="e#1019#1020#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IRoom.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Room/IRoom.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
+            <state relative-caret-position="213">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,26 +91,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IUboat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/IUboat.java">
+      <file leaf-file-name="CompetitionScreen.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="256">
+              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Uboat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java">
+      <file leaf-file-name="Agent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Agent/src/Agent/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="171">
+              <caret line="79" column="54" lean-forward="false" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dictionary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Dictionary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="115" column="61" lean-forward="false" selection-start-line="115" selection-start-column="61" selection-end-line="115" selection-end-column="61" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1533418667535" expanded="true" signature="457:469" ph="..." />
+                <marker date="1533418667535" expanded="true" signature="470:826" ph="..." />
+                <marker date="1533418667535" expanded="true" signature="539:565" ph="..." />
+                <marker date="1533418667535" expanded="true" signature="539:632" ph="..." />
+                <marker date="1533418667535" expanded="true" signature="709:735" ph="..." />
+                <marker date="1533418667535" expanded="true" signature="709:803" ph="..." />
+                <marker date="1533418667535" expanded="true" signature="953:1059" ph="..." />
+                <marker date="1533418667535" expanded="true" signature="1497:1570" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessStringServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsoleUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="75" column="51" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProgramManger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProgramManager/src/ProgramManger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="214" column="55" lean-forward="false" selection-start-line="214" selection-start-column="55" selection-end-line="214" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rotor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Rotor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -184,43 +188,44 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mInput</find>
-      <find>alph</find>
-      <find>catch</find>
-      <find>getABC</find>
-      <find>age</find>
-      <find>f</find>
-      <find>showDe</find>
-      <find>new a</find>
-      <find>worksu</find>
-      <find>startA</find>
-      <find>missionsToCraateBeforeStartAgents</find>
-      <find>missionto</find>
-      <find>currentRotor</find>
-      <find>hand</find>
-      <find>math.max</find>
-      <find>max</find>
-      <find>new mi</find>
-      <find>missionToCreateBeforeStartAgents</find>
-      <find>QUE</find>
-      <find>menuCMD_b</find>
-      <find>lo</find>
-      <find>create</find>
-      <find>conne</find>
-      <find>//</find>
-      <find>Level</find>
-      <find>Secret</find>
-      <find>proc</find>
-      <find>proccessStr</find>
-      <find>addAl</find>
-      <find>gson</find>
+      <find>createAg</find>
+      <find>rotorsInUse</find>
+      <find>setmM</find>
+      <find>setSe</find>
+      <find>secret</find>
+      <find>selectinit</find>
+      <find>machineInstance</find>
+      <find>createMachineIns</find>
+      <find>alert</find>
+      <find>fromxml</find>
+      <find>double</find>
+      <find>invalidnot</find>
+      <find>InvalidReflectorMappingException</find>
+      <find>InvalidRotorsIdException</find>
+      <find>InvalidReflectorIdException</find>
+      <find>AlphabetIsOddException</find>
+      <find>InvalidRotorsCountException</find>
+      <find>InvalidAgentsNumberException</find>
+      <find>Doubl</find>
+      <find>get</find>
+      <find>data</find>
+      <find>initialSe</find>
+      <find>getSecretRotorsInUse</find>
+      <find>getRotorsPositionFromUser</find>
+      <find>validationError</find>
+      <find>Position</find>
+      <find>initialS</find>
+      <find>validateAndPro</find>
+      <find>SpecialCha</find>
+      <find>new reg</find>
     </findStrings>
     <replaceStrings>
       <replace>eApp</replace>
@@ -238,29 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ProgramManager/src/eAppState.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/InvalidAgentsNumberException.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Rotor.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java" />
-        <option value="$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/MenuItem.java" />
-        <option value="$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/BorderConsole.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Secret.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Dictionary.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/Agent/Agent.java" />
-        <option value="$PROJECT_DIR$/ProgramManager/src/ProgramManger.java" />
-        <option value="$PROJECT_DIR$/AgentDMParts/src/Dictionary.java" />
-        <option value="$PROJECT_DIR$/AgentDMParts/src/eDM_State.java" />
-        <option value="$PROJECT_DIR$/AgentDMParts/src/Secret.java" />
-        <option value="$PROJECT_DIR$/AgentDMParts/src/Mission.java" />
-        <option value="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Secret.java" />
-        <option value="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Dictionary.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/Logic.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/History/History.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Decipher.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/SecretGenerator.java" />
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/WorkSummery.java" />
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM_State.java" />
         <option value="$PROJECT_DIR$/Agent/src/Agent/SuccessString.java" />
         <option value="$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java" />
@@ -280,20 +262,49 @@
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/IUboat.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/ProcessStringReturnValue.java" />
-        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" />
         <option value="$PROJECT_DIR$/Server/web/index.html" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" />
-        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/IRoom.java" />
         <option value="$PROJECT_DIR$/appServer/src/Consts.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/Consts.java" />
-        <option value="$PROJECT_DIR$/appServer/src/Utils/Consts.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/SignInServlet.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Utils/Consts.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/LogoutServlet.java" />
+        <option value="$PROJECT_DIR$/LogicModule/src/Logic/Logic.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/UploadXMLServlet.java" />
+        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" />
+        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java" />
+        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" />
+        <option value="$PROJECT_DIR$/appServer/web/index.html" />
+        <option value="$PROJECT_DIR$/appServer/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/Response.java" />
+        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AgentInfo.java" />
+        <option value="$PROJECT_DIR$/appServer/web/scripts/index.js" />
+        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java" />
+        <option value="$PROJECT_DIR$/ProgramManager/src/ProgramManger.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/createRoom.js" />
+        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Dictionary.java" />
+        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Decipher.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/createRoom.js" />
+        <option value="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/createRoom.html" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -356,13 +367,45 @@
             <path>
               <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
               <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="appServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Servlets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
               <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="appServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="UboatServlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
+              <item name="appServer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
+              <item name="appServer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
+              <item name="appServer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="Uboat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
+              <item name="appServer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="Uboat" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -376,7 +419,7 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/gson-2.8.5.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
@@ -384,20 +427,22 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat\scripts" />
+      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat" />
+      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web" />
       <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic" />
       <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src" />
-      <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule" />
-      <recent name="C:\Users\user\IdeaProjects\Enigma\src\Logic\MachineXMLParsser" />
-      <recent name="C:\Users\user\IdeaProjects\Enigma" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic\MachineXMLParsser" />
@@ -531,6 +576,21 @@
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="55058" />
       </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -607,7 +667,7 @@
       <workItem from="1530174914496" duration="230000" />
       <workItem from="1532255372652" duration="3317000" />
       <workItem from="1533047092206" duration="17518000" />
-      <workItem from="1533233674650" duration="19492000" />
+      <workItem from="1533233674650" duration="64120000" />
     </task>
     <task id="LOCAL-00001" summary="hi">
       <created>1524053480790</created>
@@ -802,7 +862,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175877000" />
+    <option name="totallyTimeSpent" value="220505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -828,14 +888,14 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34569377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34569377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326555" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3241627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3241627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33971292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -899,109 +959,41 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java</url>
-          <line>28</line>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java</url>
+          <line>83</line>
           <properties />
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java</url>
-          <line>191</line>
+          <url>file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java</url>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="130" />
         </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ProgramManager/src/ProgramManger.java</url>
-          <line>281</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java</url>
-          <line>305</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/ProgramManager/src/ProgramManger.java</url>
-          <line>318</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java</url>
-          <line>125</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/Agent/Agent.java</url>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java</url>
           <line>38</line>
           <properties />
-          <option name="timeStamp" value="73" />
+          <option name="timeStamp" value="134" />
         </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/Agent/Agent.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java</url>
-          <line>129</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/Agent/Agent.java</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java</url>
-          <line>90</line>
-          <properties />
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java</url>
-          <line>203</line>
-          <properties />
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java</url>
-          <line>190</line>
-          <properties class="Logic.Dm.DM" method="calcMissionToCreateBeforeAgentsStart">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="105" />
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js</url>
+          <line>6</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="133" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="110" />
+      <option name="time" value="135" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1077,444 +1069,55 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>req.getParameterMap()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ServerLogic.getInstance(getServletContext()).rooms</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rooms</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ServerLogic.getInstance(getServletContext())</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>enigmaMachine.decipher</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>fileContent</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>enigmaMachine</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>enigmaMachine.getDecipher()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>enigmaMachine.machine</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/locks/AbstractOwnableSynchronizer.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/locks/ReentrantLock.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/src.zip!/java/lang/Object.java" />
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/ArrayBlockingQueue.java" />
-    <entry file="file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/MenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/BorderConsole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/ProgramManger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6409">
-          <caret line="392" column="20" lean-forward="false" selection-start-line="392" selection-start-column="20" selection-end-line="392" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/src.zip!/java/lang/Thread.java" />
-    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/eDM_State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/History/History.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Logic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1046">
-          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Decipher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#437#438#0" expanded="false" />
-            <element signature="e#465#466#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3744#3745#0" expanded="false" />
-            <element signature="e#3783#3784#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Secret.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/SecretGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1369">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/WorkSummery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-417">
-          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding>
-            <element signature="e#1724#1725#0" expanded="false" />
-            <element signature="e#1810#1811#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM_State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Mission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="e#468#469#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding>
-            <element signature="e#497#498#0" expanded="false" />
-            <element signature="e#525#526#0" expanded="false" />
-            <element signature="e#562#563#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#667#668#0" expanded="false" />
-            <element signature="e#720#721#0" expanded="false" />
-            <element signature="e#762#763#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/ServerSockets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1216#1217#0" expanded="false" />
-            <element signature="e#1246#1247#0" expanded="false" />
-            <element signature="e#1289#1290#0" expanded="false" />
-            <element signature="e#1318#1319#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Agent/src/Agent/Agent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#1129#1130#0" expanded="false" />
-            <element signature="e#1164#1165#0" expanded="false" />
-            <element signature="e#2830#2831#0" expanded="false" />
-            <element signature="e#2872#2873#0" expanded="false" />
-            <element signature="e#2916#2917#0" expanded="false" />
-            <element signature="e#2952#2953#0" expanded="false" />
-            <element signature="e#3000#3001#0" expanded="false" />
-            <element signature="e#3040#3041#0" expanded="false" />
-            <element signature="e#3112#3113#0" expanded="false" />
-            <element signature="e#3165#3166#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/SuccessString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#596#597#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Agent/src/Agent/ComManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/ComManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="82" column="30" lean-forward="false" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2247#2248#0" expanded="false" />
-            <element signature="e#2273#2274#0" expanded="false" />
-            <element signature="e#2581#2582#0" expanded="false" />
-            <element signature="e#2620#2621#0" expanded="false" />
-            <element signature="e#2684#2685#0" expanded="false" />
-            <element signature="e#2740#2741#0" expanded="false" />
-            <element signature="e#2780#2781#0" expanded="false" />
-            <element signature="e#2805#2806#0" expanded="false" />
-            <element signature="e#2852#2853#0" expanded="false" />
-            <element signature="e#2880#2881#0" expanded="false" />
-            <element signature="e#2930#2931#0" expanded="false" />
-            <element signature="e#2960#2961#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/UI_interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="99" column="22" lean-forward="false" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#calcWorkSize#0;class#DM#0" expanded="false" />
-            <element signature="method#createMachineInstance#0;class#DM#0" expanded="false" />
-            <element signature="e#7797#7798#0" expanded="false" />
-            <element signature="e#7829#7830#0" expanded="false" />
-            <element signature="e#8026#8027#0" expanded="false" />
-            <element signature="e#8057#8058#0" expanded="false" />
-            <element signature="e#8121#8122#0" expanded="false" />
-            <element signature="e#8161#8162#0" expanded="false" />
-            <element signature="method#setMissionSize#0;class#DM#0" expanded="false" />
-            <element signature="e#8460#8461#0" expanded="false" />
-            <element signature="e#8498#8499#0" expanded="false" />
-            <element signature="method#updateAgentCurrentMission#0;class#DM#0" expanded="false" />
-            <element signature="method#setKnown_RotorsIDs#0;class#DM#0" expanded="false" />
-            <element signature="e#8924#8925#0" expanded="false" />
-            <element signature="e#8975#8976#0" expanded="false" />
-            <element signature="method#setKnown_Reflector#0;class#DM#0" expanded="false" />
-            <element signature="e#9174#9175#0" expanded="false" />
-            <element signature="e#9226#9227#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/AgentInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Room/RoomState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/Update.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/IAlies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UiAlies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-            <element signature="e#406#407#0" expanded="false" />
-            <element signature="e#459#460#0" expanded="false" />
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#545#546#0" expanded="false" />
-            <element signature="e#578#579#0" expanded="false" />
-            <element signature="e#637#638#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#717#718#0" expanded="false" />
-            <element signature="e#749#750#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
-            <element signature="e#878#879#0" expanded="false" />
-            <element signature="e#911#912#0" expanded="false" />
-            <element signature="e#964#965#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="false" />
-            <element signature="e#1050#1051#0" expanded="false" />
-            <element signature="e#1079#1080#0" expanded="false" />
-            <element signature="e#1132#1133#0" expanded="false" />
-            <element signature="e#1168#1169#0" expanded="false" />
-            <element signature="e#1208#1209#0" expanded="false" />
-            <element signature="e#1238#1239#0" expanded="false" />
-            <element signature="e#1290#1291#0" expanded="false" />
-            <element signature="e#1328#1329#0" expanded="false" />
-            <element signature="e#1368#1369#0" expanded="false" />
-            <element signature="e#1404#1405#0" expanded="false" />
-            <element signature="e#1462#1463#0" expanded="false" />
-            <element signature="e#1512#1513#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/ProcessStringReturnValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <element signature="e#148#149#0" expanded="true" />
-            <element signature="e#176#177#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-            <element signature="e#253#254#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/IUboat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1544,19 +1147,7 @@
         <state relative-caret-position="290">
           <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3795#3796#0" expanded="true" />
-            <element signature="e#3869#3870#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1574,33 +1165,427 @@
         <state relative-caret-position="270">
           <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="false" />
+            <element signature="e#390#391#0" expanded="false" />
+            <element signature="e#433#434#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#499#500#0" expanded="false" />
+            <element signature="e#527#528#0" expanded="false" />
+            <element signature="e#568#569#0" expanded="false" />
+            <element signature="e#602#603#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/ePlayerType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/EnigmaMachine.jar!/pukteam/enigma/component/machine/api/EnigmaMachine.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/ProcessStringReturnValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Decipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="125" column="13" lean-forward="false" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3809#3810#0" expanded="false" />
+            <element signature="e#3877#3878#0" expanded="false" />
+            <element signature="e#4565#4566#0" expanded="false" />
+            <element signature="e#4600#4601#0" expanded="false" />
+            <element signature="e#4660#4661#0" expanded="false" />
+            <element signature="e#4708#4709#0" expanded="false" />
+            <element signature="e#4763#4764#0" expanded="false" />
+            <element signature="e#4804#4805#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/RotorInSecret.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Utils/Consts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+        <state relative-caret-position="225">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/SignInServlet.java">
+    <entry file="file://$PROJECT_DIR$/appServer/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        <state relative-caret-position="100">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/appServer.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/createRoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="62" lean-forward="true" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/SuccessString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/AgentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="40" column="29" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+          <folding>
+            <element signature="method#calcWorkSize#0;class#DM#0" expanded="false" />
+            <element signature="method#setMissionSize#0;class#DM#0" expanded="false" />
+            <element signature="method#updateAgentCurrentMission#0;class#DM#0" expanded="false" />
+            <element signature="method#setKnown_RotorsIDs#0;class#DM#0" expanded="false" />
+            <element signature="method#setKnown_Reflector#0;class#DM#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/לימודים/שנה ג/גאווה/12. JQuery Introduction/src/examples/jquery/FileUploadServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="135" column="24" lean-forward="false" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/לימודים/שנה ג/גאווה/apache-tomcat-8.5.23/apache-tomcat-8.5.23/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="40" column="175" lean-forward="false" selection-start-line="40" selection-start-column="175" selection-end-line="40" selection-end-column="175" />
+          <folding>
+            <marker date="1506587460000" expanded="false" signature="3:117" ph="/.../" />
+            <marker date="1506587460000" expanded="true" signature="1067:1090" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="1264:1287" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="1367:1390" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="1565:1588" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="1763:1786" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="1960:1983" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="2160:2183" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="2275:2298" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="2476:2499" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="2675:2698" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="2874:2897" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="3001:3024" ph="{}" />
+            <marker date="1506587460000" expanded="true" signature="3178:3201" ph="{}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Enigma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Machine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Mapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Battlefield.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Decipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/createRoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/createRoom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/scripts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="22" column="86" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/UI_interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="75" column="51" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/ProgramManger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="214" column="55" lean-forward="false" selection-start-line="214" selection-start-column="55" selection-end-line="214" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Rotor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Agent/src/Agent/Agent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="79" column="54" lean-forward="false" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Dictionary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="115" column="61" lean-forward="false" selection-start-line="115" selection-start-column="61" selection-end-line="115" selection-end-column="61" />
+          <folding>
+            <marker date="1533418667535" expanded="true" signature="457:469" ph="..." />
+            <marker date="1533418667535" expanded="true" signature="470:826" ph="..." />
+            <marker date="1533418667535" expanded="true" signature="539:565" ph="..." />
+            <marker date="1533418667535" expanded="true" signature="539:632" ph="..." />
+            <marker date="1533418667535" expanded="true" signature="709:735" ph="..." />
+            <marker date="1533418667535" expanded="true" signature="709:803" ph="..." />
+            <marker date="1533418667535" expanded="true" signature="953:1059" ph="..." />
+            <marker date="1533418667535" expanded="true" signature="1497:1570" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

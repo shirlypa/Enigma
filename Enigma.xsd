@@ -74,7 +74,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="AgentDMParts.Dictionary">
+	<xs:element name="Dictionary">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="Words" type="xs:string"/>
@@ -85,7 +85,7 @@
 	<xs:element name="Decipher">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="AgentDMParts.Dictionary"/>
+				<xs:element ref="Dictionary"/>
 			</xs:sequence>
 			<xs:attribute name="agents" type="xs:int" use="required"/>
 		</xs:complexType>

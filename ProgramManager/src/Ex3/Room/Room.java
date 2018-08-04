@@ -10,6 +10,7 @@ import Ex3.update.UboatUpdate;
 import Ex3.update.UiAlies;
 import Logic.Dm.eProccessLevel;
 import Logic.Logic;
+import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 
 import java.util.ArrayList;
@@ -18,10 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Room implements IRoom{
-    Battlefield b;
-    private String mbattleName;
-    private int mRoomMaxAlies;
-    private eProccessLevel mProccessLevel;
+    private Battlefield mBattlefield;
+    private MachineDescriptor mMachineDescriptor;
+
     private IUboat mUboat;
     private List<IAlies> mAliesList;
     private RoomState eRoomState = RoomState.BATTLEFIELD_LOADED;
@@ -120,7 +120,7 @@ public class Room implements IRoom{
 
     @Override
     public boolean isRoomFull() {
-        return mAliesList.size() == mRoomMaxAlies - 1; //-1 (uboat)
+        return mAliesList.size() == mBattlefield.getAllies();
     }
 
     @Override
@@ -148,5 +148,21 @@ public class Room implements IRoom{
             }
         }
         return null;
+    }
+
+    public Battlefield getBattlefield() {
+        return mBattlefield;
+    }
+
+    public void setBattlefield(Battlefield mBattlefield) {
+        this.mBattlefield = mBattlefield;
+    }
+
+    public MachineDescriptor getMachineDescriptor() {
+        return mMachineDescriptor;
+    }
+
+    public void setMachineDescriptor(MachineDescriptor mMachineDescriptor) {
+        this.mMachineDescriptor = mMachineDescriptor;
     }
 }

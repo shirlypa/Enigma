@@ -10,6 +10,9 @@ import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
 import Logic.MachineXMLParsser.MachineXMLParsser;
+import pukteam.enigma.component.machine.api.EnigmaMachine;
+import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
+import pukteam.enigma.factory.EnigmaComponentFactory;
 
 
 import java.util.HashMap;
@@ -21,7 +24,7 @@ public class MachineDescriptor {
     private String Alphabet;
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
-    private Logic.MachineDescriptor.MachineComponents.Decipher MachineDecipher;
+    private Decipher MachineDecipher;
 
     public MachineDescriptor(Enigma enigmaMachine) {
         AvaliableRotors = new HashMap<>();
@@ -50,6 +53,21 @@ public class MachineDescriptor {
            //     enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
 
     }
+
+    public EnigmaMachine createMachineInstance(){
+        EnigmaMachineBuilder machineBuilder = EnigmaComponentFactory.INSTANCE.buildMachine(RotorsInUseCount,Alphabet);
+        Map<Integer,Rotor> availableRotors = AvaliableRotors;
+        Map<Integer,Reflector> availableReflectors = AvaliableReflector;
+        for (Rotor r:availableRotors.values()) {
+            machineBuilder.defineRotor(r.getID(),r.getSource(),r.getDest(),r.getNotch());
+        }
+
+        for (Reflector r:availableReflectors.values()) {
+            machineBuilder.defineReflector(r.getID(),r.getSource(),r.getDest());
+        }
+        return machineBuilder.create();
+    }
+
     private byte[] getReflectorSource(List<Reflect> reflects,int alphabetSize){
         byte[] arr = new byte[alphabetSize / 2];
         int i=0;

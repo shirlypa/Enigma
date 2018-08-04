@@ -4,6 +4,7 @@ import AgentDMParts.Dictionary;
 import AgentDMParts.Secret;
 import Logic.Dm.eProccessLevel;
 import Logic.Logic;
+import Logic.MachineDescriptor.MachineDescriptor;
 
 public class Uboat implements IUboat {
     private Logic mLogic;
@@ -23,7 +24,10 @@ public class Uboat implements IUboat {
         res.setEncodedStr(mLogic.proccess(strToProcess));
         return res;
     }
-
+    public void setMachineDescriptor(MachineDescriptor machineDescriptor){
+        mLogic = new Logic();
+        mLogic.setmMachineDescriptor(machineDescriptor);
+    }
     public String getUser() {
         return mUser;
     }

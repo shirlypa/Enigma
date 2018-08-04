@@ -30,6 +30,11 @@ public class Logic {
         return mSecret;
     }
 
+    public void setmMachineDescriptor(MachineDescriptor mMachineDescriptor) {
+        this.mMachineDescriptor = mMachineDescriptor;
+        createMachine();
+    }
+
     private void createMachine() {
        EnigmaMachineBuilder machineBuilder = EnigmaComponentFactory.INSTANCE.buildMachine(mMachineDescriptor.getRotorsInUseCount(),mMachineDescriptor.getAlphabet());
        Map<Integer,Rotor> availableRotors = mMachineDescriptor.getAvaliableRotors();
