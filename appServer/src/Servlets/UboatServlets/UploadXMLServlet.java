@@ -32,7 +32,12 @@ public class UploadXMLServlet extends HttpServlet {
         resp.setContentType("application/json;charset=UTF-8");
         Collection<Part> parts = req.getParts();
 
-        String userName = null;
+        String userName = ServerLogic.getInstance(getServletContext()).getUsernameFromCookies(req.getCookies());
+        if (userName == null){
+            resp.getWriter().println(new Gson().toJson(new Response<String>(false,"no cookies :(")));
+            return;
+        }
+
         Cookie cookies [] = req.getCookies();
         if (cookies != null) {
             for (Cookie c : cookies) {
@@ -51,10 +56,6 @@ public class UploadXMLServlet extends HttpServlet {
 
 
         MachineDescriptor machineDescriptor = null;
-        Battlefield battlefield = new Battlefield();
-        battlefield.setAllies(2);
-        battlefield.setBattleName("battlefield");
-        battlefield.setLevel("Easy");
         List<String> validErrors = new ArrayList<>();
         try {
             machineDescriptor = MachineXMLParsser.parseMachineFromXMLContent(fileContent.toString());
@@ -80,7 +81,7 @@ public class UploadXMLServlet extends HttpServlet {
             return;
         }
         //TODO check xml validation.
-        ServerLogic.getInstance(getServletContext()).setUboatXml(userName,machineDescriptor,battlefield);
+        ServerLogic.getInstance(getServletContext()).setUboatXml(userName,machineDescriptor);
         resp.getWriter().print(new Gson().toJson(new Response<String>(true,null)));
     }
     private String readFromInputStream(InputStream inputStream) {

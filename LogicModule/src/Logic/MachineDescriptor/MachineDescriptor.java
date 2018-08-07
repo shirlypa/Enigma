@@ -6,6 +6,7 @@ import Logic.MachineDescriptor.MachineComponents.Rotor;
 import AgentDMParts.Dictionary;
 
 //import Logic.MachineXMLParsser.Generated.Enigma;
+import Logic.MachineXMLParsser.Generated.Battlefield;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
@@ -25,11 +26,13 @@ public class MachineDescriptor {
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
     private Decipher MachineDecipher;
+    private Battlefield Battlefield;
 
     public MachineDescriptor(Enigma enigmaMachine) {
         AvaliableRotors = new HashMap<>();
         AvaliableReflector = new HashMap<>();
 
+        this.Battlefield = enigmaMachine.getBattlefield();
         this.RotorsInUseCount=enigmaMachine.getMachine().getRotorsCount();
         this.Alphabet = enigmaMachine.getMachine().getABC().trim();
         for (Logic.MachineXMLParsser.Generated.Rotor r: enigmaMachine.getMachine().getRotors().getRotor()) {
@@ -139,5 +142,9 @@ public class MachineDescriptor {
 
     public int getMaxAgents() {
         return this.MachineDecipher.getAgents();
+    }
+
+    public Logic.MachineXMLParsser.Generated.Battlefield getBattlefield() {
+        return Battlefield;
     }
 }

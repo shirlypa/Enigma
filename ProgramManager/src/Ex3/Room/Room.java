@@ -4,11 +4,9 @@ import AgentDMParts.Secret;
 import Ex3.Alies.Alies;
 import Ex3.Alies.IAlies;
 import Ex3.Uboat.IUboat;
-import Ex3.Uboat.ProcessStringReturnValue;
 import Ex3.update.AliesUpdate;
 import Ex3.update.UboatUpdate;
 import Ex3.update.UiAlies;
-import Logic.Dm.eProccessLevel;
 import Logic.Logic;
 import Logic.MachineDescriptor.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Battlefield;
@@ -25,18 +23,23 @@ public class Room implements IRoom{
     private IUboat mUboat;
     private List<IAlies> mAliesList;
     private RoomState eRoomState = RoomState.BATTLEFIELD_LOADED;
-    private Logic mLogic;
-    private String mStringToProcess;
+    private String mEncodedString;
     private String mSourceString;
     private List<String> winners = new ArrayList<>();
 
-    public ProcessStringReturnValue processString(Secret secret, String str){
-        ProcessStringReturnValue res = mUboat.processString(secret,str);
-        if (res.isValid()){
-            mStringToProcess = res.getEncodedStr();
-            mSourceString = str;
+
+    public void checkWinner(Map<String,List<String>> strings){
+        for (Map.Entry<String,List<String>> stringListEntry : strings.entrySet()){
+            List<String> stringList = stringListEntry.getValue();
+            for (String str : stringList) {
+                if (str.equals(mSourceString)) {
+                    synchronized (this) {
+                        eRoomState = RoomState.GAME_OVER;
+                        winners.add(stringListEntry.getKey());
+                    }
+                }
+            }
         }
-        return res;
     }
 
     @Override
@@ -56,7 +59,7 @@ public class Room implements IRoom{
         resUpdate.setGameState(eRoomState);
 
         if (!eRoomState.equals(RoomState.BATTLEFIELD_LOADED)){
-            resUpdate.setStrToProccess(mStringToProcess);
+            resUpdate.setStrToProccess(mEncodedString);
         }
         if (winners.size() != 0) {
             resUpdate.setWinners(winners);
@@ -164,5 +167,17 @@ public class Room implements IRoom{
 
     public void setMachineDescriptor(MachineDescriptor mMachineDescriptor) {
         this.mMachineDescriptor = mMachineDescriptor;
+    }
+
+    public RoomState geteRoomState() {
+        return eRoomState;
+    }
+
+    public void seteRoomState(RoomState eRoomState) {
+        this.eRoomState = eRoomState;
+    }
+
+    public List<String> getWinners() {
+        return winners;
     }
 }

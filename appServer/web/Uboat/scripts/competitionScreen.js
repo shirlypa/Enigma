@@ -2,9 +2,10 @@ let machineDescriptor;
 const rotors = [];
 const rotorsPosition = [];
 let reflector = null;
+let randomSecret = false;
 
 $(document).ready(() => {
-    $.get(`/MachineDescriptor?roomName=battlefield`,(data, status) => {
+    $.get(`/MachineDescriptor`,(data, status) => {
         machineDescriptor = data;
         console.log(data);
         const availableRotorCouns = Object.keys(data.AvaliableRotors).length;
@@ -27,6 +28,8 @@ $(document).ready(() => {
         `)
     })
     $('#btnProcessStr').click(validateAndProcessStr)
+
+    $('#btnRandom').click(() => randomSecret = true)
 })
 
 const selectRotor = (pos, value) => {
@@ -76,7 +79,15 @@ const showValidationError = (errMsg) => {
     $('#errList').append(errMsg);
 }
 
-function validation(validStr, txtToProcess) {
+function validation(txtToProcess) {
+    let validStr = ""
+    if (!txtToProcess) {
+        validStr += '<li>You must enter string to process</li>'
+    }
+    if (!isFromDictionary(txtToProcess)) {
+        validStr += '<li>You must enter words from dictionary</li>'
+    }
+    if (randomSecret) return validStr;
     if (new Set(rotors).size !== rotors.length) {
         validStr += '<li>you cant choose a rotor twice</li>';
     }
@@ -89,32 +100,44 @@ function validation(validStr, txtToProcess) {
     if (!reflector) {
         validStr += '<li>You must select reflector</li>'
     }
-    if (!txtToProcess) {
-        validStr += '<li>You must enter string to process</li>'
-    }
-    if (!isFromDictionary(txtToProcess)) {
-        validStr += '<li>You must enter words from dictionary</li>'
-    }
     return validStr;
 }
 
 const validateAndProcessStr = () => {
     const txtToProcess = $('#txtToProcess').val().trim().toLowerCase();
 
-    let validStr = "";
     $('#validationError').hide();
     $('#errList').empty();
 
-    validStr = validation(validStr, txtToProcess);
+    const validStr = validation(txtToProcess);
 
     if (validStr) return showValidationError(validStr);
 
+    $('#beforeString').text(txtToProcess.toUpperCase());
+    $('#secretFormContainer').fadeOut();
+    const data = {str: txtToProcess};
+    if (randomSecret){
+        data.random = "RANDOM";
+        data.secret = null;
+    } else {
+        data.random = "";
+        data.secret = createSecretJson();
+    }
     $.ajax({
         type: 'POST',
         url: '/ProcessString',
-        data: {secret: createSecretJson(), str: txtToProcess},
-        success: data => alert('sucess' + JSON.stringify(data)),
+        data,
+        success: data => {
+            $('#afterString').text(data.payload)
+            pullUpdate()
+        },
         error: err => alert(JSON.stringify(err)),
+    })
+}
+
+const pullUpdate = () => {
+    $.get('/UboatUpdate',data => {
+        console.log(data);
     })
 }
 
@@ -140,11 +163,19 @@ const createSecretJson = () => {
     for (let i = 0; i < machineDescriptor.RotorsInUseCount; i++){
         RotorsInUse.push({
             RotorId: rotors[i],
-            Position: rotorsPosition[i],
+            Position: {
+                PositionAsChar: rotorsPosition[i].toLowerCase(),
+                PositionAsInt: 0,
+                IsLetter: false,
+            }
         })
     }
     return JSON.stringify({
         RotorsInUse,
         ReflectorId: reflector,
     });
+}
+
+const renderAlieses = (alieses) => {
+
 }

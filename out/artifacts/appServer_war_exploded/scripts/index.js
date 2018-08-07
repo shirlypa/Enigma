@@ -23,7 +23,7 @@ $(document).ready(() => {
         $.get(`/login?userName=${userName}&userType=${playerType}`,(data, status) => {
             if (status === "success" && data > 0){
                 if (playerType === UBOAT){
-                    location.href = `/Uboat/createRoom.html?userName=${userName}`;
+                    location.href = `/Uboat/createRoom.html`;
                 } else {
                     const nextPage = "abc";
                     location.href = `/${nextPage}?port=${data}`;

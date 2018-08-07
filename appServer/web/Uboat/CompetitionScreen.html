@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="secretFormContainer">
+        <div><button id="btnRandom">Click To Random Secret</button></div>
         <div id="rotorsContainer">
         </div>
         <div id="reflectorContainer">
@@ -15,11 +16,19 @@
         </div>
         <input id="txtToProcess" type="text" placeholder="Text to process"/>
         <button id="btnProcessStr">Process</button>
+
     </div>
     <div style="color: red" id="validationError">
         <ul id="errList">
 
         </ul>
+    </div>
+    <div id="BeforeAfterEncodeingContainer">
+        <div>Plain Text: <span id="beforeString"></span></div>
+        <div>Encrypted Text: <span id="afterString"></span></div>
+    </div>
+    <div id="aliesesContainer">
+
     </div>
 </body>
 </html>

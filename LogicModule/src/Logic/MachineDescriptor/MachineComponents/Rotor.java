@@ -32,7 +32,7 @@ public class Rotor {
     }
 
     public boolean fillNumberWhileValidCharacter(Position position){
-        int positionIndex1Base = Dest.indexOf(position.getPositionAsChar()) + 1;
+        int positionIndex1Base = Dest.toLowerCase().indexOf(Character.toLowerCase(position.getPositionAsChar())) + 1;
         if (positionIndex1Base < 1)
             return false;
         position.setPositionAsInt(positionIndex1Base);

@@ -1,28 +1,23 @@
 package Ex3.Uboat;
 
-import AgentDMParts.Dictionary;
 import AgentDMParts.Secret;
-import Logic.Dm.eProccessLevel;
 import Logic.Logic;
 import Logic.MachineDescriptor.MachineDescriptor;
 
 public class Uboat implements IUboat {
     private Logic mLogic;
     private String mUser;
+    private String mSourceString;
+    private String mRoomName;
     private boolean ready;
 
-    public ProcessStringReturnValue processString(Secret secret, String strToProcess){
-        ProcessStringReturnValue res = new ProcessStringReturnValue();
-        Dictionary dictionary = mLogic.getDictionary();
-        if (!dictionary.isTextValid(strToProcess)){
-           res.setValid(false);
-           return res;
+    public String processString(Secret secret, String strToProcess,boolean random){
+        if (random){
+            mLogic.createRandomSecret();
+        } else {
+            mLogic.setSecret(secret);
         }
-
-        res.setValid(true);
-        mLogic.setSecret(secret);
-        res.setEncodedStr(mLogic.proccess(strToProcess));
-        return res;
+        return mLogic.proccess(strToProcess);
     }
     public void setMachineDescriptor(MachineDescriptor machineDescriptor){
         mLogic = new Logic();
@@ -42,5 +37,13 @@ public class Uboat implements IUboat {
 
     public void setReady(boolean ready) {
         this.ready = ready;
+    }
+
+    public String getmRoomName() {
+        return mRoomName;
+    }
+
+    public void setmRoomName(String mRoomName) {
+        this.mRoomName = mRoomName;
     }
 }

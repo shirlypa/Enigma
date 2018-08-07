@@ -9,7 +9,7 @@ $(document).ready(()=>{
             data: params,
             success: data => {
                 if (!data.success) return showError(data.payload);
-                alert('success!');
+                location.href = `/Uboat/CompetitionScreen.html`;
             },
             error: function(err) {
                 console.log("Failed to load the file");
