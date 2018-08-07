@@ -4,35 +4,28 @@ package Logic.Dm;
 import AgentDMParts.Data;
 import AgentDMParts.Mission;
 import AgentDMParts.SuccessString;
-//import common.*;
-//import machine.machineLogic.EnigmaMachine;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class ComManager extends Thread {
-    // private BlockingQueue<ResultMission> resultsQueue;
     private BlockingQueue<SuccessString> validStringQueue;
-
+    private BlockingQueue<Mission> missionTodo;
     private Socket finalAgentSocket;
     private ObjectInputStream in;
     private ObjectOutputStream out;
+    private final int K_QUEUE_SIZE = 100;
 
 
-    public ComManager(int id, Socket finalAgentSocket) {
+
+    public ComManager(Socket finalAgentSocket,BlockingQueue<Mission> missionTodo) {
         this.finalAgentSocket = finalAgentSocket;
-        //this.resultsQueue = new LinkedBlockingQueue<>();
-        //this.missions = new ArrayList<>();
-        //agentId = id;
-        //permissionToSendMissions = new Boolean(false);
+        this.validStringQueue = new ArrayBlockingQueue<SuccessString>(K_QUEUE_SIZE);
+        this.missionTodo = missionTodo;
 
         try {
             in = new ObjectInputStream((finalAgentSocket.getInputStream()));
@@ -51,6 +44,9 @@ public class ComManager extends Thread {
                 Data<?> msg = (Data) in.readObject();
                 switch (msg.getmDataType()) {
                     // TODO check which kind of data!!
+                    case MISSION_TODO:
+                        sendMsg(new Data(this.missionTodo.take(), Data.eDataType.MISSION_TODO));
+                        break;
                     case SUCCESS_STRING:
                         SuccessString successString = (SuccessString) msg.getmData();
                         this.validStringQueue.add(successString);
@@ -69,6 +65,8 @@ public class ComManager extends Thread {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
@@ -78,13 +76,20 @@ public class ComManager extends Thread {
     }
 
     //TODO
-    //public void sendMissions(Message<LinkedList<Mission>> msg) throws IOException {
-    //    missions = msg.getParametersToFunction();
-    //    synchronized (out) {
-    //        out.writeObject(msg);
-    //        out.flush();
-    //    }
-    //}
+    public void sendMissions(Data<Mission> msg) throws IOException {
+        synchronized (out) {
+            out.writeObject(msg);
+            out.flush();
+        }
+    }
+
+    public void startAgent() throws IOException {
+        Data<String> msg = new Data<>("start", Data.eDataType.START_AGENT);
+        synchronized (out) {
+            out.writeObject(msg);
+            out.flush();
+        }
+    }
 
 
     public Socket getFinalAgentSocket() {
@@ -105,6 +110,14 @@ public class ComManager extends Thread {
 
     public void setOut(ObjectOutputStream out) {
         this.out = out;
+    }
+
+    public void sendMsg(Data msgToSend) throws IOException {
+        //Data<Object> msgToSend = new Data<>(msg, type);
+        synchronized (out) {
+            out.writeObject(msgToSend);
+            out.flush();
+        }
     }
 
 }

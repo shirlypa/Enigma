@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Decipher")
 public class Decipher {
 
-    @XmlElement(name = "AgentDMParts.Dictionary", required = true)
+    @XmlElement(name = "Dictionary", required = true)
     protected Dictionary dictionary;
     @XmlAttribute(name = "agents", required = true)
     protected int agents;

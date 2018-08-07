@@ -3,9 +3,9 @@ package ConsoleUI;
 import Logic.Dm.WorkSummery;
 import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
-import Logic.MachineDescriptor.MachineComponents.Position;
+import AgentDMParts.MachineComponents.Position;
 import AgentDMParts.Secret;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 
 
 import java.util.List;

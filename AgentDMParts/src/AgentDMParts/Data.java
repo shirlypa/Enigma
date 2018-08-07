@@ -11,7 +11,9 @@ public class Data<T extends Serializable> implements Serializable {
         MACHINE,
         SOURCE,
         ALPHABET,
-        MISSION_TODO
+        MISSION_TODO,
+        START_AGENT,
+        INTERRUPT
     }
 
     private T mData;

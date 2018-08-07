@@ -2,17 +2,15 @@ package Logic.Dm;
 
 //import Agent.Agent;
 //import AgentDMParts.SuccessString;
-import AgentDMParts.Mission;
-import AgentDMParts.SuccessString;
-import AgentDMParts.eDM_State;
-import Logic.MachineDescriptor.MachineComponents.Reflector;
-import Logic.MachineDescriptor.MachineComponents.Rotor;
-import AgentDMParts.Secret;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.*;
+import AgentDMParts.MachineComponents.Reflector;
+import AgentDMParts.MachineComponents.Rotor;
+import AgentDMParts.MachineDescriptor;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
 import pukteam.enigma.factory.EnigmaComponentFactory;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -48,6 +46,8 @@ public class DM extends Thread implements Runnable {
     private MissionsProducerThread missionProd;
     private long missionsNumber;
     private long workTime;
+    private ServerSockets serverSockets;
+    private int port;
 
     public DM(String txtToDecipher, hasUItoShowMissions programManager, eProccessLevel processLevel, int agentNumber, MachineDescriptor machineDescriptor){
         this.txtToDecipher = txtToDecipher;
@@ -60,11 +60,18 @@ public class DM extends Thread implements Runnable {
         this.validStringList = new ArrayList<>();
         this.agentCurrentMissionMap = new HashMap<>();
         this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount(), machineDescriptor.getAlphabet());
+        this.port = port;
         mWorkSize = calcWorkSize();
       //  agentList = new ArrayList<>();
 
         toDoMissionsQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
         validStringQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
+
+        serverSockets = new ServerSockets(0,toDoMissionsQueue);
+        port = serverSockets.getPort();
+        serverSockets.start();
+        //TODO just for debbugging
+        System.out.println(port);
     }
 
     private long calcWorkSize() {
@@ -90,18 +97,39 @@ public class DM extends Thread implements Runnable {
 
         startWorkInstant = Instant.now();
         calcMissionToCreateBeforeAgentsStart();
-        //createAgentsList();
-        missionProd = new MissionsProducerThread(this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor, mWorkSize);
+        boolean first = true;
+        try {
+            while(serverSockets.getAgents().size() <2){
+                if(first) {
+                    System.out.println("need to run agent!");
+                    first=false;
+                }
+            }
+            System.out.println("2 Agent connected");
+            createAgentsList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        missionProd = new MissionsProducerThread(serverSockets.getAgents(),this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor, mWorkSize);
         missionProd.setSecretGenerator(secretGenerator);
 
         //missionProd.setAgentList(agentList);
         missionProd.setName("MissionProducer-Thread");
         missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
         missionProd.start();
+        try {
+            startAgents();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //Start listening to accomplishedMissions
         while (!missionProd.getFinish()|| missionsNumber > accomplishedMissions){
             if (this.isInterrupted()){
-                handleInterrupt();
+                try {
+                    handleInterrupt();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
             SuccessString successString = validStringQueue.poll();
             if (successString != null) {
@@ -118,16 +146,30 @@ public class DM extends Thread implements Runnable {
                 try {
                     this.wait();
                 } catch (InterruptedException e1) {
-                    handleInterrupt();
+                    try {
+                        handleInterrupt();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
         }
-      //  interruptAllAgents();
+        try {
+            interruptAllAgents();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
 
-    private void handleInterrupt() {
-    //    interruptAllAgents();
+    private void startAgents() throws IOException {
+        for (ComManager agent:serverSockets.getAgents())
+        {
+            agent.startAgent();
+        }
+    }
+    private void handleInterrupt() throws IOException {
+        interruptAllAgents();
         if (this.getDm_state().equals(eDM_State.DONE)){
             return;
         }
@@ -144,14 +186,14 @@ public class DM extends Thread implements Runnable {
     }
 
     //DOTO how to interupt!!
-    //private void interruptAllAgents() {
-      //  for (Agent agent : agentList) {
-        //    agent.interrupt();
-       // }
-        //if (missionProd.getState().equals(State.RUNNABLE)) {
-         //   missionProd.interrupt();
-        //}
-    //}
+    private void interruptAllAgents() throws IOException {
+        for (ComManager agent : serverSockets.getAgents()) {
+            agent.sendMsg(new Data("", Data.eDataType.INTERRUPT));
+        }
+        if (missionProd.getState().equals(State.RUNNABLE)) {
+            missionProd.interrupt();
+        }
+    }
 
     public WorkSummery createWorkSummery() {
         long timeFromStart;
@@ -163,15 +205,23 @@ public class DM extends Thread implements Runnable {
         return new WorkSummery(accomplishedMissions,missionsNumber,agentCurrentMissionMap,validStringList,timeFromStart);
     }
 
-    //TODO dont know what to do with the Agents
-    //private void createAgentsList() {
-      //  for (int i = 0; i < agentNumber; i++) {
-      //      Agent newAgent = new Agent(toDoMissionsQueue,validStringQueue,createMachineInstance(),txtToDecipher,machineDescriptor.getDictionary(),
-       //             machineDescriptor.getAlphabet(),i+1,this);
-        //    newAgent.setName("Agent-" + (i+1) + "-Thread");
-         //   agentList.add(newAgent);
-       // }
-    //}
+    private void createAgentsList() throws IOException {
+        for (ComManager agent : serverSockets.getAgents()) {
+
+            //TODO pass the MACHINE AND THE QUEUE?
+            agent.sendMsg(new Data(machineDescriptor,Data.eDataType.MACHINE));
+            System.out.println("Send Machine");
+            agent.sendMsg(new Data(txtToDecipher, Data.eDataType.SOURCE));
+            System.out.println("Send SourceString");
+            agent.sendMsg(new Data(machineDescriptor.getAlphabet(), Data.eDataType.ALPHABET));
+            System.out.println("Send Alphabet");
+            agent.sendMsg(new Data(machineDescriptor.getDictionary(), Data.eDataType.DICTIONERY));
+            System.out.println("Send Dictionery");
+
+            //newAgent.setName("Agent-" + (i+1) + "-Thread");
+            //agentList.add(newAgent);
+        }
+    }
 
     private EnigmaMachine createMachineInstance() {
         EnigmaMachineBuilder machineBuilder = EnigmaComponentFactory.INSTANCE.buildMachine(machineDescriptor.getRotorsInUseCount(),machineDescriptor.getAlphabet());

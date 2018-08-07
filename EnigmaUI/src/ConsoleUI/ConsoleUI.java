@@ -4,10 +4,10 @@ import AgentDMParts.SuccessString;
 import Logic.Dm.WorkSummery;
 import Logic.Dm.eProccessLevel;
 import Logic.History.ProcessString;
-import Logic.MachineDescriptor.MachineComponents.Position;
-import Logic.MachineDescriptor.MachineComponents.Rotor;
+import AgentDMParts.MachineComponents.Position;
+import AgentDMParts.MachineComponents.Rotor;
 import AgentDMParts.Secret;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 
 import java.util.*;
 

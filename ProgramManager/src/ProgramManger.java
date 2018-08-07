@@ -5,8 +5,8 @@ import AgentDMParts.Secret;
 import AgentDMParts.eDM_State;
 import ConsoleUI.MenuItem;
 import Logic.Dm.*;
-import Logic.MachineDescriptor.MachineComponents.*;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineComponents.*;
+import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
 import Logic.Logic;
 

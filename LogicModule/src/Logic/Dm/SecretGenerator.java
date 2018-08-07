@@ -1,8 +1,8 @@
 package Logic.Dm;
 
 import AgentDMParts.Secret;
-import Logic.MachineDescriptor.MachineComponents.Position;
-import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
+import AgentDMParts.MachineComponents.Position;
+import AgentDMParts.MachineComponents.RotorInSecret;
 
 import java.util.ArrayList;
 import java.util.List;

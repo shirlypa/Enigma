@@ -2,8 +2,8 @@ package Logic;
 
 import Logic.History.History;
 import Logic.History.ProcessString;
-import Logic.MachineDescriptor.MachineComponents.*;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineComponents.*;
+import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;

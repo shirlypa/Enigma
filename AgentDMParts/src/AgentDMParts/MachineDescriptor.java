@@ -1,28 +1,26 @@
-package Logic.MachineDescriptor;
-
-import Logic.MachineDescriptor.MachineComponents.Decipher;
-import Logic.MachineDescriptor.MachineComponents.Reflector;
-import Logic.MachineDescriptor.MachineComponents.Rotor;
-import AgentDMParts.Dictionary;
+package AgentDMParts;
 
 //import Logic.MachineXMLParsser.Generated.Enigma;
+
+import AgentDMParts.MachineComponents.Decipher;
+import AgentDMParts.MachineComponents.Reflector;
+import AgentDMParts.MachineComponents.Rotor;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
 import Logic.MachineXMLParsser.MachineXMLParsser;
-
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MachineDescriptor implements Serializable {
+public class MachineDescriptor implements Serializable{
     private int RotorsInUseCount;
     private String Alphabet;
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
-    private Logic.MachineDescriptor.MachineComponents.Decipher MachineDecipher;
+    private Decipher MachineDecipher;
 
     public MachineDescriptor(Enigma enigmaMachine) {
         AvaliableRotors = new HashMap<>();
@@ -45,9 +43,9 @@ public class MachineDescriptor implements Serializable {
 
         Dictionary dic = new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars());
-        MachineDecipher = new Logic.MachineDescriptor.MachineComponents.Decipher(enigmaMachine.getDecipher().getAgents(),dic);
+        MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),dic);
         MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
-                new AgentDMParts.Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
+                new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
 
     }

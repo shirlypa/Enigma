@@ -2,7 +2,9 @@ package AgentDMParts;//package Logic.Dm;
 
 //import Logic.MachineDescriptor.MachineComponents.AgentDMParts.Secret;
 
-public class Mission {
+import java.io.Serializable;
+
+public class Mission implements Serializable {
     private int missionID;
     private Secret initialSecret;
     private int missionSize;
