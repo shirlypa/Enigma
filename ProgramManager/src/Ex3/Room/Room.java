@@ -42,57 +42,7 @@ public class Room implements IRoom{
         }
     }
 
-    @Override
-    public AliesUpdate getAliesUpdate(String userName) {
-        IAlies reqAlies = findAlies(userName);
-        AliesUpdate resUpdate = new AliesUpdate();
 
-        resUpdate.setAgents(reqAlies.getAgentsInfo());
-
-        List<UiAlies> userList = new ArrayList<>(mAliesList.size());
-        for (IAlies alies : mAliesList) {
-            if (!alies.getUser().equals(userName)){
-                userList.add(new UiAlies(alies.getUser(),alies.getAgentNumber(),alies.isReady()));
-            }
-        }
-        resUpdate.setOtherAlies(userList);
-        resUpdate.setGameState(eRoomState);
-
-        if (!eRoomState.equals(RoomState.BATTLEFIELD_LOADED)){
-            resUpdate.setStrToProccess(mEncodedString);
-        }
-        if (winners.size() != 0) {
-            resUpdate.setWinners(winners);
-            //TODO stop the dm and the agents
-        }
-        return resUpdate;
-    }
-
-    @Override
-    public UboatUpdate getUboatUpdate() {
-        UboatUpdate resUpdate = new UboatUpdate();
-
-        Map<String, List<String>> successedStr = new HashMap<>();
-        List<UiAlies> resAliesList = new ArrayList<>();
-        for (IAlies alies : mAliesList){
-            String userName = alies.getUser();
-            resAliesList.add(new UiAlies(userName,alies.getAgentNumber(),alies.isReady()));
-            List<String> aliesStrings = alies.getSuccessStrings();
-            successedStr.put(userName,aliesStrings);
-            if (checkForWinner(aliesStrings)){
-                winners.add(userName);
-                eRoomState = RoomState.GAME_OVER;
-            }
-        }
-        resUpdate.setAliesList(resAliesList);
-        resUpdate.setSuccessedStrings(successedStr);
-
-        resUpdate.setGameState(eRoomState);
-        if (winners.size() != 0){
-            resUpdate.setWinners(winners);
-        }
-        return resUpdate;
-    }
 
     private boolean checkForWinner(List<String> successedStr) {
         for (String str : successedStr){
@@ -126,23 +76,9 @@ public class Room implements IRoom{
         return mAliesList.size() == mBattlefield.getAllies();
     }
 
-    @Override
-    public int addAlies(String userName) {
-        Alies alies = new Alies();
-        alies.setUser(userName);
-        //return alies.getPortForAgentsToConnect();
-        return 0;
-    }
 
-    @Override
-    public void setReady(String userName) {
-        if (mUboat.getUser().equals(userName)){
-            mUboat.setReady(true);
-        } else {
-            findAlies(userName).setReady(true);
-        }
 
-    }
+
 
     private IAlies findAlies(String userName){
         for(IAlies agent: mAliesList){
@@ -181,5 +117,17 @@ public class Room implements IRoom{
 
     public List<String> getWinners() {
         return winners;
+    }
+
+    public String getmEncodedString() {
+        return mEncodedString;
+    }
+
+    public void setmEncodedString(String mEncodedString) {
+        this.mEncodedString = mEncodedString;
+    }
+
+    public void setmSourceString(String mSourceString) {
+        this.mSourceString = mSourceString;
     }
 }

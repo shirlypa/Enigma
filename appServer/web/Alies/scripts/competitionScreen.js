@@ -14,6 +14,7 @@ $(document).ready(() => {
             success: () => {
                 alert('done');
                 pullUpdate()
+                setInterval(pullUpdate,5000);
             },
             error: err => console.log(JSON.stringify(err)),
         })
@@ -23,4 +24,11 @@ $(document).ready(() => {
 const showValidationError = (errMsg) => {
     $('#validationError').show();
     $('#errList').append(errMsg);
+}
+
+const pullUpdate = () => {
+    $.get('/AliesUpdate',data => {
+        console.log(data);
+        $('#update').text(JSON.stringify(data));
+    })
 }

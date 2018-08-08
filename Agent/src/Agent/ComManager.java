@@ -123,7 +123,8 @@ public class ComManager {
                 agent.interrupt();
                 break;
             case CLOSE:
-                killAgent();
+                agent.printMsg((String)currentMsg.getmData());
+                //killAgent();
                 logout = true;
                 sendMessage(new Data("", Data.eDataType.CLOSE));
                 return true;

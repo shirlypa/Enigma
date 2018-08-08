@@ -1,11 +1,13 @@
 package Ex3.Alies;
 
+import AgentDMParts.SuccessString;
 import Ex3.update.AgentInfo;
 import Logic.Dm.DM;
 import Logic.Dm.eProccessLevel;
 import Logic.Logic;
 import org.omg.SendingContext.RunTime;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Alies {
@@ -25,23 +27,15 @@ public class Alies {
     public Map<String,List<String>> getSuccessedList(){
         //TODO
         Map<String,List<String>> res = new HashMap<>();
-        List<String> strings = new ArrayList<>();
-        strings.add("abc");
-        strings.add("def");
-        strings.add("edffdsd");
-        res.put(mUser,strings);
+        res.put(mUser,mDm.getValidStringList());
         return res;
-    }
-    public int getAgentsNumber(){
-        return new Random().nextInt(7);
     }
 
     public List<AgentInfo> getAgentsInfo(){
         //TODO
         List<AgentInfo> agentInfoList = new ArrayList<>();
-        int agentNumber = new Random().nextInt(4);
-        for (int i = 0; i < agentNumber; i++) {
-            agentInfoList.add(new AgentInfo(new Random().nextInt(6)));
+        for (int i:mDm.getAgentInfo()) {
+            agentInfoList.add(new AgentInfo(i));
         }
         return agentInfoList;
     }
@@ -71,15 +65,24 @@ public class Alies {
     }
 
     public int getPort() {
-        //TODO
-        return 0;
+        return this.port;
     }
 
-    public void startProcess() {
+    public void startProcess() throws IOException {
         //TODO
+        mDm.startAgents();
+    }
+
+    public void stopProccess(boolean isWinner) throws IOException {
+        mDm.stopAgents(isWinner);
     }
 
     public void setMissionSize(int missionSize) {
         //TODO
+        mDm.setMissionSize(missionSize);
+    }
+
+    public int getAgentsNumber() {
+        return getAgentsInfo().size();
     }
 }

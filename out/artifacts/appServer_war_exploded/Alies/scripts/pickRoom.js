@@ -1,4 +1,8 @@
 $(document).ready(() => {
+    $.get('/AliesPort',port => {
+        $('#port').text(port);
+    })
+
     $.get("/AvailableRooms",data => {
         data.rooms.forEach(room => {
             $('#roomsContainer').append(`

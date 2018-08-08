@@ -129,6 +129,7 @@ const validateAndProcessStr = () => {
         success: data => {
             $('#afterString').text(data.payload)
             pullUpdate()
+            setInterval(pullUpdate,5000);
         },
         error: err => alert(JSON.stringify(err)),
     })
@@ -136,7 +137,7 @@ const validateAndProcessStr = () => {
 
 const pullUpdate = () => {
     $.get('/UboatUpdate',data => {
-        console.log(data);
+        $('#aliesesContainer').text(JSON.stringify(data));
     })
 }
 

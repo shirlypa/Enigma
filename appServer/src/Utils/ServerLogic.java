@@ -6,15 +6,14 @@ import Ex3.Room.Room;
 import Ex3.Room.RoomState;
 import Ex3.Room.UIRoom;
 import Ex3.Uboat.Uboat;
-import Ex3.update.AgentInfo;
-import Ex3.update.UboatUpdate;
-import Ex3.update.UiAlies;
-import Ex3.update.ePlayerType;
+import Ex3.update.*;
 import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Battlefield;
+import sun.swing.UIAction;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
+import java.io.IOException;
 import java.util.*;
 
 public class ServerLogic {
@@ -38,12 +37,16 @@ public class ServerLogic {
         }
         return sInstance;
     }
-    public String processUboatString(String uboatName, Secret secret, String strToProcess, boolean random){
+    public String processUboatString(String uboatName, Secret secret, String strToProcess, boolean random) throws IOException {
         Uboat uboat = uboats.get(uboatName);
-        rooms.get(uboat.getmRoomName()).seteRoomState(RoomState.GOT_STRING_TO_PROCESS);
+        Room room = rooms.get(uboat.getmRoomName());
+        room.seteRoomState(RoomState.GOT_STRING_TO_PROCESS);
+        room.setmSourceString(strToProcess);
         uboat.setReady(true);
         checkAllPlayersReady(uboat.getmRoomName());
-        return uboat.processString(secret,strToProcess, random);
+        String encoded = uboat.processString(secret,strToProcess, random);
+        room.setmEncodedString(encoded);
+        return encoded;
     }
 
     public String getUsernameFromCookies(Cookie[] cookies){
@@ -117,9 +120,11 @@ public class ServerLogic {
     public Uboat getUboat(String userName){
         return uboats.get(userName);
     }
+
     public Alies getAlies(String userName){
         return alieses.get(userName);
     }
+
     public UboatUpdate getUboatUpdate(String userName){
         UboatUpdate resUpdate = new UboatUpdate();
         List<UiAlies> uiAlieses = new ArrayList<>();
@@ -129,7 +134,7 @@ public class ServerLogic {
         List<Alies> aliesList = findAllAliesInRoom(roomName);
         Map<String,List<String>> successStrList = new HashMap<>();
         for (Alies alies : aliesList){
-            UiAlies uiAlies = new UiAlies(userName,alies.getAgentsNumber(),alies.isReady());
+            UiAlies uiAlies = new UiAlies(alies.getUser(),alies.getAgentsNumber(),alies.isReady());
             successStrList.putAll(alies.getSuccessedList());
             uiAlieses.add(uiAlies);
         }
@@ -163,7 +168,7 @@ public class ServerLogic {
         return null;
     }
 
-    private void checkAllPlayersReady(String roomName){
+    private void checkAllPlayersReady(String roomName) {
         List<Alies> aliesInRoom = findAllAliesInRoom(roomName);
         Room room = rooms.get(roomName);
         if (aliesInRoom.size() < room.getBattlefield().getAllies()) return;
@@ -175,7 +180,11 @@ public class ServerLogic {
         if (!allReady) return;
 
         for (Alies alies : aliesInRoom){
-            alies.startProcess();
+            try {
+                alies.startProcess();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         room.seteRoomState(RoomState.RUNNING);
     }
@@ -220,6 +229,41 @@ public class ServerLogic {
     }
 
     public void setAliesMissionSize(String userName,int missionSize) {
-        alieses.get(userName).setMissionSize(missionSize);
+        synchronized (this) {
+            Alies alies = alieses.get(userName);
+            alies.setMissionSize(missionSize);
+            alies.setReady(true);
+            checkAllPlayersReady(alies.getRoomName());
+        }
+    }
+
+    public AliesUpdate getAliesUpdate(String userName) {
+        AliesUpdate aliesUpdate = new AliesUpdate();
+        Alies alies = alieses.get(userName);
+        Uboat uboat = findUboatByRoomName(alies.getRoomName());
+        Room room = rooms.get(alies.getRoomName());
+
+        List<UiAlies> otherAllies = new ArrayList<>();
+        List<Alies> alliesInRoom = findAllAliesInRoom(alies.getRoomName());
+        alliesInRoom.remove(alies);
+        for(Alies otherUser : alliesInRoom){
+            UiAlies uiAlies = new UiAlies(otherUser.getUser(),otherUser.getAgentsNumber(),otherUser.isReady());
+            otherAllies.add(uiAlies);
+        }
+        aliesUpdate.setOtherAlies(otherAllies);
+        aliesUpdate.setAgents(alies.getAgentsInfo());
+        aliesUpdate.setStrToProccess(room.getmEncodedString());
+        aliesUpdate.setUboatName(uboat.getUser());
+        aliesUpdate.setUboatReady(uboat.isReady());
+        RoomState roomState = room.geteRoomState();
+        aliesUpdate.setGameState(roomState);
+        if (roomState.equals(RoomState.GAME_OVER)){
+            aliesUpdate.setWinners(room.getWinners());
+        }
+        return aliesUpdate;
+    }
+
+    public boolean isRoomNameExist(String roomName) {
+        return rooms.get(roomName) != null;
     }
 }

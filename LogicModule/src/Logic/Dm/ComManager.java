@@ -19,6 +19,7 @@ public class ComManager extends Thread {
     private ObjectInputStream in;
     private ObjectOutputStream out;
     private final int K_QUEUE_SIZE = 100;
+    private int succsesStrings;
 
 
 
@@ -26,6 +27,7 @@ public class ComManager extends Thread {
         this.finalAgentSocket = finalAgentSocket;
         this.validStringQueue = new ArrayBlockingQueue<SuccessString>(K_QUEUE_SIZE);
         this.missionTodo = missionTodo;
+        this.succsesStrings = 0;
 
         try {
             in = new ObjectInputStream((finalAgentSocket.getInputStream()));
@@ -43,13 +45,13 @@ public class ComManager extends Thread {
             while (!finish) {
                 Data<?> msg = (Data) in.readObject();
                 switch (msg.getmDataType()) {
-                    // TODO check which kind of data!!
                     case MISSION_TODO:
                         sendMsg(new Data(this.missionTodo.take(), Data.eDataType.MISSION_TODO));
                         break;
                     case SUCCESS_STRING:
                         SuccessString successString = (SuccessString) msg.getmData();
                         this.validStringQueue.add(successString);
+                        this.succsesStrings++;
                         break;
                     case CLOSE:
                         finish = true;
@@ -57,8 +59,6 @@ public class ComManager extends Thread {
                         in.close();
                         finalAgentSocket.close();
                         break;
-
-
                 }
             }
         } catch (IOException e) {
@@ -120,4 +120,7 @@ public class ComManager extends Thread {
         }
     }
 
+    public int getSuccsesString() {
+        return this.succsesStrings;
+    }
 }

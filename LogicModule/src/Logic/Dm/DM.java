@@ -78,6 +78,8 @@ public class DM extends Thread implements Runnable {
         serverSockets = new ServerSockets(0,toDoMissionsQueue);
         port = serverSockets.getPort();
         serverSockets.start();
+        this.validStringList = new ArrayList<>();
+
     }
 
     public int getPort(){return this.port;}
@@ -170,10 +172,10 @@ public class DM extends Thread implements Runnable {
 
     }
 
-    private void startAgents() throws IOException {
+    public void startAgents() throws IOException {
         for (ComManager agent:serverSockets.getAgents())
         {
-            agent.startAgent();
+            agent.sendMsg(new Data("start", Data.eDataType.START_AGENT));
         }
     }
     private void handleInterrupt() throws IOException {
@@ -299,4 +301,35 @@ public class DM extends Thread implements Runnable {
     }
 
     public int gerQueueSize(){return K_QUEUE_SIZE;}
+
+    public void stopAgents(boolean isWinner) throws IOException {
+        String msg;
+        if (isWinner){
+            msg = "We Won";
+        }
+        else {
+            msg = "We Lost";
+        }
+        for (ComManager agent:serverSockets.getAgents())
+        {
+            agent.sendMsg(new Data(msg, Data.eDataType.CLOSE));
+        }
+    }
+
+    public List<Integer> getAgentInfo() {
+        List<Integer> AgentInfo = new ArrayList<>();
+        for (ComManager agent:serverSockets.getAgents())
+        {
+            AgentInfo.add(agent.getSuccsesString());
+        }
+        return AgentInfo;
+    }
+
+    public List<String> getValidStringList() {
+        List<String> res = new ArrayList<>();
+        for (SuccessString successString : validStringList){
+            res.add(successString.getSucessString());
+        }
+        return res;
+    }
 }
