@@ -206,8 +206,7 @@ public class ServerLogic {
     }
 
     public int getAliesPort(String userName) {
-        return new Random().nextInt();
-        //return alieses.get(userName).getPort();
+        return alieses.get(userName).getPort();
     }
 
     public boolean linkAlliesToRoom(String userName, String roomName) {

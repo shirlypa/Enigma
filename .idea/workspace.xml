@@ -7,120 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9cb4e15-e242-481a-869d-237ac1370a1f" name="Default" comment="Merge branch 'master' of https://github.com/shirlypa/Enigma&#10;&#10;# Conflicts:&#10;#&#9;LogicModule/src/Logic/Dm/DM.java">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Agent/src/Agent/AgentMain.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Machine.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineComponents/Decipher.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineComponents/Position.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineComponents/Reflector.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineComponents/Rotor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineComponents/RotorInSecret.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineDescriptor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.jms.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.persistence.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.resource.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/AgentMain.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Machine.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineComponents/Decipher.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineComponents/Position.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineComponents/Reflector.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineComponents/Rotor.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineComponents/RotorInSecret.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineDescriptor.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/AgentMain.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Machine.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineComponents/Decipher.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineComponents/Position.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineComponents/Reflector.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineComponents/Rotor.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineComponents/RotorInSecret.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineDescriptor.class" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/Agent/Agent.java" afterPath="$PROJECT_DIR$/Agent/src/Agent/Agent.java" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/Agent/ComManager.java" afterPath="$PROJECT_DIR$/Agent/src/Agent/ComManager.java" />
-      <change beforePath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Data.java" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Data.java" />
-      <change beforePath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Dictionary.java" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Dictionary.java" />
-      <change beforePath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Mission.java" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Mission.java" />
-      <change beforePath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Secret.java" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/Secret.java" />
-      <change beforePath="$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java" afterPath="$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/ConsoleUI.java" />
-      <change beforePath="$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/UI_interface.java" afterPath="$PROJECT_DIR$/EnigmaUI/src/ConsoleUI/UI_interface.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ComManager.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ComManager.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/SecretGenerator.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/SecretGenerator.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ServerSockets.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ServerSockets.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Logic.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Logic.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineDescriptor.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/MachineXMLParsser.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/ProgramManger.java" afterPath="$PROJECT_DIR$/ProgramManager/src/ProgramManger.java" />
-      <change beforePath="$PROJECT_DIR$/appServer/appServer.iml" afterPath="$PROJECT_DIR$/appServer/appServer.iml" />
-      <change beforePath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java" />
-      <change beforePath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java" />
       <change beforePath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" afterPath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/ProgramManger.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/ProgramManger.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/Agent.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/Agent.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/ComManager$1.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/ComManager$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/ComManager.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/ComManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Data$eDataType.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Data$eDataType.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Data.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Data.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Dictionary.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Dictionary.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Mission.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Mission.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Secret.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/Secret.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/ConsoleUI/ConsoleUI.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/ConsoleUI/ConsoleUI.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/ConsoleUI/UI_interface.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/ConsoleUI/UI_interface.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/ComManager$1.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/ComManager$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/ComManager.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/ComManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/DM.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/DM.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/MissionsProducerThread.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/MissionsProducerThread.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/SecretGenerator.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/SecretGenerator.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/ServerSockets.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/ServerSockets.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Logic.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Logic.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineDescriptor/MachineDescriptor.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineDescriptor/MachineDescriptor.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/MachineXMLParsser.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/MachineXMLParsser/MachineXMLParsser.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/ProgramManger.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/ProgramManger.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/MachineDescriptorServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/MachineDescriptorServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/UploadXMLServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/UploadXMLServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager$1.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Data$eDataType.class" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Data$eDataType.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Data.class" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Data.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Dictionary.class" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Dictionary.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Mission.class" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Mission.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Secret.class" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/Secret.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EnigmaUI/ConsoleUI/ConsoleUI.class" afterPath="$PROJECT_DIR$/out/production/EnigmaUI/ConsoleUI/ConsoleUI.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/EnigmaUI/ConsoleUI/UI_interface.class" afterPath="$PROJECT_DIR$/out/production/EnigmaUI/ConsoleUI/UI_interface.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ComManager$1.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ComManager$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ComManager.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ComManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/MissionsProducerThread.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/MissionsProducerThread.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/SecretGenerator.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/SecretGenerator.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ServerSockets.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/ServerSockets.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Logic.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Logic.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineDescriptor/MachineDescriptor.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineDescriptor/MachineDescriptor.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/MachineXMLParsser.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/MachineXMLParsser/MachineXMLParsser.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/ProgramManger.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/ProgramManger.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/MachineDescriptorServlet.class" afterPath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/MachineDescriptorServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/UploadXMLServlet.class" afterPath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/UploadXMLServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,10 +23,12 @@
       <file leaf-file-name="ServerLogic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="217" column="33" lean-forward="true" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+            <state relative-caret-position="170">
+              <caret line="208" column="8" lean-forward="false" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#7260#7261#0" expanded="true" />
+                <element signature="e#7314#7315#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -686,7 +576,7 @@
       <workItem from="1533646932054" duration="203000" />
       <workItem from="1533670541685" duration="9530000" />
       <workItem from="1533719354856" duration="169000" />
-      <workItem from="1533743866030" duration="2095000" />
+      <workItem from="1533743866030" duration="2432000" />
     </task>
     <task id="LOCAL-00001" summary="hi">
       <created>1524053480790</created>
@@ -881,7 +771,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248200000" />
+    <option name="totallyTimeSpent" value="248537000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -992,7 +882,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java</url>
-          <line>223</line>
+          <line>222</line>
           <properties />
           <option name="timeStamp" value="172" />
         </line-breakpoint>
@@ -1515,10 +1405,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="217" column="33" lean-forward="true" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+        <state relative-caret-position="170">
+          <caret line="208" column="8" lean-forward="false" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7260#7261#0" expanded="true" />
+            <element signature="e#7314#7315#0" expanded="true" />
           </folding>
         </state>
       </provider>
