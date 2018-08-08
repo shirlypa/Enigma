@@ -40,9 +40,8 @@ public class Alies {
     public List<AgentInfo> getAgentsInfo(){
         //TODO
         List<AgentInfo> agentInfoList = new ArrayList<>();
-        int agentNumber = new Random().nextInt(4);
-        for (int i = 0; i < agentNumber; i++) {
-            agentInfoList.add(new AgentInfo(new Random().nextInt(6)));
+        for (int i:mDm.getAgentInfo()) {
+            agentInfoList.add(new AgentInfo(i));
         }
         return agentInfoList;
     }
@@ -80,12 +79,13 @@ public class Alies {
         mDm.startAgents();
     }
 
-    public void stopProccess(){
-        mDm.stopAgents();
+    public void stopProccess(boolean isWinner) throws IOException {
+        mDm.stopAgents(isWinner);
     }
 
     public void setMissionSize(int missionSize) {
         //TODO
         mDm.setMissionSize(missionSize);
     }
+
 }

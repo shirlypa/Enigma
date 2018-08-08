@@ -300,7 +300,26 @@ public class DM extends Thread implements Runnable {
 
     public int gerQueueSize(){return K_QUEUE_SIZE;}
 
-    public void stopAgents() {
+    public void stopAgents(boolean isWinner) throws IOException {
+        String msg;
+        if (isWinner){
+            msg = "We Won";
+        }
+        else {
+            msg = "We Lost";
+        }
+        for (ComManager agent:serverSockets.getAgents())
+        {
+            agent.sendMsg(new Data(msg, Data.eDataType.CLOSE));
+        }
+    }
 
+    public List<Integer> getAgentInfo() {
+        List<Integer> AgentInfo = new ArrayList<>();
+        for (ComManager agent:serverSockets.getAgents())
+        {
+            AgentInfo.add(agent.getSuccsesString());
+        }
+        return AgentInfo;
     }
 }

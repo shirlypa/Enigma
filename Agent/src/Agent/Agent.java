@@ -132,4 +132,8 @@ public class  Agent extends Thread implements Runnable {
     public void setMissionQueue(BlockingQueue<Mission> missionQueue) {
         this.toDoMissionsQueue = missionQueue;
     }
+
+    public void printMsg(String msg) {
+        System.out.println(msg);
+    }
 }
