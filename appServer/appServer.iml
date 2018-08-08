@@ -32,5 +32,6 @@
     </orderEntry>
     <orderEntry type="library" name="gson-2.8.5" level="project" />
     <orderEntry type="module" module-name="LogicModule" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
   </component>
 </module>

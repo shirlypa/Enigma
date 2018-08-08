@@ -73,6 +73,14 @@ public class DM extends Thread implements Runnable {
         //TODO just for debbugging
         System.out.println(port);
     }
+    public DM()
+    {
+        serverSockets = new ServerSockets(0,toDoMissionsQueue);
+        port = serverSockets.getPort();
+        serverSockets.start();
+    }
+
+    public int getPort(){return this.port;}
 
     private long calcWorkSize() {
         long result = (long)pow(machineDescriptor.getAlphabet().length(),machineDescriptor.getRotorsInUseCount());

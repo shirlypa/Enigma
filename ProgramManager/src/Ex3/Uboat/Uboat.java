@@ -2,7 +2,7 @@ package Ex3.Uboat;
 
 import AgentDMParts.Secret;
 import Logic.Logic;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 
 public class Uboat implements IUboat {
     private Logic mLogic;
@@ -36,7 +36,9 @@ public class Uboat implements IUboat {
     }
 
     public void setReady(boolean ready) {
-        this.ready = ready;
+        synchronized (this) {
+            this.ready = ready;
+        }
     }
 
     public String getmRoomName() {

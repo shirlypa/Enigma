@@ -4,6 +4,7 @@ import Ex3.update.AgentInfo;
 import Logic.Dm.DM;
 import Logic.Dm.eProccessLevel;
 import Logic.Logic;
+import org.omg.SendingContext.RunTime;
 
 import java.util.*;
 
@@ -15,6 +16,11 @@ public class Alies {
     private eProccessLevel proccessLevel;
     private String roomName;
     private int port;
+
+    public Alies() {
+        mDm = new DM();
+        this.port = mDm.getPort();
+    }
 
     public Map<String,List<String>> getSuccessedList(){
         //TODO
@@ -62,5 +68,18 @@ public class Alies {
 
     public void setRoomName(String roomName) {
         this.roomName = roomName;
+    }
+
+    public int getPort() {
+        //TODO
+        return 0;
+    }
+
+    public void startProcess() {
+        //TODO
+    }
+
+    public void setMissionSize(int missionSize) {
+        //TODO
     }
 }

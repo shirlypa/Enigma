@@ -1,7 +1,7 @@
 package Servlets.UboatServlets;
 
 import Ex3.Room.Room;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 import Utils.ServerLogic;
 import com.google.gson.Gson;
 

@@ -22,19 +22,6 @@ import java.util.List;
 @WebServlet(name = "ProcessStringServlet" ,urlPatterns = "/ProcessString")
 public class ProcessStringServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("application/json;charset=UTF-8");
-        List<RotorInSecret> rotorInSecrets = new ArrayList<>();
-        Position pos = new Position();
-        pos.setPositionAsChar('a');
-        rotorInSecrets.add(new RotorInSecret(3,pos));
-        rotorInSecrets.add(new RotorInSecret(1,pos));
-        rotorInSecrets.add(new RotorInSecret(2,pos));
-        Secret secret = new Secret(rotorInSecrets,2);
-        resp.getWriter().print(new Gson().toJson(secret));
-    }
-
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json;charset=UTF-8");
         ServerLogic serverLogic = ServerLogic.getInstance(getServletContext());

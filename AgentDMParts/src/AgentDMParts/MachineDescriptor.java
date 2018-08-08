@@ -5,6 +5,7 @@ package AgentDMParts;
 import AgentDMParts.MachineComponents.Decipher;
 import AgentDMParts.MachineComponents.Reflector;
 import AgentDMParts.MachineComponents.Rotor;
+import Logic.MachineXMLParsser.Generated.Battlefield;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
@@ -21,6 +22,7 @@ public class MachineDescriptor implements Serializable{
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
     private Decipher MachineDecipher;
+    private Battlefield Battlefield;
 
     public MachineDescriptor(Enigma enigmaMachine) {
         AvaliableRotors = new HashMap<>();
@@ -47,6 +49,7 @@ public class MachineDescriptor implements Serializable{
         MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
                 new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
+        Battlefield = enigmaMachine.getBattlefield();
 
     }
     private byte[] getReflectorSource(List<Reflect> reflects,int alphabetSize){
@@ -121,4 +124,8 @@ public class MachineDescriptor implements Serializable{
     public int getMaxAgents() {
         return this.MachineDecipher.getAgents();
     }
+    public Logic.MachineXMLParsser.Generated.Battlefield getBattlefield() {
+        return Battlefield;
+    }
+
 }
