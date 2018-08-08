@@ -78,6 +78,12 @@ public class DM extends Thread implements Runnable {
         serverSockets = new ServerSockets(0,toDoMissionsQueue);
         port = serverSockets.getPort();
         serverSockets.start();
+        this.validStringList = new ArrayList<>();
+
+    }
+
+    public void setTxtToDecipher(String text) {
+        txtToDecipher = text;
     }
 
     public int getPort(){return this.port;}
@@ -321,5 +327,17 @@ public class DM extends Thread implements Runnable {
             AgentInfo.add(agent.getSuccsesString());
         }
         return AgentInfo;
+    }
+
+    public List<String> getValidStringList() {
+        List<String> res = new ArrayList<>();
+        for (SuccessString successString : validStringList){
+            res.add(successString.getSucessString());
+        }
+        return res;
+    }
+
+    public void setProcessLevel(eProccessLevel proccessLevel) {
+        this.processLevel=proccessLevel;
     }
 }

@@ -1,5 +1,6 @@
 package Ex3.Alies;
 
+import AgentDMParts.SuccessString;
 import Ex3.update.AgentInfo;
 import Logic.Dm.DM;
 import Logic.Dm.eProccessLevel;
@@ -16,6 +17,7 @@ public class Alies {
     private boolean mReady;
     private eProccessLevel proccessLevel;
     private String roomName;
+    private String encodedString;
     private int port;
 
     public Alies() {
@@ -26,15 +28,8 @@ public class Alies {
     public Map<String,List<String>> getSuccessedList(){
         //TODO
         Map<String,List<String>> res = new HashMap<>();
-        List<String> strings = new ArrayList<>();
-        strings.add("abc");
-        strings.add("def");
-        strings.add("edffdsd");
-        res.put(mUser,strings);
+        res.put(mUser,mDm.getValidStringList());
         return res;
-    }
-    public int getAgentsNumber(){
-        return new Random().nextInt(7);
     }
 
     public List<AgentInfo> getAgentsInfo(){
@@ -76,6 +71,8 @@ public class Alies {
 
     public void startProcess() throws IOException {
         //TODO
+        mDm.setTxtToDecipher(encodedString);
+        mDm.setProcessLevel(this.proccessLevel);
         mDm.startAgents();
     }
 
@@ -88,4 +85,7 @@ public class Alies {
         mDm.setMissionSize(missionSize);
     }
 
+    public int getAgentsNumber() {
+        return getAgentsInfo().size();
+    }
 }

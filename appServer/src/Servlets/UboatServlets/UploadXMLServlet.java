@@ -76,6 +76,10 @@ public class UploadXMLServlet extends HttpServlet {
         } catch (InvalidAgentsNumberException e) {
             //
         }
+        String roomName = machineDescriptor.getBattlefield().getBattleName();
+        if (ServerLogic.getInstance(getServletContext()).isRoomNameExist(roomName)){
+            validErrors.add("The battle name already exist");
+        }
         if (validErrors.size() > 0){
             resp.getWriter().print(new Gson().toJson(new Response<List<String>>(false,validErrors)));
             return;

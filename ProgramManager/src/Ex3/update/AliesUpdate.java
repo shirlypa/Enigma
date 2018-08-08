@@ -9,9 +9,9 @@ public class AliesUpdate {
     private List<UiAlies> otherAlies;
     private String uboatName;
     private boolean uboatReady;
-    private List<AgentInfo> agents;
     private List<String> winners;
     private String strToProccess;
+    private List<AgentInfo> agents;
 
     public RoomState getGameState() {
         return gameState;
@@ -45,14 +45,6 @@ public class AliesUpdate {
         this.uboatReady = uboatReady;
     }
 
-    public List<AgentInfo> getAgents() {
-        return agents;
-    }
-
-    public void setAgents(List<AgentInfo> agents) {
-        this.agents = agents;
-    }
-
     public List<String> getWinners() {
         return winners;
     }
@@ -67,5 +59,9 @@ public class AliesUpdate {
 
     public void setStrToProccess(String strToProccess) {
         this.strToProccess = strToProccess;
+    }
+
+    public void setAgents(List<AgentInfo> agents) {
+        this.agents = agents;
     }
 }
