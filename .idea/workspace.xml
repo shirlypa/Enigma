@@ -6,46 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9cb4e15-e242-481a-869d-237ac1370a1f" name="Default" comment="Merge branch 'master' of https://github.com/shirlypa/Enigma&#10;&#10;# Conflicts:&#10;#&#9;LogicModule/src/Logic/Dm/DM.java">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/UIRoom.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/AvailableRoomsServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/EnterRoomServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/SetMissionSizeServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Utils/AvailableRoomWithPort.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Alies/PickRoom.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/web/Alies/scripts/pickRoom.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" />
-      <change beforePath="$PROJECT_DIR$/appServer/src/Servlets/LoginServlet.java" afterPath="$PROJECT_DIR$/appServer/src/Servlets/LoginServlet.java" />
-      <change beforePath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java" />
-      <change beforePath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" afterPath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
-      <change beforePath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
-      <change beforePath="$PROJECT_DIR$/appServer/web/scripts/index.js" afterPath="$PROJECT_DIR$/appServer/web/scripts/index.js" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/scripts/competitionScreen.js" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/LoginServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/ProcessStringServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/ProcessStringServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic$1.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/scripts/index.js" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/scripts/index.js" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/out/production/appServer/Servlets/LoginServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/ProcessStringServlet.class" afterPath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/ProcessStringServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic$1.class" afterPath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" />
-    </list>
+    <list default="true" id="f9cb4e15-e242-481a-869d-237ac1370a1f" name="Default" comment="Merge branch 'master' of https://github.com/shirlypa/Enigma&#10;&#10;# Conflicts:&#10;#&#9;LogicModule/src/Logic/Dm/DM.java" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -622,7 +583,7 @@
       <workItem from="1533580934649" duration="5587000" />
       <workItem from="1533646932054" duration="203000" />
       <workItem from="1533670541685" duration="9530000" />
-      <workItem from="1533719354856" duration="115000" />
+      <workItem from="1533719354856" duration="169000" />
     </task>
     <task id="LOCAL-00001" summary="hi">
       <created>1524053480790</created>
@@ -817,7 +778,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246051000" />
+    <option name="totallyTimeSpent" value="246105000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -830,7 +791,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -843,7 +803,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3241627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33971292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33971292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19985358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
