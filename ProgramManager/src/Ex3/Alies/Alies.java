@@ -16,6 +16,7 @@ public class Alies {
     private String mUser;
     private boolean mReady;
     private eProccessLevel proccessLevel;
+    private String encodedString;
     private String roomName;
     private int port;
 
@@ -84,5 +85,13 @@ public class Alies {
 
     public int getAgentsNumber() {
         return getAgentsInfo().size();
+    }
+
+    public void setEncodedString(String encodedString) {
+        this.encodedString = encodedString;
+    }
+
+    public void setProccessLevel(eProccessLevel proccessLevel) {
+        this.proccessLevel = proccessLevel;
     }
 }

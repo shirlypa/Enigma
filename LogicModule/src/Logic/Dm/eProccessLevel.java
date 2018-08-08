@@ -19,4 +19,19 @@ public enum eProccessLevel {
         }
         throw new IllegalArgumentException("Proccess Level not exist");
     }
+
+    public static eProccessLevel fromString(String str){
+        switch (str){
+            case "Easy":
+                return eProccessLevel.EASY;
+            case "Medium":
+                return eProccessLevel.MEDIUM;
+            case "Hard":
+                return eProccessLevel.HARD;
+            case "Insane":
+                return eProccessLevel.IMPOSSIBLE;
+            default:
+                return null;
+        }
+    }
 }

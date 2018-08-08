@@ -113,7 +113,7 @@ const validateAndProcessStr = () => {
     if (validStr) return showValidationError(validStr);
 
     $('#beforeString').text(txtToProcess.toUpperCase());
-    $('#secretFormContainer').fadeOut();
+    $('#secretFormContainer').hide();
     const data = {str: txtToProcess};
     if (randomSecret){
         data.random = "RANDOM";
@@ -129,6 +129,8 @@ const validateAndProcessStr = () => {
         success: data => {
             $('#afterString').text(data.payload)
             pullUpdate()
+            $('#candidateStrings').fadeIn();
+            $('#BeforeAfterEncodeingContainer').fadeIn();
             setInterval(pullUpdate,5000);
         },
         error: err => alert(JSON.stringify(err)),
@@ -137,7 +139,15 @@ const validateAndProcessStr = () => {
 
 const pullUpdate = () => {
     $.get('/UboatUpdate',data => {
-        $('#aliesesContainer').text(JSON.stringify(data));
+        $('#aliesesContainer').empty();
+        $('#successStringContainer').empty();
+        data.aliesList.forEach(alies => {
+            $('#aliesesContainer').append(renderAlies(alies));
+        })
+        Object.keys(data.successedStrings).forEach(aliesName => {
+                $('#successStringContainer').append(renderAgents(aliesName,data.successedStrings[aliesName]))
+            }
+        )
     })
 }
 
@@ -176,6 +186,21 @@ const createSecretJson = () => {
     });
 }
 
-const renderAlieses = (alieses) => {
+const renderAlies = (alies) => (
+    `
+        <div class="ally-container">
+            <b>${alies.name}</b><br/>
+            <span>Ready: ${alies.ready ? "Yes": "No"}</span><br/>
+            <span>Agents: ${alies.agentNumber}</span>
+        </div>
+    `
+)
 
-}
+const renderAgents = (aliesName, strings) => (
+    `
+    <div>
+        <b>${aliesName}</b><br/>   
+        ${strings.map((string) => (string + "</br>"))}
+    </div>
+    `
+)
