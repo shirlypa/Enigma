@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/EnigmaUI/EnigmaUI.iml" filepath="$PROJECT_DIR$/EnigmaUI/EnigmaUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/LogicModule/LogicModule.iml" filepath="$PROJECT_DIR$/LogicModule/LogicModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProgramManager/ProgramManager.iml" filepath="$PROJECT_DIR$/ProgramManager/ProgramManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appServer/appServer.iml" filepath="$PROJECT_DIR$/appServer/appServer.iml" />
     </modules>
   </component>
 </project>

@@ -6,10 +6,14 @@ import Logic.MachineDescriptor.MachineComponents.Rotor;
 import AgentDMParts.Dictionary;
 
 //import Logic.MachineXMLParsser.Generated.Enigma;
+import Logic.MachineXMLParsser.Generated.Battlefield;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
 import Logic.MachineXMLParsser.MachineXMLParsser;
+import pukteam.enigma.component.machine.api.EnigmaMachine;
+import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
+import pukteam.enigma.factory.EnigmaComponentFactory;
 
 
 import java.io.Serializable;
@@ -22,12 +26,14 @@ public class MachineDescriptor implements Serializable {
     private String Alphabet;
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
-    private Logic.MachineDescriptor.MachineComponents.Decipher MachineDecipher;
+    private Decipher MachineDecipher;
+    private Battlefield Battlefield;
 
     public MachineDescriptor(Enigma enigmaMachine) {
         AvaliableRotors = new HashMap<>();
         AvaliableReflector = new HashMap<>();
 
+        this.Battlefield = enigmaMachine.getBattlefield();
         this.RotorsInUseCount=enigmaMachine.getMachine().getRotorsCount();
         this.Alphabet = enigmaMachine.getMachine().getABC().trim();
         for (Logic.MachineXMLParsser.Generated.Rotor r: enigmaMachine.getMachine().getRotors().getRotor()) {
@@ -51,6 +57,21 @@ public class MachineDescriptor implements Serializable {
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
 
     }
+
+    public EnigmaMachine createMachineInstance(){
+        EnigmaMachineBuilder machineBuilder = EnigmaComponentFactory.INSTANCE.buildMachine(RotorsInUseCount,Alphabet);
+        Map<Integer,Rotor> availableRotors = AvaliableRotors;
+        Map<Integer,Reflector> availableReflectors = AvaliableReflector;
+        for (Rotor r:availableRotors.values()) {
+            machineBuilder.defineRotor(r.getID(),r.getSource(),r.getDest(),r.getNotch());
+        }
+
+        for (Reflector r:availableReflectors.values()) {
+            machineBuilder.defineReflector(r.getID(),r.getSource(),r.getDest());
+        }
+        return machineBuilder.create();
+    }
+
     private byte[] getReflectorSource(List<Reflect> reflects,int alphabetSize){
         byte[] arr = new byte[alphabetSize / 2];
         int i=0;
@@ -122,5 +143,9 @@ public class MachineDescriptor implements Serializable {
 
     public int getMaxAgents() {
         return this.MachineDecipher.getAgents();
+    }
+
+    public Logic.MachineXMLParsser.Generated.Battlefield getBattlefield() {
+        return Battlefield;
     }
 }

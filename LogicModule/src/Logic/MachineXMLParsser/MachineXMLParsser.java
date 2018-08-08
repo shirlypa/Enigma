@@ -2,7 +2,9 @@ package Logic.MachineXMLParsser;
 
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
-import AgentDMParts.MachineDescriptor;
+import Logic.MachineDescriptor.MachineDescriptor;
+import Logic.MachineXMLParsser.Generated.Battlefield;
+//import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;
@@ -21,6 +23,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.util.*;
 //import Logic.MachineXMLParsser.Generated.Enigma;
 
@@ -46,6 +49,22 @@ public class MachineXMLParsser {
         checkMachine(enigmaMachine);
         return createMachine(enigmaMachine);
 
+    }
+
+    public static MachineDescriptor parseMachineFromXMLContent(String fileContent) throws DoubleMappingException, InvalidNotchLocationException, InvalidReflectorMappingException, InvalidRotorsIdException, InvalidReflectorIdException, AlphabetIsOddException, InvalidRotorsCountException, InvalidAgentsNumberException {
+        Enigma enigmaMachine;
+        try {
+        StringReader stringReader = new StringReader(fileContent);
+            JAXBContext jc = JAXBContext.newInstance(Enigma.class);
+            Unmarshaller u= jc.createUnmarshaller();
+            enigmaMachine= (Enigma)u.unmarshal(stringReader);
+        }
+        catch (JAXBException e){
+            e.printStackTrace();
+            return null;
+        }
+        checkMachine(enigmaMachine);
+        return createMachine(enigmaMachine);
     }
 
     private static MachineDescriptor createMachine(Enigma enigmaMachine) {

@@ -23,11 +23,20 @@ public class Logic {
 
     public void setSecret(Secret mSecret) {
         this.mSecret = mSecret;
+        for (RotorInSecret rotorInSecret : mSecret.getRotorsInUse()){
+            Rotor rotor = mMachineDescriptor.getAvaliableRotors().get(rotorInSecret.getRotorId());
+            rotor.fillNumberWhileValidCharacter(rotorInSecret.getPosition());
+        }
         mSecret.createEnigmaMachineSecret(mMachine);
     }
 
     public Secret getSecret() {
         return mSecret;
+    }
+
+    public void setmMachineDescriptor(MachineDescriptor mMachineDescriptor) {
+        this.mMachineDescriptor = mMachineDescriptor;
+        createMachine();
     }
 
     private void createMachine() {
