@@ -33,8 +33,8 @@ public class LoginServlet extends HttpServlet {
             playerType = ePlayerType.Alies;
         }
 
-        int res = ServerLogic.getInstance(getServletContext()).login(userName,playerType);
-        if (res > 0){
+        boolean res = ServerLogic.getInstance(getServletContext()).login(userName,playerType);
+        if (res){
             Cookie cookie = new Cookie("userName",userName);
             cookie.setMaxAge(60*60*24);
             response.addCookie(cookie);

@@ -21,12 +21,11 @@ $(document).ready(() => {
             return showErr("Please select uboat or alies")
         }
         $.get(`/login?userName=${userName}&userType=${playerType}`,(data, status) => {
-            if (status === "success" && data > 0){
+            if (status === "success" && data){
                 if (playerType === UBOAT){
                     location.href = `/Uboat/createRoom.html`;
                 } else {
-                    const nextPage = "abc";
-                    location.href = `/${nextPage}?port=${data}`;
+                    location.href = `/Alies/PickRoom.html`;
                 }
             } else {
                 showErr(`The name ${userName} already used. Please select another name`)

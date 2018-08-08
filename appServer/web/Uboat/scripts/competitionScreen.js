@@ -7,23 +7,22 @@ let randomSecret = false;
 $(document).ready(() => {
     $.get(`/MachineDescriptor`,(data, status) => {
         machineDescriptor = data;
-        console.log(data);
-        const availableRotorCouns = Object.keys(data.AvaliableRotors).length;
-        for (let i = 0; i < data.RotorsInUseCount; i++){
+        const availableRotorCouns = Object.keys(machineDescriptor.AvaliableRotors).length;
+        for (let i = 0; i < machineDescriptor.RotorsInUseCount; i++){
             $('#rotorsContainer').append(`
                 <div style="display:flex">
                     <select onchange="selectRotor(${i},this.value)">
                         ${renderRotorIds(availableRotorCouns)}
                     </select>
                     <select onChange="selectRotorPosition(${i},this.value)">
-                        ${renderAlphabetOptions(data.Alphabet)}
+                        ${renderAlphabetOptions(machineDescriptor.Alphabet)}
                     </select>
                 </div>
             `)
         }
         $('#reflectorContainer').append(`
             <select onchange="selectReflector(this.value)">
-                        ${renderReflectors(Object.values(data.AvaliableReflector))}
+                        ${renderReflectors(Object.values(machineDescriptor.AvaliableReflector))}
             </select>
         `)
     })

@@ -174,7 +174,9 @@ public class Room implements IRoom{
     }
 
     public void seteRoomState(RoomState eRoomState) {
-        this.eRoomState = eRoomState;
+        synchronized (this) {
+            this.eRoomState = eRoomState;
+        }
     }
 
     public List<String> getWinners() {

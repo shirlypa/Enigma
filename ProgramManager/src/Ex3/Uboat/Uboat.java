@@ -36,7 +36,9 @@ public class Uboat implements IUboat {
     }
 
     public void setReady(boolean ready) {
-        this.ready = ready;
+        synchronized (this) {
+            this.ready = ready;
+        }
     }
 
     public String getmRoomName() {
