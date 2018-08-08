@@ -17,6 +17,11 @@ public class Alies {
     private String roomName;
     private int port;
 
+    public Alies() {
+        mDm = new DM();
+        this.port = mDm.getPort();
+    }
+
     public Map<String,List<String>> getSuccessedList(){
         //TODO
         Map<String,List<String>> res = new HashMap<>();

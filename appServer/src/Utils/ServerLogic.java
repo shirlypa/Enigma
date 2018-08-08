@@ -10,7 +10,7 @@ import Ex3.update.AgentInfo;
 import Ex3.update.UboatUpdate;
 import Ex3.update.UiAlies;
 import Ex3.update.ePlayerType;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 
 import javax.servlet.ServletContext;
@@ -96,6 +96,11 @@ public class ServerLogic {
 
     private void createNewAliesAndGetPort(String userName) {
         //TODO
+        Alies alies=new Alies();
+        alies.setUser(userName);
+        synchronized (this) {
+            alieses.put(userName, alies);
+        }
     }
 
     private void createNewUboat(String userName) {
@@ -142,7 +147,8 @@ public class ServerLogic {
     private List<Alies> findAllAliesInRoom(String roomName){
         List<Alies> resList = new ArrayList<>();
         for (Alies alies : alieses.values()){
-            if (alies.getRoomName().equals(roomName)){
+            String aliesRoom = alies.getRoomName();
+            if (aliesRoom != null && aliesRoom.equals(roomName)){
                 resList.add(alies);
             }
         }
@@ -176,17 +182,23 @@ public class ServerLogic {
 
     public List<UIRoom> getAvailableRooms() {
         List<UIRoom> resRooms = new ArrayList<>();
+        int requiredAllies, registeredAllies;
         for (Room room : rooms.values()) {
             RoomState roomState = room.geteRoomState();
             if (roomState.equals(RoomState.RUNNING) || roomState.equals(RoomState.GAME_OVER)){
                 continue;
             }
-            UIRoom uiRoom = new UIRoom();
             String roomName = room.getBattlefield().getBattleName();
+            requiredAllies = room.getBattlefield().getAllies();
+            registeredAllies = findAllAliesInRoom(roomName).size();
+            if (requiredAllies <= registeredAllies) {
+                continue;
+            }
+            UIRoom uiRoom = new UIRoom();
             uiRoom.setRoomName(roomName);
             uiRoom.setProcessLevel(room.getBattlefield().getLevel());
-            uiRoom.setRequiredAllies(room.getBattlefield().getAllies());
-            uiRoom.setRegisteredAllies(findAllAliesInRoom(roomName).size());
+            uiRoom.setRequiredAllies(requiredAllies);
+            uiRoom.setRegisteredAllies(registeredAllies);
             uiRoom.setUboatName(findUboatByRoomName(roomName).getUser());
             resRooms.add(uiRoom);
         }
@@ -203,12 +215,12 @@ public class ServerLogic {
             int reqAllies = rooms.get(roomName).getBattlefield().getAllies();
             int inRoom = findAllAliesInRoom(roomName).size();
             if (inRoom >= reqAllies) return false;
-            //alieses.get(userName).setRoomName(roomName);
+            alieses.get(userName).setRoomName(roomName);
             return true;
         }
     }
 
     public void setAliesMissionSize(String userName,int missionSize) {
-        //alieses.get(userName).setMissionSize(missionSize);
+        alieses.get(userName).setMissionSize(missionSize);
     }
 }

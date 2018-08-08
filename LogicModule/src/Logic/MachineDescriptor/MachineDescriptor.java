@@ -16,11 +16,12 @@ import pukteam.enigma.component.machine.builder.EnigmaMachineBuilder;
 import pukteam.enigma.factory.EnigmaComponentFactory;
 
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MachineDescriptor {
+public class MachineDescriptor implements Serializable {
     private int RotorsInUseCount;
     private String Alphabet;
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
@@ -51,9 +52,9 @@ public class MachineDescriptor {
         Dictionary dic = new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars());
         MachineDecipher = new Logic.MachineDescriptor.MachineComponents.Decipher(enigmaMachine.getDecipher().getAgents(),dic);
-       // MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
-         //       new AgentDMParts.Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
-           //     enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
+        MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
+                new AgentDMParts.Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
+                enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
 
     }
 

@@ -1,13 +1,11 @@
 package Agent;
 
-import AgentDMParts.Data;
-import AgentDMParts.Dictionary;
-import AgentDMParts.Mission;
-import AgentDMParts.SuccessString;
+import AgentDMParts.*;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class ComManager {
@@ -17,15 +15,20 @@ public class ComManager {
     private Data currentMsg;
     private Agent agent;
     private Thread listener;
-    //private BlockingQueue<ResultMission> resultsQueue;
     private BlockingQueue<SuccessString> accomplishedMissionsQueue;
+    private BlockingQueue<Mission> missionToDo;
+    private final int K_QUEUE_SIZE = 100;
+
 
     private int countResultMissions = 0;
     private int port;
     private boolean logout;
 
     public ComManager(){
-        agent = new Agent();
+        this.missionToDo = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
+        this.accomplishedMissionsQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
+
+        agent = new Agent(missionToDo,accomplishedMissionsQueue, this);
     }
 
     public void connect(String ipPortStr) {
@@ -44,7 +47,7 @@ public class ComManager {
             System.out.println("I'm very sorry but the input string isn't an integer");
             System.exit(1);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("invalid port");
         }
     }
 
@@ -55,7 +58,7 @@ public class ComManager {
         while (!done){
             currentMsg = (Data) in.readObject();
             Data.eDataType type = currentMsg.getmDataType();
-            System.out.println("1. "+type);
+            //System.out.println("1. "+type);
             done = doMsg(type);
         }
 
@@ -91,21 +94,33 @@ public class ComManager {
 
     public boolean doMsg(Data.eDataType msg) throws IOException {
         switch (msg){
-            //Todo all kind of messages
             case DICTIONERY:
                 agent.setDictionary((Dictionary)currentMsg.getmData());
+                System.out.println("Got Dictionery");
                 break;
             case MACHINE:
-                agent.setMachine((EnigmaMachine)currentMsg.getmData());
+                agent.setMachine((MachineDescriptor)currentMsg.getmData());
+                System.out.println("Got Machine");
                 break;
             case SOURCE:
                 agent.setSource((String)currentMsg.getmData());
+                System.out.println("Got source String");
                 break;
             case ALPHABET:
                 agent.setAlphaBet((String)currentMsg.getmData());
+                System.out.println("Got alphabet");
                 break;
             case MISSION_TODO:
-                agent.setMissionQueue((BlockingQueue<Mission>)currentMsg.getmData());
+                //agent.setMissionQueue((BlockingQueue<Mission>)currentMsg.getmData());
+                missionToDo.add((Mission) currentMsg.getmData());
+                System.out.println("Got Mission");
+                break;
+            case START_AGENT:
+                System.out.println("STARTING");
+                agent.start();
+                break;
+            case INTERRUPT:
+                agent.interrupt();
                 break;
             case CLOSE:
                 killAgent();
@@ -127,7 +142,7 @@ public class ComManager {
         }
     }
 
-    private void sendMessage(Data msg){
+    public void sendMessage(Data msg){
         synchronized (out){
             try {
                 out.writeObject(msg);

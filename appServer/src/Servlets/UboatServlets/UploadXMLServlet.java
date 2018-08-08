@@ -3,7 +3,7 @@ package Servlets.UboatServlets;
 import Logic.MachineDescriptor.MachineComponents.Position;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
 import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.*;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 import Servlets.Response;

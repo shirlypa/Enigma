@@ -5,8 +5,9 @@ import Agent.Agent;
 import AgentDMParts.Mission;
 import AgentDMParts.Secret;
 import AgentDMParts.eDM_State;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
@@ -19,11 +20,12 @@ public class MissionsProducerThread extends Thread implements Runnable {
     private long workSize;
     private SecretGenerator secretGenerator;
     private DM mDM;
-    private List<Agent> agentList;
+   // private List<Agent> agentList;
+    private List<ComManager> agentSockets;
     private int missionsToCraateBeforeStartAgents;
     private boolean finish = false;
 
-    public MissionsProducerThread(DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, long workSize) {
+    public MissionsProducerThread(List<ComManager> agentSockets,DM dm, BlockingQueue<Mission> missionsQueue, eProccessLevel proccessLevel, int mMissionSize, MachineDescriptor machineDescriptor, long workSize) {
         this.missionsQueue = missionsQueue;
         this.proccessLevel = proccessLevel;
         this.workSize = workSize;
@@ -31,6 +33,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
         this.mMissionSize = mMissionSize;
         this.machineDescriptor = machineDescriptor;
         this.mDM = dm;
+        this.agentSockets=agentSockets;
     }
 
     @Override
@@ -44,7 +47,7 @@ public class MissionsProducerThread extends Thread implements Runnable {
         int currentMissionSize = 1;
         for (long i = 1; i < workSize; i++,currentMissionSize++){
             if (i == mDM.gerQueueSize()){
-                startAgents();
+                //startAgents();
             }
             if (!codeWasReset) {
                 codeWasReset = advancedSecret.advanceRotors(alphabet);
@@ -87,9 +90,10 @@ public class MissionsProducerThread extends Thread implements Runnable {
 
     }
 
-    private void startAgents() {
-        for (Agent agent : agentList){
-            agent.start();
+    private void startAgents() throws IOException {
+        for (ComManager agent:agentSockets)
+        {
+            agent.startAgent();
         }
     }
 
@@ -118,9 +122,9 @@ public class MissionsProducerThread extends Thread implements Runnable {
         this.secretGenerator = secretGenerator;
     }
 
-    public void setAgentList(List<Agent> agentList) {
-        this.agentList = agentList;
-    }
+    //public void setAgentList(List<Agent> agentList) {
+      //  this.agentList = agentList;
+    //}
 
     public void setMissionsToCraateBeforeStartAgents(int missionsToCraateBeforeStartAgents) {
         this.missionsToCraateBeforeStartAgents = missionsToCraateBeforeStartAgents;

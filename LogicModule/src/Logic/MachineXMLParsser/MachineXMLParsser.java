@@ -2,8 +2,9 @@ package Logic.MachineXMLParsser;
 
 import Logic.MachineDescriptor.MachineComponents.Reflector;
 import Logic.MachineDescriptor.MachineComponents.Rotor;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Battlefield;
+//import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
 import Logic.MachineXMLParsser.Generated.Reflect;

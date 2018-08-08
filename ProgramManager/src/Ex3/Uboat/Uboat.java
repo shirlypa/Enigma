@@ -2,7 +2,7 @@ package Ex3.Uboat;
 
 import AgentDMParts.Secret;
 import Logic.Logic;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 
 public class Uboat implements IUboat {
     private Logic mLogic;

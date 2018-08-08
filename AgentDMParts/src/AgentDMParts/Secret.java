@@ -1,14 +1,15 @@
 package AgentDMParts;//package Logic.MachineDescriptor.MachineComponents;
 
-import Logic.MachineDescriptor.MachineComponents.Position;
+import AgentDMParts.MachineComponents.Position;
 import pukteam.enigma.component.machine.api.EnigmaMachine;
-import Logic.MachineDescriptor.MachineComponents.RotorInSecret;
+import AgentDMParts.MachineComponents.RotorInSecret;
 import pukteam.enigma.component.machine.secret.SecretBuilder;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Secret {
+public class Secret implements Serializable{
 
     private List<RotorInSecret> RotorsInUse;
     private int ReflectorId;

@@ -8,7 +8,7 @@ import Ex3.update.AliesUpdate;
 import Ex3.update.UboatUpdate;
 import Ex3.update.UiAlies;
 import Logic.Logic;
-import Logic.MachineDescriptor.MachineDescriptor;
+import AgentDMParts.MachineDescriptor;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 
 import java.util.ArrayList;

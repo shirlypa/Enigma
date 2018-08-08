@@ -1,6 +1,8 @@
 package AgentDMParts;
 
-public class Dictionary {
+import java.io.Serializable;
+
+public class Dictionary implements Serializable {
     private String Words;
     private String[] splittedDictionary;
     private String SpecialChar;
