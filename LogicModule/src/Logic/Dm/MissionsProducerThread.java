@@ -90,12 +90,12 @@ public class MissionsProducerThread extends Thread implements Runnable {
 
     }
 
-    private void startAgents() throws IOException {
-        for (ComManager agent:agentSockets)
-        {
-            agent.startAgent();
-        }
-    }
+//    private void startAgents() throws IOException {
+//        for (ComManager agent:agentSockets)
+//        {
+//            agent.startAgent();
+//        }
+//    }
 
     public BlockingQueue<Mission> getMissionsQueue() {
         return missionsQueue;

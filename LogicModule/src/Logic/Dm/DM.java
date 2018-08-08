@@ -170,10 +170,10 @@ public class DM extends Thread implements Runnable {
 
     }
 
-    private void startAgents() throws IOException {
+    public void startAgents() throws IOException {
         for (ComManager agent:serverSockets.getAgents())
         {
-            agent.startAgent();
+            agent.sendMsg(new Data("start", Data.eDataType.START_AGENT));
         }
     }
     private void handleInterrupt() throws IOException {
@@ -299,4 +299,8 @@ public class DM extends Thread implements Runnable {
     }
 
     public int gerQueueSize(){return K_QUEUE_SIZE;}
+
+    public void stopAgents() {
+
+    }
 }

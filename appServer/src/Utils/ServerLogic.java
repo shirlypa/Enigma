@@ -15,6 +15,7 @@ import Logic.MachineXMLParsser.Generated.Battlefield;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
+import java.io.IOException;
 import java.util.*;
 
 public class ServerLogic {
@@ -38,7 +39,7 @@ public class ServerLogic {
         }
         return sInstance;
     }
-    public String processUboatString(String uboatName, Secret secret, String strToProcess, boolean random){
+    public String processUboatString(String uboatName, Secret secret, String strToProcess, boolean random) throws IOException {
         Uboat uboat = uboats.get(uboatName);
         rooms.get(uboat.getmRoomName()).seteRoomState(RoomState.GOT_STRING_TO_PROCESS);
         uboat.setReady(true);
@@ -162,7 +163,7 @@ public class ServerLogic {
         return null;
     }
 
-    private void checkAllPlayersReady(String roomName){
+    private void checkAllPlayersReady(String roomName) throws IOException {
         List<Alies> aliesInRoom = findAllAliesInRoom(roomName);
         Room room = rooms.get(roomName);
         if (aliesInRoom.size() < room.getBattlefield().getAllies()) return;

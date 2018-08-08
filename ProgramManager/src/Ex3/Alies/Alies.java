@@ -6,6 +6,7 @@ import Logic.Dm.eProccessLevel;
 import Logic.Logic;
 import org.omg.SendingContext.RunTime;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Alies {
@@ -71,15 +72,20 @@ public class Alies {
     }
 
     public int getPort() {
-        //TODO
-        return 0;
+        return this.port;
     }
 
-    public void startProcess() {
+    public void startProcess() throws IOException {
         //TODO
+        mDm.startAgents();
+    }
+
+    public void stopProccess(){
+        mDm.stopAgents();
     }
 
     public void setMissionSize(int missionSize) {
         //TODO
+        mDm.setMissionSize(missionSize);
     }
 }
