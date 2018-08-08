@@ -59,7 +59,7 @@ public class ComManager {
             currentMsg = (Data) in.readObject();
             Data.eDataType type = currentMsg.getmDataType();
             //System.out.println("1. "+type);
-            done = doMsg(type);
+            done = doMsg(currentMsg);
         }
 
         if(!logout){
@@ -92,8 +92,8 @@ public class ComManager {
         });
     }
 
-    public boolean doMsg(Data.eDataType msg) throws IOException {
-        switch (msg){
+    public boolean doMsg(Data msg) throws IOException {
+        switch (msg.getmDataType()){
             case DICTIONERY:
                 agent.setDictionary((Dictionary)currentMsg.getmData());
                 System.out.println("Got Dictionery");
