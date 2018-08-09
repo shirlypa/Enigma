@@ -34,7 +34,7 @@ public class Room implements IRoom{
         for (Map.Entry<String,List<String>> stringListEntry : strings.entrySet()){
             List<String> stringList = stringListEntry.getValue();
             for (String str : stringList) {
-                if (str.equals(mSourceString)) {
+                if (str.equals(mSourceString.toUpperCase())) {
                     synchronized (this) {
                         eRoomState = RoomState.GAME_OVER;
                         winners.add(stringListEntry.getKey());
@@ -135,5 +135,9 @@ public class Room implements IRoom{
 
     public void setSecret(Secret secret) {
         this.mSecret = secret;
+    }
+
+    public Secret getSecret() {
+        return mSecret;
     }
 }

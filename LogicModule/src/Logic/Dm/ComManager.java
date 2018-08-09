@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
@@ -20,6 +22,8 @@ public class ComManager extends Thread {
     private ObjectOutputStream out;
     private final int K_QUEUE_SIZE = 100;
     private int succsesStrings;
+    private List<String> successStrings;
+
 
 
 
@@ -28,6 +32,7 @@ public class ComManager extends Thread {
         this.validStringQueue = new ArrayBlockingQueue<SuccessString>(K_QUEUE_SIZE);
         this.missionTodo = missionTodo;
         this.succsesStrings = 0;
+        this.successStrings = new ArrayList<>();
 
         try {
             in = new ObjectInputStream((finalAgentSocket.getInputStream()));
@@ -52,6 +57,7 @@ public class ComManager extends Thread {
                         SuccessString successString = (SuccessString) msg.getmData();
                         this.validStringQueue.add(successString);
                         this.succsesStrings++;
+                        this.successStrings.add(successString.getSucessString());
                         break;
                     case CLOSE:
                         finish = true;
@@ -122,5 +128,9 @@ public class ComManager extends Thread {
 
     public int getSuccsesString() {
         return this.succsesStrings;
+    }
+
+    public List<String> getSuccesStringsList() {
+        return successStrings;
     }
 }

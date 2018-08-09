@@ -74,11 +74,10 @@ public class  Agent extends Thread implements Runnable {
                 mission = toDoMissionsQueue.take();
                 runMission(mission);
                // dm.accomplishedMissionsPlusPlus();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            catch(InterruptedException e)
-            {
-                //handleInterrupt();
-            }
+
         }
     }
 
@@ -111,6 +110,7 @@ public class  Agent extends Thread implements Runnable {
                 String cleanResult = dictionary.removeSpecialChars(result);
                 successString = new SuccessString(cleanResult,currentSecret.cloneSecret(),agentID);
                 accomplishedMissionsQueue.put(successString);
+                comManager.sendMessage(new Data(successString, Data.eDataType.SUCCESS_STRING));
                 System.out.println(successString.getSucessString());
             }
             currentSecret.advanceRotors(alphabet);

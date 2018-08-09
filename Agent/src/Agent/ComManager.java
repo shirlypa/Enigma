@@ -147,11 +147,13 @@ public class ComManager {
     }
 
     public void sendMessage(Data msg){
-        synchronized (out){
-            try {
-                out.writeObject(msg);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if(!logout) {
+            synchronized (out) {
+                try {
+                    out.writeObject(msg);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

@@ -44,9 +44,9 @@ public class ServerLogic {
         room.seteRoomState(RoomState.GOT_STRING_TO_PROCESS);
         room.setmSourceString(strToProcess);
         uboat.setReady(true);
-        room.setSecret(uboat.getmSecret());
         checkAllPlayersReady(uboat.getmRoomName());
         String encoded = uboat.processString(secret,strToProcess, random);
+        room.setSecret(uboat.getmSecret());
         room.setmEncodedString(encoded);
         return encoded;
     }
@@ -146,7 +146,14 @@ public class ServerLogic {
         resUpdate.setGameState(roomState);
         if (roomState.equals(RoomState.GAME_OVER)){
             resUpdate.setWinners(room.getWinners());
-
+            for (Alies alies : aliesList){
+                if(room.getWinners().contains(alies.getUser())) {
+                    alies.stopProccess(true);
+                }
+                else{
+                    alies.stopProccess(false);
+                }
+            }
         }
         resUpdate.setSuccessedStrings(successStrList);
         return resUpdate;
@@ -187,6 +194,7 @@ public class ServerLogic {
             try {
                 alies.setEncodedString(room.getmEncodedString());
                 alies.setMachineDescriptor(room.getMachineDescriptor());
+                alies.setmSecret(room.getSecret());
                 alies.startProcess();
             } catch (IOException e) {
                 e.printStackTrace();
