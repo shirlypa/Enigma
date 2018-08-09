@@ -12,10 +12,7 @@ import AgentDMParts.MachineDescriptor;
 import Logic.MachineDescriptor.MachineComponents.BattleFieldNew;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Room implements IRoom{
     private BattleFieldNew mBattlefield;
@@ -26,7 +23,7 @@ public class Room implements IRoom{
     private RoomState eRoomState = RoomState.BATTLEFIELD_LOADED;
     private String mEncodedString;
     private String mSourceString;
-    private List<String> winners = new ArrayList<>();
+    private Set<String> winners = new HashSet<>();
     private Secret mSecret;
 
 
@@ -117,7 +114,7 @@ public class Room implements IRoom{
         }
     }
 
-    public List<String> getWinners() {
+    public Set<String> getWinners() {
         return winners;
     }
 

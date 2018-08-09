@@ -239,6 +239,15 @@ public class ServerLogic {
             alies.setProccessLevel(null);
         }
     }
+    public void unlinkUboatToRoom(String userName) {
+        synchronized (this) {
+            Uboat uboat = uboats.get(userName);
+            uboat.setMachineDescriptor(null);
+            uboat.setmRoomName(null);
+            uboat.setReady(false);
+
+        }
+    }
 
     public boolean linkAlliesToRoom(String userName, String roomName) {
         synchronized (this) {

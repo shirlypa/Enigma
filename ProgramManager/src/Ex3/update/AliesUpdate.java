@@ -3,13 +3,14 @@ package Ex3.update;
 import Ex3.Room.RoomState;
 
 import java.util.List;
+import java.util.Set;
 
 public class AliesUpdate {
     private RoomState gameState;
     private List<UiAlies> otherAlies;
     private String uboatName;
     private boolean uboatReady;
-    private List<String> winners;
+    private Set<String> winners;
     private String strToProccess;
     private String roomName;
     private List<AgentInfo> agents;
@@ -46,11 +47,11 @@ public class AliesUpdate {
         this.uboatReady = uboatReady;
     }
 
-    public List<String> getWinners() {
+    public Set<String> getWinners() {
         return winners;
     }
 
-    public void setWinners(List<String> winners) {
+    public void setWinners(Set<String> winners) {
         this.winners = winners;
     }
 

@@ -5,12 +5,13 @@ import Ex3.Room.RoomState;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class UboatUpdate {
     private RoomState gameState;
     private List<UiAlies> aliesList;
     private Map<String,List<String>> successedStrings;
-    private List<String> winners;
+    private Set<String> winners;
 
     public RoomState getGameState() {
         return gameState;
@@ -36,11 +37,11 @@ public class UboatUpdate {
         this.successedStrings = successedStrings;
     }
 
-    public List<String> getWinners() {
+    public Set<String> getWinners() {
         return winners;
     }
 
-    public void setWinners(List<String> winners) {
+    public void setWinners(Set<String> winners) {
         this.winners = winners;
     }
 }
