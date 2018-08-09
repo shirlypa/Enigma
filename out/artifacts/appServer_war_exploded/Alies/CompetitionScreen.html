@@ -5,45 +5,64 @@
     <title>Enigma Machine Game</title>
     <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="scripts/competitionScreen.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .w3-table-all {
+            width: fit-content;
+            margin: auto;
+        }
+        .other-allies-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 0 2rem;
+        }
+        #missionSizeContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding: 1rem;
+            width: fit-content;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <div id="missionSizeContainer">
-        <input type="number" placeholder="Type Mission Size.." id="txtMissionSize"/>
-        <button id="btnSend">ready</button>
-        <div style="color: red" id="validationError">
-            <ul id="errList">
-
-            </ul>
-        </div>
-    </div>
-    <div>
+    <div style="display: none;">
         <button onclick="pullUpdate()">Pull</button>
         <div id="update">
 
         </div>
     </div>
 
+    <div class="w3-container w3-indigo w3-margin-bottom" style="display: flex;">
+        <div style="font-size: 2em;flex: 1;"><b>Battle Name: </b><span id="battleName"></span></div>
+        <div>created by: <span id="uboatName"></span></div>
+    </div>
+    <div class="w3-container w3-center w3-border-top w3-border-bottom w3-padding">
+        <b>Room status:</b>
+        <span id="roomStatus"></span>
+    </div>
+    <div class="w3-card-2 w3-sand w3-round w3-container w3-margin-top" id="missionSizeContainer">
+        <input class="w3-input w3-round w3-margin-bottom" type="number" placeholder="Type Mission Size.." id="txtMissionSize"/>
+        <button class="w3-button w3-green w3-margin-bottom" id="btnSend">ready</button>
+        <div style="color: red" id="validationError" class="w3-margin-bottom"></div>
+    </div>
+
     <div class="ally-container">
-        <b>Noy</b><br/>
-        <span>Ready: Yes</span>
-        <table>
+        <table class="w3-table-all w3-centered w3-margin-top">
             <thead>
-            <tr>
-                <td><u>Agent</u></td>
+            <tr class="w3-blue">
+                <td><u>Agent #</u></td>
                 <td><u>Success String</u></td>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>35</td>
-            </tr>
+            <tbody id="agentsInfo">
             </tbody>
         </table>
+    </div>
+    <div class="other-allies-container">
+
     </div>
 </body>
 </html>

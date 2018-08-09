@@ -29,6 +29,9 @@ $(document).ready(() => {
     $('#btnProcessStr').click(validateAndProcessStr)
 
     $('#btnRandom').click(() => randomSecret = true)
+
+    pullUpdate();
+    setInterval(pullUpdate,5000);
 })
 
 const selectRotor = (pos, value) => {
@@ -131,7 +134,7 @@ const validateAndProcessStr = () => {
             pullUpdate()
             $('#candidateStrings').fadeIn();
             $('#BeforeAfterEncodeingContainer').fadeIn();
-            setInterval(pullUpdate,5000);
+            pullUpdate();
         },
         error: err => alert(JSON.stringify(err)),
     })
@@ -139,10 +142,11 @@ const validateAndProcessStr = () => {
 
 const pullUpdate = () => {
     $.get('/UboatUpdate',data => {
-        $('#aliesesContainer').empty();
+        $('#json').text(JSON.stringify(data));
+        $('.aliesesContainer').empty();
         $('#successStringContainer').empty();
         data.aliesList.forEach(alies => {
-            $('#aliesesContainer').append(renderAlies(alies));
+            $('.aliesesContainer').append(renderAlly(alies));
         })
         Object.keys(data.successedStrings).forEach(aliesName => {
                 $('#successStringContainer').append(renderAgents(aliesName,data.successedStrings[aliesName]))
@@ -185,17 +189,6 @@ const createSecretJson = () => {
         ReflectorId: reflector,
     });
 }
-
-const renderAlies = (alies) => (
-    `
-        <div class="ally-container">
-            <b>${alies.name}</b><br/>
-            <span>Ready: ${alies.ready ? "Yes": "No"}</span><br/>
-            <span>Agents: ${alies.agentNumber}</span>
-        </div>
-    `
-)
-
 const renderAgents = (aliesName, strings) => (
     `
     <div>
@@ -204,3 +197,11 @@ const renderAgents = (aliesName, strings) => (
     </div>
     `
 )
+
+const renderAlly = ({name, agentNumber, ready}) => `
+    <div class="w3-card-4 w3-round w3-margin" style="min-width: 150px">
+            <header class="w3-container w3-card-2 w3-center w3-light-blue w3-padding">${name}</header>
+            <div class="w3-center w3-padding">Agents: ${agentNumber}</div>
+            <footer class="w3-container w3-center w3-light-${ready ? 'green' : 'grey'} w3-border-top w3-padding"><b>Ready</b></footer>
+        </div>
+`
