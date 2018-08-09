@@ -34,7 +34,9 @@ $(document).ready(() => {
     setInterval(pullUpdate,5000);
 
     $('#btnCloseRoom').click(() => {
-        $.get('/')
+        $.get('/CloserRoom', data => {
+            location.href = `/Uboat/createRoom.html`;
+        })
     })
 })
 

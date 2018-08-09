@@ -10,10 +10,12 @@ public class Uboat implements IUboat {
     private String mSourceString;
     private String mRoomName;
     private boolean ready;
+    private Secret mSecret;
 
     public String processString(Secret secret, String strToProcess,boolean random){
         if (random){
             mLogic.createRandomSecret();
+            mSecret = mLogic.getSecret();
         } else {
             mLogic.setSecret(secret);
         }
@@ -48,4 +50,9 @@ public class Uboat implements IUboat {
     public void setmRoomName(String mRoomName) {
         this.mRoomName = mRoomName;
     }
+
+    public Secret getmSecret() {
+        return mSecret;
+    }
+
 }

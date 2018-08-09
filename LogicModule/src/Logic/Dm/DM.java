@@ -100,7 +100,6 @@ public class DM extends Thread implements Runnable {
         calcMissionToCreateBeforeAgentsStart();
 
         missionProd = new MissionsProducerThread(serverSockets.getAgents(),this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor, mWorkSize);
-        this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount(), machineDescriptor.getAlphabet());
         missionProd.setSecretGenerator(secretGenerator);
 
         //missionProd.setAgentList(agentList);
@@ -341,5 +340,9 @@ public class DM extends Thread implements Runnable {
 
     public void addSuccessList(SuccessString successStr){
         validStringList.add(successStr);
+    }
+
+    public void setSecretGenerator() {
+        this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount(), machineDescriptor.getAlphabet());
     }
 }

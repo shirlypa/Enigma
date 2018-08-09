@@ -32,6 +32,12 @@ $(document).ready(() => {
 
     pullUpdate();
     setInterval(pullUpdate,5000);
+
+    $('#btnCloseRoom').click(() => {
+        $.get('/CloserRoom', data => {
+            location.href = `/Uboat/createRoom.html`;
+        })
+    })
 })
 
 const selectRotor = (pos, value) => {
@@ -212,5 +218,15 @@ const renderAlly = ({name, agentNumber, ready}) => `
 `
 
 const renderStatus = (update) => {
-
+    switch (update.gameState){
+        case "BATTLEFIELD_LOADED":
+            return "Waiting for secret & text";
+        case "GOT_STRING_TO_PROCESS":
+            return "Waiting for allies";
+        case "RUNNING":
+            return "They all started, trying to decode"
+        case "GAME_OVER":
+            $('#btnCloseRoom').fadeIn();
+            return `Game Over. ${update.winners} Won`;
+    }
 }

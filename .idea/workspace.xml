@@ -7,10 +7,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9cb4e15-e242-481a-869d-237ac1370a1f" name="Default" comment="Merge branch 'master' of https://github.com/shirlypa/Enigma&#10;&#10;# Conflicts:&#10;#&#9;LogicModule/src/Logic/Dm/DM.java">
-      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/CloserRoomServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/AgentDMParts/src/Agent.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/Agent.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/Enigma/META-INF/MANIFEST.MF" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" afterPath="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/Agent/Agent.iml" afterPath="$PROJECT_DIR$/Agent/Agent.iml" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/Agent/Agent.java" afterPath="$PROJECT_DIR$/Agent/src/Agent/Agent.java" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/Agent/ComManager.java" afterPath="$PROJECT_DIR$/Agent/src/Agent/ComManager.java" />
+      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/Uboat.java" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/CloserRoomServlet.java" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/CloserRoomServlet.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" afterPath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" afterPath="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" />
       <change beforePath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Agent_jar/Agent.jar" afterPath="$PROJECT_DIR$/out/artifacts/Agent_jar/Agent.jar" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/EnigmaUI_jar/EnigmaUI.jar" afterPath="$PROJECT_DIR$/out/artifacts/EnigmaUI_jar/EnigmaUI.jar" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/LogicModule_jar/LogicModule.jar" afterPath="$PROJECT_DIR$/out/artifacts/LogicModule_jar/LogicModule.jar" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProgramManager_jar/ProgramManager.jar" afterPath="$PROJECT_DIR$/out/artifacts/ProgramManager_jar/ProgramManager.jar" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war/appServer_war.war" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war/appServer_war.war" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/CompetitionScreen.html" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/scripts/competitionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Room/Room.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Uboat/Uboat.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/AliesUpdate.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/AliesUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/UboatUpdate.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/UboatUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/CompetitionScreen.html" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/scripts/competitionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/Agent.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/Agent.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/ComManager.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/ComManager.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Room/Room.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Uboat/Uboat.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/AliesUpdate.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/AliesUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/UboatUpdate.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/UboatUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/DM.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/DM.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic$1.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/ComManager.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Room/Room.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Uboat/Uboat.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/AliesUpdate.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/AliesUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/UboatUpdate.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/UboatUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic$1.class" afterPath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="32" />
+              <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -47,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/Agent/src/Agent/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+              <caret line="106" column="26" lean-forward="false" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -56,11 +106,12 @@
       <file leaf-file-name="CompetitionScreen.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="42" />
+            <state relative-caret-position="355">
+              <caret line="70" column="67" lean-forward="true" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,31 +120,41 @@
       <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+            <state relative-caret-position="184">
+              <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
               <folding>
-                <marker date="1533849374822" expanded="true" signature="461:473" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="474:919" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="581:607" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="581:674" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="789:815" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="789:896" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="1092:1102" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="1103:1222" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="6130:6140" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="6130:6246" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="6403:6419" ph="..." />
-                <marker date="1533849374822" expanded="true" signature="6420:6748" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="461:473" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="474:919" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="581:607" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="581:674" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="789:815" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="789:896" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="1092:1102" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="1103:1222" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="6215:6225" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="6215:6331" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="6488:6504" ph="..." />
+                <marker date="1533849558357" expanded="true" signature="6505:6833" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CloserRoomServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/web/scripts/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CloserRoomServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/CloserRoomServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="375">
+              <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,7 +166,7 @@
         <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="62" />
+              <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -114,8 +175,8 @@
       <file leaf-file-name="ServerLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="132" column="15" lean-forward="false" selection-start-line="132" selection-start-column="15" selection-end-line="132" selection-end-column="15" />
+            <state relative-caret-position="268">
+              <caret line="242" column="15" lean-forward="false" selection-start-line="242" selection-start-column="15" selection-end-line="242" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -124,29 +185,29 @@
       <file leaf-file-name="UboatUpdate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state relative-caret-position="250">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding>
-                <element signature="e#1118#1119#0" expanded="true" />
-                <element signature="e#1149#1150#0" expanded="true" />
-                <element signature="e#1197#1198#0" expanded="true" />
-                <element signature="e#1237#1238#0" expanded="true" />
+                <element signature="e#1137#1138#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="66" column="15" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="23" />
+            <state relative-caret-position="234">
+              <caret line="91" column="36" lean-forward="false" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
               <folding>
-                <marker date="1533843173124" expanded="true" signature="1534:1604" ph="..." />
-                <marker date="1533843173124" expanded="true" signature="2338:2354" ph="..." />
-                <marker date="1533843173124" expanded="true" signature="2355:2514" ph="..." />
-                <marker date="1533843173124" expanded="true" signature="2355:2594" ph="..." />
-                <marker date="1533843173124" expanded="true" signature="2355:2683" ph="..." />
+                <marker date="1533850248908" expanded="true" signature="1534:1604" ph="..." />
+                <marker date="1533850248908" expanded="true" signature="2367:2383" ph="..." />
+                <marker date="1533850248908" expanded="true" signature="2384:2543" ph="..." />
+                <marker date="1533850248908" expanded="true" signature="2384:2623" ph="..." />
+                <marker date="1533850248908" expanded="true" signature="2384:2712" ph="..." />
               </folding>
             </state>
           </provider>
@@ -166,8 +227,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>comMana</find>
-      <find>new com</find>
       <find>validStringQueue</find>
       <find>agentL</find>
       <find>++</find>
@@ -196,6 +255,8 @@
       <find>pull</find>
       <find>uboatUpda</find>
       <find>case</find>
+      <find>o</find>
+      <find>location</find>
     </findStrings>
     <replaceStrings>
       <replace>eApp</replace>
@@ -257,13 +318,13 @@
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/ResetServlet.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" />
+        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
+        <option value="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/CloserRoomServlet.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
         <option value="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" />
         <option value="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" />
-        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
-        <option value="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
-        <option value="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
-        <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
-        <option value="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/CloserRoomServlet.java" />
       </list>
     </option>
   </component>
@@ -408,21 +469,21 @@
     <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Logic.MachineXMLParsser" />
-      <recent name="ConsoleUI" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic\MachineXMLParsser" />
-      <recent name="C:\Users\user\IdeaProjects\Enigma\src\Logic" />
-      <recent name="C:\Users\user\IdeaProjects\Enigma\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat\scripts" />
       <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat" />
       <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web" />
       <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic" />
       <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic\MachineXMLParsser" />
+      <recent name="C:\Users\user\IdeaProjects\Enigma\src\Logic" />
+      <recent name="C:\Users\user\IdeaProjects\Enigma\src" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Logic.MachineXMLParsser" />
+      <recent name="ConsoleUI" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -844,7 +905,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279649000" />
+    <option name="totallyTimeSpent" value="280477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,7 +922,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32798165" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19985358" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -885,16 +946,41 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Azure Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Azure Activity Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19985358" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3451835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326555" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3233945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34059632" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Spark Job in Cluster" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Remote Spark Job in Cluster" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1038,13 +1124,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appServer/web/scripts/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UboatUpdateServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1252,7 +1331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="698" column="29" lean-forward="true" selection-start-line="698" selection-start-column="29" selection-end-line="698" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1260,7 +1338,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,7 +1366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1321,7 +1397,7 @@
         <state relative-caret-position="275">
           <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1357,60 +1433,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2635">
           <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Agent/src/Agent/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+          <caret line="106" column="26" lean-forward="false" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="250">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
-            <element signature="e#1118#1119#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="132" column="15" lean-forward="false" selection-start-line="132" selection-start-column="15" selection-end-line="132" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="66" column="15" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="23" />
-          <folding>
-            <marker date="1533843173124" expanded="true" signature="1534:1604" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2338:2354" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2355:2514" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2355:2594" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2355:2683" ph="..." />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1418,7 +1460,7 @@
     <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="32" />
+          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1434,41 +1476,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding>
-            <marker date="1533849374822" expanded="true" signature="461:473" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="474:919" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="581:607" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="581:674" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="789:815" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="789:896" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="1092:1102" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="1103:1222" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="6130:6140" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="6130:6246" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="6403:6419" ph="..." />
-            <marker date="1533849374822" expanded="true" signature="6420:6748" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/MachineDescriptorServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="62" />
+          <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="242" column="15" lean-forward="false" selection-start-line="242" selection-start-column="15" selection-end-line="242" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/CloserRoomServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state relative-caret-position="375">
+          <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/scripts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+          <folding>
+            <marker date="1533849558357" expanded="true" signature="461:473" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="474:919" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="581:607" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="581:674" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="789:815" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="789:896" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="1092:1102" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="1103:1222" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="6215:6225" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="6215:6331" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="6488:6504" ph="..." />
+            <marker date="1533849558357" expanded="true" signature="6505:6833" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="70" column="67" lean-forward="true" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="91" column="36" lean-forward="false" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+          <folding>
+            <marker date="1533850248908" expanded="true" signature="1534:1604" ph="..." />
+            <marker date="1533850248908" expanded="true" signature="2367:2383" ph="..." />
+            <marker date="1533850248908" expanded="true" signature="2384:2543" ph="..." />
+            <marker date="1533850248908" expanded="true" signature="2384:2623" ph="..." />
+            <marker date="1533850248908" expanded="true" signature="2384:2712" ph="..." />
           </folding>
         </state>
       </provider>

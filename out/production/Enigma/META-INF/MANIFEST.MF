@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: javax.persistence.jar javax.annotation.jar javax.jms.jar j
+ avax.transaction.jar javax.ejb.jar javax.servlet.jar javax.resource.j
+ ar javax.servlet.jsp.jar javax.servlet.jsp.jstl.jar gson-2.8.5.jar En
+ igmaMachine.jar gson-2.8.5.jar
+Main-Class: Agent.AgentMain
+

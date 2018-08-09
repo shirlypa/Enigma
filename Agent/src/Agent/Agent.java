@@ -74,11 +74,10 @@ public class  Agent extends Thread implements Runnable {
                 mission = toDoMissionsQueue.take();
                 runMission(mission);
                // dm.accomplishedMissionsPlusPlus();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            catch(InterruptedException e)
-            {
-                //handleInterrupt();
-            }
+
         }
     }
 

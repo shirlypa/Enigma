@@ -12,10 +12,7 @@ import AgentDMParts.MachineDescriptor;
 import Logic.MachineDescriptor.MachineComponents.BattleFieldNew;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Room implements IRoom{
     private BattleFieldNew mBattlefield;
@@ -26,14 +23,15 @@ public class Room implements IRoom{
     private RoomState eRoomState = RoomState.BATTLEFIELD_LOADED;
     private String mEncodedString;
     private String mSourceString;
-    private List<String> winners = new ArrayList<>();
+    private Set<String> winners = new HashSet<>();
+    private Secret mSecret;
 
 
     public void checkWinner(Map<String,List<String>> strings){
         for (Map.Entry<String,List<String>> stringListEntry : strings.entrySet()){
             List<String> stringList = stringListEntry.getValue();
             for (String str : stringList) {
-                if (str.equals(mSourceString)) {
+                if (str.equals(mSourceString.toUpperCase())) {
                     synchronized (this) {
                         eRoomState = RoomState.GAME_OVER;
                         winners.add(stringListEntry.getKey());
@@ -116,7 +114,7 @@ public class Room implements IRoom{
         }
     }
 
-    public List<String> getWinners() {
+    public Set<String> getWinners() {
         return winners;
     }
 
@@ -130,5 +128,13 @@ public class Room implements IRoom{
 
     public void setmSourceString(String mSourceString) {
         this.mSourceString = mSourceString;
+    }
+
+    public void setSecret(Secret secret) {
+        this.mSecret = secret;
+    }
+
+    public Secret getSecret() {
+        return mSecret;
     }
 }
