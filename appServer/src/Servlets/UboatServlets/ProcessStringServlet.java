@@ -34,7 +34,7 @@ public class ProcessStringServlet extends HttpServlet {
             resp.getWriter().println(new Gson().toJson(new Response<String>(false,"no cookies :(")));
             return;
         }
-        if (randomSecret != null){
+        if (randomSecret != ""){
             secret = null;
             random = true;
         } else {
