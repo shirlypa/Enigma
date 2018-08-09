@@ -210,3 +210,7 @@ const renderAlly = ({name, agentNumber, ready}) => `
             <footer class="w3-container w3-center w3-light-${ready ? 'green' : 'grey'} w3-border-top w3-padding"><b>Ready</b></footer>
         </div>
 `
+
+const renderStatus = (update) => {
+
+}
