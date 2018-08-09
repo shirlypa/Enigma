@@ -83,11 +83,33 @@ public class DM extends Thread implements Runnable {
 
     }
 
+    public void setWorkTime() {
+        mWorkSize = calcWorkSize();
+    }
+
     public void setTxtToDecipher(String text) {
         txtToDecipher = text;
     }
 
     public int getPort(){return this.port;}
+
+    public void ProduceMissions()
+    {
+        startWorkInstant = Instant.now();
+        mWorkSize = calcWorkSize();
+        calcMissionToCreateBeforeAgentsStart();
+
+        missionProd = new MissionsProducerThread(serverSockets.getAgents(),this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor, mWorkSize);
+        this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount(), machineDescriptor.getAlphabet());
+        missionProd.setSecretGenerator(secretGenerator);
+
+        //missionProd.setAgentList(agentList);
+        missionProd.setName("MissionProducer-Thread");
+        missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
+        missionProd.initialMissions();
+        missionProd.start();
+
+    }
 
     private long calcWorkSize() {
         long result = (long)pow(machineDescriptor.getAlphabet().length(),machineDescriptor.getRotorsInUseCount());
@@ -110,28 +132,6 @@ public class DM extends Thread implements Runnable {
     @Override
     public void run() {
 
-        startWorkInstant = Instant.now();
-        calcMissionToCreateBeforeAgentsStart();
-        boolean first = true;
-        try {
-            while(serverSockets.getAgents().size() <2){
-                if(first) {
-                    System.out.println("need to run agent!");
-                    first=false;
-                }
-            }
-            System.out.println("2 Agent connected");
-            createAgentsList();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        missionProd = new MissionsProducerThread(serverSockets.getAgents(),this,toDoMissionsQueue,processLevel,missionSize,machineDescriptor, mWorkSize);
-        missionProd.setSecretGenerator(secretGenerator);
-
-        //missionProd.setAgentList(agentList);
-        missionProd.setName("MissionProducer-Thread");
-        missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
-        missionProd.start();
 
             //startAgents();
 
@@ -142,12 +142,6 @@ public class DM extends Thread implements Runnable {
                     handleInterrupt();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }
-            }
-            SuccessString successString = validStringQueue.poll();
-            if (successString != null) {
-                synchronized (validStringList) {
-                    validStringList.add(successString);
                 }
             }
         }
@@ -331,8 +325,8 @@ public class DM extends Thread implements Runnable {
 
     public List<String> getValidStringList() {
         List<String> res = new ArrayList<>();
-        for (SuccessString successString : validStringList){
-            res.add(successString.getSucessString());
+        for (ComManager comManager : serverSockets.getAgents()){
+            res.addAll(comManager.getSuccesStringsList());
         }
         return res;
     }
@@ -343,5 +337,9 @@ public class DM extends Thread implements Runnable {
 
     public void setMachineDescriptor(MachineDescriptor machineDescriptor) {
         this.machineDescriptor = machineDescriptor;
+    }
+
+    public void addSuccessList(SuccessString successStr){
+        validStringList.add(successStr);
     }
 }

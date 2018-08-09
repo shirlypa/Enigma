@@ -18,6 +18,7 @@ public class ServerSockets extends Thread{
     private ServerSocket serverSocket;
     private BlockingQueue<Mission> missionTodo;
 
+
     public ServerSockets(int port, BlockingQueue<Mission> missionTodo) {
         try {
             serverSocket = new ServerSocket(port);

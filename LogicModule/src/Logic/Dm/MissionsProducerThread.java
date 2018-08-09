@@ -36,6 +36,56 @@ public class MissionsProducerThread extends Thread implements Runnable {
         this.agentSockets=agentSockets;
     }
 
+    public void initialMissions()
+    {
+        Mission mission;
+        String alphabet = machineDescriptor.getAlphabet();
+        boolean codeWasReset = false;
+        Secret currentMissionInitialSecret = secretGenerator.getInitialSecret();
+        Secret advancedSecret = currentMissionInitialSecret.cloneSecret();
+
+        int currentMissionSize = 1;
+        for(int i=1;i<workSize;i++,currentMissionSize++){
+            if (i > missionsToCraateBeforeStartAgents) {
+                break;
+            }
+                if (!codeWasReset) {
+                codeWasReset = advancedSecret.advanceRotors(alphabet);
+            }
+            if (codeWasReset || currentMissionSize == mMissionSize || i == workSize) {
+                synchronized (this) {
+                    mission = new Mission(missionsNumber++, currentMissionInitialSecret, currentMissionSize);
+                }
+                currentMissionSize = 1;
+                if (codeWasReset && i != workSize) {
+                    currentMissionInitialSecret = secretGenerator.advanceRotorsAndReflectorByLevel();
+                    advancedSecret = currentMissionInitialSecret.cloneSecret();
+                    codeWasReset = false;
+                } else {
+                    i++;
+                    codeWasReset = advancedSecret.advanceRotors(alphabet);
+                    currentMissionInitialSecret = advancedSecret.cloneSecret();
+                }
+                //put mission in missionQueue
+                try {
+                    missionsQueue.put(mission);
+                    //System.out.println(this.getName() + " >> New mission: " + mission);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    if (mDM.getDm_state().equals(eDM_State.DONE)){
+                        return;
+                    }
+                    while (!mDM.getDm_state().equals(eDM_State.RUNNING)){
+                        try {
+                            mDM.getDm_state().wait();
+                        } catch (InterruptedException e1) {
+                            throw new RuntimeException("Erro: MissionProducerThread got interrupt while wait for resume");
+                        }
+                    }
+                }
+            }
+        }
+    }
     @Override
     public void run() {
         Mission mission;
@@ -45,10 +95,10 @@ public class MissionsProducerThread extends Thread implements Runnable {
         Secret advancedSecret = currentMissionInitialSecret.cloneSecret();
 
         int currentMissionSize = 1;
-        for (long i = 1; i < workSize; i++,currentMissionSize++){
-            if (i == mDM.gerQueueSize()){
-                //startAgents();
-            }
+        for (long i = missionsToCraateBeforeStartAgents; i < workSize; i++,currentMissionSize++){
+//            if (i == mDM.gerQueueSize()){
+//                //startAgents();
+//            }
             if (!codeWasReset) {
                 codeWasReset = advancedSecret.advanceRotors(alphabet);
             }
