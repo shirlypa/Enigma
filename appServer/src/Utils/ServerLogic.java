@@ -270,6 +270,7 @@ public class ServerLogic {
         aliesUpdate.setStrToProccess(room.getmEncodedString());
         aliesUpdate.setUboatName(uboat.getUser());
         aliesUpdate.setUboatReady(uboat.isReady());
+        aliesUpdate.setRoomName(room.getBattlefield().getBattleName());
         RoomState roomState = room.geteRoomState();
         aliesUpdate.setGameState(roomState);
         if (roomState.equals(RoomState.GAME_OVER)){
@@ -282,5 +283,11 @@ public class ServerLogic {
         return rooms.get(roomName) != null;
     }
 
+    public boolean reset(){
+        alieses.clear();
+        rooms.clear();
+        uboats.clear();
+        return true;
+    }
 
 }

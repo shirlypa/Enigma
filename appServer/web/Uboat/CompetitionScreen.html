@@ -5,15 +5,16 @@
     <title>Enigma Machine Game</title>
     <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="scripts/competitionScreen.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         .successStringContainer {
             display: flex;
             align-content: flex-start;
         }
-        .ally-container {
-            border: 1px solid;
-            border-radius: 5px;
-            padding: 10px;
+        .aliesesContainer {
+            display: flex;
+            justify-content: space-around;
+            padding: 0 2rem;
         }
         /*table {
             min-width: 200px;
@@ -27,13 +28,23 @@
     </style>
 </head>
 <body>
+    <div id="json"></div>
+    <div class="w3-container w3-indigo w3-margin-bottom" style="display: flex;">
+        <div style="font-size: 2em;text-align: center"><b>Battle Name: </b><span id="battleName"></span></div>
+    </div>
+    <div class="w3-container w3-center w3-border-top w3-border-bottom w3-padding">
+        <b>Room status:</b>
+        <span id="roomStatus"></span>
+        <div id="BeforeAfterEncodeingContainer" style="display: none">
+            <div>Plain Text: <span id="beforeString"></span></div>
+            <div>Encrypted Text: <span id="afterString"></span></div>
+        </div>
+    </div>
+
     <div id="secretFormContainer">
         <div><button id="btnRandom">Click To Random Secret</button></div>
-        <div id="rotorsContainer">
-        </div>
-        <div id="reflectorContainer">
-
-        </div>
+        <div id="rotorsContainer"></div>
+        <div id="reflectorContainer"></div>
         <input id="txtToProcess" type="text" placeholder="Text to process"/>
         <button id="btnProcessStr">Process</button>
     </div>
@@ -43,15 +54,9 @@
         </ul>
     </div>
 
-    <div id="BeforeAfterEncodeingContainer" style="display: none">
-        <div>Plain Text: <span id="beforeString"></span></div>
-        <div>Encrypted Text: <span id="afterString"></span></div>
-    </div>
+    <div class="aliesesContainer" style="display: flex;"></div>
 
-    <div id="aliesesContainer" style="display: flex;">
-
-    </div>
-    <div id="candidateStrings" style="display: none;">
+    <div id="candidateStrings" style="display: block;">
         <div style="text-align: center;"><h4>Candidate Strings</h4></div>
         <div id="successStringContainer"></div>
     </div>

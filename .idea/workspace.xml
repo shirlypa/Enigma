@@ -7,28 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9cb4e15-e242-481a-869d-237ac1370a1f" name="Default" comment="Merge branch 'master' of https://github.com/shirlypa/Enigma&#10;&#10;# Conflicts:&#10;#&#9;LogicModule/src/Logic/Dm/DM.java">
+      <change beforePath="" afterPath="$PROJECT_DIR$/appServer/src/Servlets/ResetServlet.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/Agent/Agent.java" afterPath="$PROJECT_DIR$/Agent/src/Agent/Agent.java" />
-      <change beforePath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineComponents/Rotor.java" afterPath="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineComponents/Rotor.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ComManager.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ComManager.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java" />
-      <change beforePath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ServerSockets.java" afterPath="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ServerSockets.java" />
-      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" />
-      <change beforePath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java" afterPath="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/Agent.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Agent/Agent.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineComponents/Rotor.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/AgentDMParts/MachineComponents/Rotor.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/DM.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/DM.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/MissionsProducerThread.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Logic/Dm/MissionsProducerThread.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/ProcessStringServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Servlets/UboatServlets/ProcessStringServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" afterPath="$PROJECT_DIR$/out/production/Agent/Agent/Agent.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineComponents/Rotor.class" afterPath="$PROJECT_DIR$/out/production/AgentDMParts/AgentDMParts/MachineComponents/Rotor.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/DM.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/MissionsProducerThread.class" afterPath="$PROJECT_DIR$/out/production/LogicModule/Logic/Dm/MissionsProducerThread.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/Alies/Alies.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/ProcessStringServlet.class" afterPath="$PROJECT_DIR$/out/production/appServer/Servlets/UboatServlets/ProcessStringServlet.class" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/Agent/src/META-INF/MANIFEST.MF" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" afterPath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" afterPath="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" afterPath="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/CompetitionScreen.html" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Alies/scripts/competitionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/AliesUpdate.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Ex3/update/AliesUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/CompetitionScreen.html" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/Uboat/scripts/competitionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/AliesUpdate.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Ex3/update/AliesUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/artifacts/appServer_war_exploded/WEB-INF/classes/Utils/ServerLogic.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Agent/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/Agent/META-INF/MANIFEST.MF" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/AliesUpdate.class" afterPath="$PROJECT_DIR$/out/production/ProgramManager/Ex3/update/AliesUpdate.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" afterPath="$PROJECT_DIR$/out/production/appServer/Utils/ServerLogic.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,40 +37,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ServerLogic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
+      <file leaf-file-name="CompetitionScreen.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="138" column="45" lean-forward="false" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
+            <state relative-caret-position="556">
+              <caret line="59" column="10" lean-forward="false" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3819#3820#0" expanded="true" />
-                <element signature="e#3888#3889#0" expanded="true" />
-                <element signature="e#7677#7678#0" expanded="true" />
-                <element signature="e#7731#7732#0" expanded="true" />
-                <element signature="e#10032#10033#0" expanded="true" />
-                <element signature="e#10082#10083#0" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UiAlies.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UiAlies.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Agent/src/Agent/ComManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -81,82 +55,61 @@
       <file leaf-file-name="Agent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Agent/src/Agent/Agent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="108" column="40" lean-forward="false" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
+            <state relative-caret-position="185">
+              <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Alies.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java">
+      <file leaf-file-name="CompetitionScreen.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="1575">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Thread.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Thread.java">
+      <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="698" column="29" lean-forward="true" selection-start-line="698" selection-start-column="29" selection-end-line="698" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="328" column="0" lean-forward="false" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
+            <state relative-caret-position="3700">
+              <caret line="148" column="12" lean-forward="false" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#10221#10222#0" expanded="true" />
-                <element signature="e#10259#10260#0" expanded="true" />
-                <element signature="e#12207#12208#0" expanded="true" />
-                <element signature="e#12254#12255#0" expanded="true" />
+                <marker date="1533844114581" expanded="true" signature="461:473" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="474:843" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="543:569" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="543:636" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="713:739" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="713:820" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="970:1089" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="5848:5858" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="5848:5950" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="6067:6083" ph="..." />
+                <marker date="1533844114581" expanded="true" signature="6084:6412" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/ComManager.java">
+      <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="132" column="24" lean-forward="false" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
+            <state relative-caret-position="925">
+              <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
               <folding>
-                <element signature="e#3733#3734#0" expanded="true" />
-                <element signature="e#3775#3776#0" expanded="true" />
-                <element signature="e#3825#3826#0" expanded="true" />
-                <element signature="e#3862#3863#0" expanded="true" />
+                <marker date="1533843173124" expanded="true" signature="1534:1604" ph="..." />
+                <marker date="1533843173124" expanded="true" signature="2338:2354" ph="..." />
+                <marker date="1533843173124" expanded="true" signature="2355:2514" ph="..." />
+                <marker date="1533843173124" expanded="true" signature="2355:2594" ph="..." />
+                <marker date="1533843173124" expanded="true" signature="2355:2683" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerSockets.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/ServerSockets.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MissionsProducerThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LogicModule/src/Logic/Dm/MissionsProducerThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="47" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -175,19 +128,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>appen</find>
-      <find>pull</find>
-      <find>mission</find>
-      <find>machine</find>
-      <find>setMachine</find>
-      <find>xml</find>
-      <find>Battle</find>
-      <find>bat</find>
-      <find>starting</find>
-      <find>agent.st</find>
-      <find>aliesUp</find>
       <find>system</find>
-      <find>run</find>
       <find>run(</find>
       <find>start</find>
       <find>start(</find>
@@ -205,6 +146,18 @@
       <find>agentL</find>
       <find>++</find>
       <find>send</find>
+      <find>pullUpda</find>
+      <find>AliesUpdate</find>
+      <find>run</find>
+      <find>winne</find>
+      <find>renderA</find>
+      <find>you mus</find>
+      <find>set</find>
+      <find>Alies</find>
+      <find>pull</find>
+      <find>renderAlie</find>
+      <find>renderAnoth</find>
+      <find>renderAlly</find>
     </findStrings>
     <replaceStrings>
       <replace>eApp</replace>
@@ -222,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineXMLParsser/Generated/Mapping.java" />
         <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/createRoom.js" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/ProcessStringReturnValue.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/RoomState.java" />
@@ -249,22 +201,16 @@
         <option value="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/AliesUpdateServlet.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/IRoom.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UiAlies.java" />
-        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" />
         <option value="$PROJECT_DIR$/appServer/web/Alies/scripts/pickRoom.js" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/PortServlet.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/AliesPortServlet.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
-        <option value="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java" />
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/eProccessLevel.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/ExitRoomServlet.java" />
         <option value="$PROJECT_DIR$/appServer/web/Alies/PickRoom.html" />
-        <option value="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" />
-        <option value="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
-        <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/Battlefield.java" />
         <option value="$PROJECT_DIR$/AgentDMParts/src/AgentDMParts/MachineDescriptor.java" />
-        <option value="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Room/Room.java" />
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/MachineDescriptor/MachineComponents/BattleFieldNew.java" />
         <option value="$PROJECT_DIR$/Agent/src/Agent/ComManager.java" />
@@ -273,6 +219,13 @@
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java" />
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/ComManager.java" />
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Servlets/ResetServlet.java" />
+        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
+        <option value="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" />
+        <option value="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
+        <option value="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
       </list>
     </option>
   </component>
@@ -322,6 +275,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,94 +292,19 @@
             <path>
               <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
               <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="Agent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
               <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="Agent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Agent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="MachineXMLParsser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Dm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="MachineDescriptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="MachineDescriptor" type="462c0819:PsiDirectoryNode" />
-              <item name="MachineComponents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="MachineXMLParsser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Enigma" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Enigma" type="462c0819:PsiDirectoryNode" />
-              <item name="LogicModule" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="MachineXMLParsser" type="462c0819:PsiDirectoryNode" />
-              <item name="Generated" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -480,7 +360,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.23">
+  <component name="RunManager" selected="Application.AgentMain">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -492,7 +372,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Agent.AgentMain" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="localhost:60767" />
+      <option name="PROGRAM_PARAMETERS" value="localhost:49852" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -691,7 +571,8 @@
       <workItem from="1533747919012" duration="12842000" />
       <workItem from="1533763620549" duration="2083000" />
       <workItem from="1533802731677" duration="28000" />
-      <workItem from="1533831445604" duration="2668000" />
+      <workItem from="1533831445604" duration="12079000" />
+      <workItem from="1533845282235" duration="540000" />
     </task>
     <task id="LOCAL-00001" summary="hi">
       <created>1524053480790</created>
@@ -886,7 +767,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266158000" />
+    <option name="totallyTimeSpent" value="276109000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -912,15 +793,15 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3451835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3451835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326555" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3241627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3233945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34059632" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -952,18 +833,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/Agent/Agent.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="229" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="230" />
+      <option name="time" value="233" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1041,6 +914,11 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>aliesUpdate</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>res</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -1052,11 +930,6 @@
       </expression>
       <expression>
         <expression-string>successString</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>aliesUpdate</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1088,38 +961,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Uboat/IUboat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="74" lean-forward="false" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/scripts/jquery-3.3.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="1" column="74099" lean-forward="false" selection-start-line="1" selection-start-column="74099" selection-end-line="1" selection-end-column="74099" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Room/RoomState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Utils/AvailableRoomWithPort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="41" column="38" lean-forward="true" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1200,13 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/pickRoom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -1284,13 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/EnterRoomServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1305,28 +1136,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="146" column="54" lean-forward="false" selection-start-line="146" selection-start-column="54" selection-end-line="146" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -1338,7 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="70" column="47" lean-forward="false" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1355,19 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="96" column="45" lean-forward="false" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2152#2153#0" expanded="false" />
-            <element signature="e#2220#2221#0" expanded="false" />
-            <element signature="e#2489#2490#0" expanded="false" />
-            <element signature="e#2524#2525#0" expanded="false" />
-            <element signature="e#3196#3197#0" expanded="false" />
-            <element signature="e#3233#3234#0" expanded="false" />
-            <element signature="e#3293#3294#0" expanded="false" />
-            <element signature="e#3345#3346#0" expanded="false" />
-            <element signature="e#3403#3404#0" expanded="false" />
-            <element signature="e#3453#3454#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1375,21 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#295#296#0" expanded="false" />
-            <element signature="e#323#324#0" expanded="false" />
-            <element signature="e#365#366#0" expanded="false" />
-            <element signature="e#399#400#0" expanded="false" />
-            <element signature="e#436#437#0" expanded="false" />
-            <element signature="e#469#470#0" expanded="false" />
-            <element signature="e#521#522#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#624#625#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#701#702#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1397,10 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="130" column="19" lean-forward="false" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
-          <folding>
-            <element signature="e#5037#5038#0" expanded="false" />
-            <element signature="e#5071#5072#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1424,23 +1199,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="138" column="45" lean-forward="false" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3819#3820#0" expanded="true" />
-            <element signature="e#3888#3889#0" expanded="true" />
-            <element signature="e#7677#7678#0" expanded="true" />
-            <element signature="e#7731#7732#0" expanded="true" />
-            <element signature="e#10032#10033#0" expanded="true" />
-            <element signature="e#10082#10083#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1448,17 +1206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1466,12 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="132" column="24" lean-forward="false" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
-          <folding>
-            <element signature="e#3733#3734#0" expanded="true" />
-            <element signature="e#3775#3776#0" expanded="true" />
-            <element signature="e#3825#3826#0" expanded="true" />
-            <element signature="e#3862#3863#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1480,6 +1221,48 @@
         <state relative-caret-position="152">
           <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Room/RoomState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/Alies/Alies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/ResetServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="255" column="9" lean-forward="false" selection-start-line="255" selection-start-column="9" selection-end-line="255" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1497,10 +1280,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding>
+            <marker date="1533843173124" expanded="true" signature="1534:1604" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2338:2354" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2355:2514" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2355:2594" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2355:2683" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3700">
+          <caret line="148" column="12" lean-forward="false" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
+          <folding>
+            <marker date="1533844114581" expanded="true" signature="461:473" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="474:843" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="543:569" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="543:636" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="713:739" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="713:820" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="970:1089" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="5848:5858" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="5848:5950" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="6067:6083" ph="..." />
+            <marker date="1533844114581" expanded="true" signature="6084:6412" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="59" column="10" lean-forward="false" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/EnigmaMachine.jar!/pukteam/enigma/component/machine/impl/EnigmaMachineImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2635">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Agent/src/Agent/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="108" column="40" lean-forward="false" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
+        <state relative-caret-position="185">
+          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
           <folding />
         </state>
       </provider>

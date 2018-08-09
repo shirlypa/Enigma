@@ -11,6 +11,7 @@ public class AliesUpdate {
     private boolean uboatReady;
     private List<String> winners;
     private String strToProccess;
+    private String roomName;
     private List<AgentInfo> agents;
 
     public RoomState getGameState() {
@@ -63,5 +64,13 @@ public class AliesUpdate {
 
     public void setAgents(List<AgentInfo> agents) {
         this.agents = agents;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 }
