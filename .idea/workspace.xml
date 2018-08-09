@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9cb4e15-e242-481a-869d-237ac1370a1f" name="Default" comment="Merge branch 'master' of https://github.com/shirlypa/Enigma&#10;&#10;# Conflicts:&#10;#&#9;LogicModule/src/Logic/Dm/DM.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" afterPath="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
+      <change beforePath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" afterPath="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
       <change beforePath="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" afterPath="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
+      <change beforePath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" afterPath="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,13 +25,17 @@
       <file leaf-file-name="CompetitionScreen.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="75">
+              <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,8 +54,8 @@
       <file leaf-file-name="CompetitionScreen.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="125">
+              <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -62,20 +68,46 @@
       <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="193" column="9" lean-forward="true" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+            <state relative-caret-position="355">
+              <caret line="150" column="45" lean-forward="true" selection-start-line="150" selection-start-column="45" selection-end-line="150" selection-end-column="45" />
               <folding>
-                <marker date="1533844114581" expanded="true" signature="461:473" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="474:843" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="543:569" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="543:636" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="713:739" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="713:820" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="970:1089" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="5848:5858" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="5848:5950" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="6067:6083" ph="..." />
-                <marker date="1533844114581" expanded="true" signature="6084:6412" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="461:473" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="474:919" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="581:607" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="581:674" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="789:815" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="789:896" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="1092:1102" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="1103:1222" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="6066:6076" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="6066:6182" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="6339:6355" ph="..." />
+                <marker date="1533848486623" expanded="true" signature="6356:6684" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="132" column="15" lean-forward="false" selection-start-line="132" selection-start-column="15" selection-end-line="132" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UboatUpdate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+              <folding>
+                <element signature="e#1118#1119#0" expanded="true" />
+                <element signature="e#1149#1150#0" expanded="true" />
+                <element signature="e#1197#1198#0" expanded="true" />
+                <element signature="e#1237#1238#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +116,8 @@
       <file leaf-file-name="competitionScreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+            <state relative-caret-position="199">
+              <caret line="68" column="40" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
               <folding>
                 <marker date="1533843173124" expanded="true" signature="1534:1604" ph="..." />
                 <marker date="1533843173124" expanded="true" signature="2338:2354" ph="..." />
@@ -111,16 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>run(</find>
-      <find>start</find>
-      <find>start(</find>
-      <find>startAg</find>
-      <find>return aliesupdate</find>
-      <find>succsesStrings</find>
-      <find>uboatUp</find>
-      <find>validStringList</find>
-      <find>queue</find>
-      <find>accomp</find>
       <find>getS</find>
       <find>comMana</find>
       <find>new com</find>
@@ -136,11 +158,21 @@
       <find>you mus</find>
       <find>set</find>
       <find>Alies</find>
-      <find>pull</find>
       <find>renderAlie</find>
       <find>renderAnoth</find>
       <find>renderAlly</find>
       <find>renderAge</find>
+      <find>win</find>
+      <find>rotors</find>
+      <find>renderR</find>
+      <find>&lt;sele</find>
+      <find>refl</find>
+      <find>reflector</find>
+      <find>refle</find>
+      <find>inpu</find>
+      <find>secretFormContainer</find>
+      <find>pull</find>
+      <find>uboatUpda</find>
     </findStrings>
     <replaceStrings>
       <replace>eApp</replace>
@@ -187,7 +219,6 @@
         <option value="$PROJECT_DIR$/appServer/web/Alies/scripts/pickRoom.js" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/PortServlet.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/AliesPortServlet.java" />
-        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/UploadXMLServlet.java" />
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/eProccessLevel.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/AliesServlet/ExitRoomServlet.java" />
@@ -204,10 +235,11 @@
         <option value="$PROJECT_DIR$/LogicModule/src/Logic/Dm/DM.java" />
         <option value="$PROJECT_DIR$/appServer/src/Servlets/ResetServlet.java" />
         <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/AliesUpdate.java" />
-        <option value="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
         <option value="$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html" />
         <option value="$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js" />
         <option value="$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js" />
+        <option value="$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java" />
+        <option value="$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java" />
         <option value="$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html" />
       </list>
     </option>
@@ -332,21 +364,21 @@
     <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat\scripts" />
-      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat" />
-      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web" />
-      <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic" />
-      <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Logic.MachineXMLParsser" />
+      <recent name="ConsoleUI" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic\MachineXMLParsser" />
       <recent name="C:\Users\user\IdeaProjects\Enigma\src\Logic" />
       <recent name="C:\Users\user\IdeaProjects\Enigma\src" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Logic.MachineXMLParsser" />
-      <recent name="ConsoleUI" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat\scripts" />
+      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web\Uboat" />
+      <recent name="C:\Users\NoyTse\IdeaProjects\Enigma\appServer\web" />
+      <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src\Logic" />
+      <recent name="C:\Users\user\IdeaProjects\Enigma\LogicModule\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -573,7 +605,7 @@
       <workItem from="1533763620549" duration="2083000" />
       <workItem from="1533802731677" duration="28000" />
       <workItem from="1533831445604" duration="12079000" />
-      <workItem from="1533845282235" duration="853000" />
+      <workItem from="1533845282235" duration="3409000" />
     </task>
     <task id="LOCAL-00001" summary="hi">
       <created>1524053480790</created>
@@ -768,7 +800,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276422000" />
+    <option name="totallyTimeSpent" value="278978000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -781,6 +813,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -793,7 +826,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3451835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3451835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326555" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -802,7 +835,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3233945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34059632" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34059632" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -836,7 +869,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="233" />
+      <option name="time" value="234" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -914,6 +947,11 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>resUpdate</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>aliesUpdate</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -950,11 +988,6 @@
       </expression>
       <expression>
         <expression-string>agent</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>aliesUpdate.agents</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1087,13 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/src/Servlets/UboatServlets/ProcessStringServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1162,6 +1188,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="96" column="45" lean-forward="false" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2152#2153#0" expanded="false" />
+            <element signature="e#2220#2221#0" expanded="false" />
+            <element signature="e#2489#2490#0" expanded="false" />
+            <element signature="e#2524#2525#0" expanded="false" />
+            <element signature="e#3196#3197#0" expanded="false" />
+            <element signature="e#3233#3234#0" expanded="false" />
+            <element signature="e#3293#3294#0" expanded="false" />
+            <element signature="e#3345#3346#0" expanded="false" />
+            <element signature="e#3403#3404#0" expanded="false" />
+            <element signature="e#3453#3454#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1228,6 +1267,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,6 +1282,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1249,21 +1290,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="255" column="9" lean-forward="false" selection-start-line="255" selection-start-column="9" selection-end-line="255" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3819#3820#0" expanded="false" />
-            <element signature="e#3888#3889#0" expanded="false" />
-            <element signature="e#7677#7678#0" expanded="false" />
-            <element signature="e#7731#7732#0" expanded="false" />
-            <element signature="e#10104#10105#0" expanded="false" />
-            <element signature="e#10154#10155#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1272,6 +1300,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="e#1505#1506#0" expanded="false" />
+            <element signature="e#1536#1537#0" expanded="false" />
+            <element signature="e#1584#1585#0" expanded="false" />
+            <element signature="e#1624#1625#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1285,32 +1319,6 @@
             <element signature="e#10259#10260#0" expanded="true" />
             <element signature="e#12207#12208#0" expanded="true" />
             <element signature="e#12254#12255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-          <folding>
-            <marker date="1533843173124" expanded="true" signature="1534:1604" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2338:2354" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2355:2514" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2355:2594" ph="..." />
-            <marker date="1533843173124" expanded="true" signature="2355:2683" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1331,35 +1339,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/scripts/competitionScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="68" column="40" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+          <folding>
+            <marker date="1533843173124" expanded="true" signature="1534:1604" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2338:2354" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2355:2514" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2355:2594" ph="..." />
+            <marker date="1533843173124" expanded="true" signature="2355:2683" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/web/Alies/CompetitionScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgramManager/src/Ex3/update/UboatUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1237#1238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appServer/src/Utils/ServerLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="132" column="15" lean-forward="false" selection-start-line="132" selection-start-column="15" selection-end-line="132" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/scripts/competitionScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="193" column="9" lean-forward="true" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+        <state relative-caret-position="355">
+          <caret line="150" column="45" lean-forward="true" selection-start-line="150" selection-start-column="45" selection-end-line="150" selection-end-column="45" />
           <folding>
-            <marker date="1533844114581" expanded="true" signature="461:473" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="474:843" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="543:569" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="543:636" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="713:739" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="713:820" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="970:1089" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="5848:5858" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="5848:5950" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="6067:6083" ph="..." />
-            <marker date="1533844114581" expanded="true" signature="6084:6412" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="461:473" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="474:919" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="581:607" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="581:674" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="789:815" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="789:896" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="1092:1102" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="1103:1222" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="6066:6076" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="6066:6182" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="6339:6355" ph="..." />
+            <marker date="1533848486623" expanded="true" signature="6356:6684" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appServer/web/Uboat/CompetitionScreen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="75">
+          <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

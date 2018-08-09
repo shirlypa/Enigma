@@ -11,6 +11,7 @@ public class UboatUpdate {
     private List<UiAlies> aliesList;
     private Map<String,List<String>> successedStrings;
     private List<String> winners;
+    private String roomName;
 
     public RoomState getGameState() {
         return gameState;
@@ -42,5 +43,13 @@ public class UboatUpdate {
 
     public void setWinners(List<String> winners) {
         this.winners = winners;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
     }
 }

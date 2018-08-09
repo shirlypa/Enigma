@@ -18,16 +18,30 @@
         }
         #successStringContainer{
             display: flex;
-            justify-content: space-around;
             padding: 0 2rem;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.1);
             max-height: 30vh;
-            overflow: scroll;
+            overflow-y: scroll;
+            height: fit-content;
         }
+        .aliesStrings{
+            padding: 10px;
+            margin: 10px;
+            border-right: 1px solid;
+        }
+        #secretFormContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            width: 40%;
+            margin: auto;
+        }
+
     </style>
 </head>
 <body>
-    <div id="json"></div>
+    <div id="json" style="display: none;"></div>
     <div class="w3-container w3-indigo w3-margin-bottom" style="display: flex;">
         <div style="font-size: 2em;text-align: center"><b>Battle Name: </b><span id="battleName"></span></div>
     </div>
@@ -40,24 +54,26 @@
         </div>
     </div>
 
-    <div id="secretFormContainer">
-        <div><button id="btnRandom">Click To Random Secret</button></div>
+    <div id="secretFormContainer" class="w3-card-2 w3-sand w3-round w3-container w3-margin-top">
+        <button id="btnRandom" class="w3-button w3-indigo" style="width: 50%;margin: 10px auto">Click To Random Secret</button>
+        - Or -<br/>
         <div id="rotorsContainer"></div>
-        <div id="reflectorContainer"></div>
-        <input id="txtToProcess" type="text" placeholder="Text to process"/>
-        <button id="btnProcessStr">Process</button>
-    </div>
-    <div style="color: red" id="validationError">
-        <ul id="errList">
+        <div id="reflectorContainer" style="display: flex;justify-content: center"></div>
+        <input id="txtToProcess" type="text" placeholder="Text to process" class="w3-input w3-border" style="width: 50%;margin: auto"/>
+        <button id="btnProcessStr" class="w3-button w3-green" style="width: 50%;margin: 10px auto">Ready</button>
+        <div style="color: red" id="validationError">
+            <ul id="errList">
 
-        </ul>
+            </ul>
+        </div>
     </div>
+
 
     <div class="aliesesContainer" style="display: flex;"></div>
 
-    <div id="candidateStrings" style="display: block;">
+    <div id="candidateStrings" style="display: block;width: fit-content;margin: auto">
         <div style="text-align: center;"><h4>Candidate Strings</h4></div>
-        <div id="successStringContainer""></div>
+        <div id="successStringContainer"></div>
     </div>
 </body>
 </html>

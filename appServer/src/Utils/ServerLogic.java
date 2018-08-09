@@ -132,6 +132,7 @@ public class ServerLogic {
         Uboat uboat = uboats.get(userName);
         String roomName = uboat.getmRoomName();
         Room room = rooms.get(roomName);
+        resUpdate.setRoomName(roomName);
         List<Alies> aliesList = findAllAliesInRoom(roomName);
         Map<String,List<String>> successStrList = new HashMap<>();
         for (Alies alies : aliesList){

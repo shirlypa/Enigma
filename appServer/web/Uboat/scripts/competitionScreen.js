@@ -11,17 +11,17 @@ $(document).ready(() => {
         for (let i = 0; i < machineDescriptor.RotorsInUseCount; i++){
             $('#rotorsContainer').append(`
                 <div style="display:flex">
-                    <select onchange="selectRotor(${i},this.value)">
+                    <select onchange="selectRotor(${i},this.value)" class="w3-select w3-border w3-margin">
                         ${renderRotorIds(availableRotorCouns)}
                     </select>
-                    <select onChange="selectRotorPosition(${i},this.value)">
+                    <select onChange="selectRotorPosition(${i},this.value)" class="w3-select w3-border w3-margin">
                         ${renderAlphabetOptions(machineDescriptor.Alphabet)}
                     </select>
                 </div>
             `)
         }
         $('#reflectorContainer').append(`
-            <select onchange="selectReflector(this.value)">
+            <select onchange="selectReflector(this.value)" class="w3-select w3-border w3-margin" style="width: 80%">
                         ${renderReflectors(Object.values(machineDescriptor.AvaliableReflector))}
             </select>
         `)
@@ -152,6 +152,7 @@ const pullUpdate = () => {
                 $('#successStringContainer').append(renderAgents(aliesName,data.successedStrings[aliesName]))
             }
         )
+        $('#battleName').text(data.roomName);
     })
 }
 
@@ -189,14 +190,18 @@ const createSecretJson = () => {
         ReflectorId: reflector,
     });
 }
-const renderAgents = (aliesName, strings) => (
+const renderAgents = (aliesName, strings) => {
+    const res = (
     `
-    <div>
+    <div class="aliesStrings">
         <b>${aliesName}</b><br/>   
-        ${strings.map((string) => (string + "</br>"))}
+        ${strings.reduce((string,acc) => acc + "<br/>" + string,'')}
     </div>
     `
 )
+    console.log(res);
+    return res;
+}
 
 const renderAlly = ({name, agentNumber, ready}) => `
     <div class="w3-card-4 w3-round w3-margin" style="min-width: 150px">
