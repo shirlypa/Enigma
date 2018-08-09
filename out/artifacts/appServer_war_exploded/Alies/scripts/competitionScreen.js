@@ -65,6 +65,7 @@ const renderStatus = (update) => {
             return `Run<br/>
                     your agents try to decode the string: ${update.strToProccess}`
         case "GAME_OVER":
+            handleGameOver()
             return `Game Over<br/>
                     The Allies: ${update.winners} Won!`
     }
@@ -77,3 +78,19 @@ const renderAnotherAlly = ({name, agentNumber, ready}) => `
             <footer class="w3-container w3-center w3-light-${ready ? 'green' : 'grey'} w3-border-top w3-padding"><b>Ready</b></footer>
         </div>
 `
+
+const handleGameOver = () => {
+    $('#exitModal').fadeIn();
+    setTimeout(timerToExit,1000)
+}
+const timerToExit = () => {
+    $('#timer').text(timerSeconds);
+    timerSeconds--;
+    if (timerSeconds === 0){
+        location.href = `/Alies/PickRoom.html`
+    } else {
+        setTimeout(timerToExit,1000)
+    }
+}
+
+let timerSeconds = 5;

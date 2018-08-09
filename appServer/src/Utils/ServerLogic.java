@@ -240,9 +240,9 @@ public class ServerLogic {
             alies.setProccessLevel(null);
         }
     }
-    public void unlinkUboatToRoom(String userName) {
+    public void closeRoom(String uboatName) {
         synchronized (this) {
-            Uboat uboat = uboats.get(userName);
+            Uboat uboat = uboats.get(uboatName);
             uboat.setMachineDescriptor(null);
             uboat.setmRoomName(null);
             uboat.setReady(false);
