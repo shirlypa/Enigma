@@ -27,6 +27,7 @@ public class Room implements IRoom{
     private String mEncodedString;
     private String mSourceString;
     private List<String> winners = new ArrayList<>();
+    private Secret mSecret;
 
 
     public void checkWinner(Map<String,List<String>> strings){
@@ -130,5 +131,9 @@ public class Room implements IRoom{
 
     public void setmSourceString(String mSourceString) {
         this.mSourceString = mSourceString;
+    }
+
+    public void setSecret(Secret secret) {
+        this.mSecret = secret;
     }
 }

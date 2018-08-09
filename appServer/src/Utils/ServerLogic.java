@@ -44,6 +44,7 @@ public class ServerLogic {
         room.seteRoomState(RoomState.GOT_STRING_TO_PROCESS);
         room.setmSourceString(strToProcess);
         uboat.setReady(true);
+        room.setSecret(uboat.getmSecret());
         checkAllPlayersReady(uboat.getmRoomName());
         String encoded = uboat.processString(secret,strToProcess, random);
         room.setmEncodedString(encoded);
@@ -157,6 +158,7 @@ public class ServerLogic {
             String aliesRoom = alies.getRoomName();
             if (aliesRoom != null && aliesRoom.equals(roomName)){
                 resList.add(alies);
+
             }
         }
         return resList;

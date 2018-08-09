@@ -2,6 +2,7 @@ package Ex3.Alies;
 
 import AgentDMParts.MachineDescriptor;
 import AgentDMParts.SuccessString;
+import Ex3.Room.Room;
 import Ex3.update.AgentInfo;
 import Logic.Dm.DM;
 import Logic.Dm.eProccessLevel;
@@ -25,6 +26,7 @@ public class Alies {
     public Alies() {
         mDm = new DM();
         this.port = mDm.getPort();
+
     }
 
     public Map<String,List<String>> getSuccessedList(){
@@ -75,6 +77,7 @@ public class Alies {
         //TODO
         mDm.setTxtToDecipher(encodedString);
         mDm.setProcessLevel(this.proccessLevel);
+        mDm.setSecretGenerator();
         mDm.setMachineDescriptor(machineDescriptor);
         mDm.ProduceMissions();
         mDm.startAgents();

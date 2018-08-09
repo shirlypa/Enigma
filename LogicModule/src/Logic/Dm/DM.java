@@ -344,4 +344,8 @@ public class DM extends Thread implements Runnable {
     public void setMachineDescriptor(MachineDescriptor machineDescriptor) {
         this.machineDescriptor = machineDescriptor;
     }
+
+    public void setSecretGenerator() {
+        this.secretGenerator = new SecretGenerator(processLevel,machineDescriptor.getRotorsInUseCount(), machineDescriptor.getAlphabet());
+    }
 }
