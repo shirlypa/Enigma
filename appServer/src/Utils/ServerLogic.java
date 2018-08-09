@@ -8,6 +8,7 @@ import Ex3.Room.UIRoom;
 import Ex3.Uboat.Uboat;
 import Ex3.update.*;
 import AgentDMParts.MachineDescriptor;
+import Logic.Dm.eProccessLevel;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 import sun.swing.UIAction;
 
@@ -144,6 +145,7 @@ public class ServerLogic {
         resUpdate.setGameState(roomState);
         if (roomState.equals(RoomState.GAME_OVER)){
             resUpdate.setWinners(room.getWinners());
+
         }
         resUpdate.setSuccessedStrings(successStrList);
         return resUpdate;
@@ -181,6 +183,8 @@ public class ServerLogic {
 
         for (Alies alies : aliesInRoom){
             try {
+                alies.setEncodedString(room.getmEncodedString());
+                alies.setMachineDescriptor(room.getMachineDescriptor());
                 alies.startProcess();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -218,12 +222,23 @@ public class ServerLogic {
         return alieses.get(userName).getPort();
     }
 
+    public void unlinkAlliesToRoom(String userName) {
+        synchronized (this) {
+            Alies alies = alieses.get(userName);
+            alies.setRoomName(null);
+            alies.setProccessLevel(null);
+        }
+    }
+
     public boolean linkAlliesToRoom(String userName, String roomName) {
         synchronized (this) {
-            int reqAllies = rooms.get(roomName).getBattlefield().getAllies();
+            Room room = rooms.get(roomName);
+            int reqAllies = room.getBattlefield().getAllies();
             int inRoom = findAllAliesInRoom(roomName).size();
             if (inRoom >= reqAllies) return false;
-            alieses.get(userName).setRoomName(roomName);
+            Alies alies = alieses.get(userName);
+            alies.setRoomName(roomName);
+            alies.setProccessLevel(eProccessLevel.fromString(room.getBattlefield().getLevel()));
             return true;
         }
     }
@@ -266,4 +281,6 @@ public class ServerLogic {
     public boolean isRoomNameExist(String roomName) {
         return rooms.get(roomName) != null;
     }
+
+
 }

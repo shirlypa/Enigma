@@ -93,6 +93,7 @@ public class ComManager {
     }
 
     public boolean doMsg(Data msg) throws IOException {
+        System.out.println("Got Msg" + msg.getmDataType());
         switch (msg.getmDataType()){
             case DICTIONERY:
                 agent.setDictionary((Dictionary)currentMsg.getmData());
@@ -117,6 +118,8 @@ public class ComManager {
                 break;
             case START_AGENT:
                 System.out.println("STARTING");
+                agent.setPriority(Thread.MAX_PRIORITY);
+                agent.setName("Agent");
                 agent.start();
                 break;
             case INTERRUPT:

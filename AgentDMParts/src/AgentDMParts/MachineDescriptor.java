@@ -5,6 +5,7 @@ package AgentDMParts;
 import AgentDMParts.MachineComponents.Decipher;
 import AgentDMParts.MachineComponents.Reflector;
 import AgentDMParts.MachineComponents.Rotor;
+import Logic.MachineDescriptor.MachineComponents.BattleFieldNew;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 import Logic.MachineXMLParsser.Generated.Enigma;
 import Logic.MachineXMLParsser.Generated.Mapping;
@@ -22,7 +23,7 @@ public class MachineDescriptor implements Serializable{
     private Map<Integer,Rotor> AvaliableRotors;  // map (rotorID (1Base), rotor)
     private Map<Integer,Reflector> AvaliableReflector; //map (reflectorID (1Base),reflector)
     private Decipher MachineDecipher;
-    private Battlefield Battlefield;
+    private BattleFieldNew Battlefield;
 
     public MachineDescriptor(Enigma enigmaMachine) {
         AvaliableRotors = new HashMap<>();
@@ -49,7 +50,10 @@ public class MachineDescriptor implements Serializable{
         MachineDecipher = new Decipher(enigmaMachine.getDecipher().getAgents(),
                 new Dictionary(enigmaMachine.getDecipher().getDictionary().getWords(),
                 enigmaMachine.getDecipher().getDictionary().getExcludeChars()));
-        Battlefield = enigmaMachine.getBattlefield();
+        Battlefield = new BattleFieldNew();
+        Battlefield.setAllies(enigmaMachine.getBattlefield().getAllies());
+        Battlefield.setBattleName(enigmaMachine.getBattlefield().getBattleName());
+        Battlefield.setLevel(enigmaMachine.getBattlefield().getLevel());
 
     }
     private byte[] getReflectorSource(List<Reflect> reflects,int alphabetSize){
@@ -124,7 +128,7 @@ public class MachineDescriptor implements Serializable{
     public int getMaxAgents() {
         return this.MachineDecipher.getAgents();
     }
-    public Logic.MachineXMLParsser.Generated.Battlefield getBattlefield() {
+    public BattleFieldNew getBattlefield() {
         return Battlefield;
     }
 

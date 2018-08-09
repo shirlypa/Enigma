@@ -76,7 +76,12 @@ public class Alies {
         mDm.setTxtToDecipher(encodedString);
         mDm.setProcessLevel(this.proccessLevel);
         mDm.setMachineDescriptor(machineDescriptor);
+        mDm.ProduceMissions();
         mDm.startAgents();
+
+        mDm.setPriority(Thread.MAX_PRIORITY);
+        mDm.setName("Dm-thread");
+        mDm.start();
     }
 
     public void stopProccess(boolean isWinner) throws IOException {
@@ -92,8 +97,15 @@ public class Alies {
         return getAgentsInfo().size();
     }
 
+    public void setEncodedString(String encodedString) {
+        this.encodedString = encodedString;
+    }
+
+    public void setProccessLevel(eProccessLevel proccessLevel) {
+        this.proccessLevel = proccessLevel;
+    }
+
     public void setMachineDescriptor(MachineDescriptor machineDescriptor) {
         this.machineDescriptor = machineDescriptor;
     }
-
 }

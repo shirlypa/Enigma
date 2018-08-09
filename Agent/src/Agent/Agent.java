@@ -111,6 +111,7 @@ public class  Agent extends Thread implements Runnable {
                 String cleanResult = dictionary.removeSpecialChars(result);
                 successString = new SuccessString(cleanResult,currentSecret.cloneSecret(),agentID);
                 accomplishedMissionsQueue.put(successString);
+                System.out.println(successString.getSucessString());
             }
             currentSecret.advanceRotors(alphabet);
         }
