@@ -9,6 +9,7 @@ import Ex3.update.UboatUpdate;
 import Ex3.update.UiAlies;
 import Logic.Logic;
 import AgentDMParts.MachineDescriptor;
+import Logic.MachineDescriptor.MachineComponents.BattleFieldNew;
 import Logic.MachineXMLParsser.Generated.Battlefield;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Room implements IRoom{
-    private Battlefield mBattlefield;
+    private BattleFieldNew mBattlefield;
     private MachineDescriptor mMachineDescriptor;
 
     private IUboat mUboat;
@@ -89,11 +90,11 @@ public class Room implements IRoom{
         return null;
     }
 
-    public Battlefield getBattlefield() {
+    public BattleFieldNew getBattlefield() {
         return mBattlefield;
     }
 
-    public void setBattlefield(Battlefield mBattlefield) {
+    public void setBattlefield(BattleFieldNew mBattlefield) {
         this.mBattlefield = mBattlefield;
     }
 

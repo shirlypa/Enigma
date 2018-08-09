@@ -184,6 +184,7 @@ public class ServerLogic {
         for (Alies alies : aliesInRoom){
             try {
                 alies.setEncodedString(room.getmEncodedString());
+                alies.setMachineDescriptor(room.getMachineDescriptor());
                 alies.startProcess();
             } catch (IOException e) {
                 e.printStackTrace();

@@ -75,11 +75,16 @@ public class DM extends Thread implements Runnable {
     }
     public DM()
     {
+        toDoMissionsQueue = new ArrayBlockingQueue<>(K_QUEUE_SIZE);
         serverSockets = new ServerSockets(0,toDoMissionsQueue);
         port = serverSockets.getPort();
         serverSockets.start();
         this.validStringList = new ArrayList<>();
 
+    }
+
+    public void setTxtToDecipher(String text) {
+        txtToDecipher = text;
     }
 
     public int getPort(){return this.port;}
@@ -127,11 +132,9 @@ public class DM extends Thread implements Runnable {
         missionProd.setName("MissionProducer-Thread");
         missionProd.setMissionsToCraateBeforeStartAgents(missionToCreateBeforeStartAgents);
         missionProd.start();
-        try {
-            startAgents();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+            //startAgents();
+
         //Start listening to accomplishedMissions
         while (!missionProd.getFinish()|| missionsNumber > accomplishedMissions){
             if (this.isInterrupted()){
@@ -173,6 +176,7 @@ public class DM extends Thread implements Runnable {
     }
 
     public void startAgents() throws IOException {
+        createAgentsList();
         for (ComManager agent:serverSockets.getAgents())
         {
             agent.sendMsg(new Data("start", Data.eDataType.START_AGENT));
@@ -331,5 +335,13 @@ public class DM extends Thread implements Runnable {
             res.add(successString.getSucessString());
         }
         return res;
+    }
+
+    public void setProcessLevel(eProccessLevel proccessLevel) {
+        this.processLevel=proccessLevel;
+    }
+
+    public void setMachineDescriptor(MachineDescriptor machineDescriptor) {
+        this.machineDescriptor = machineDescriptor;
     }
 }

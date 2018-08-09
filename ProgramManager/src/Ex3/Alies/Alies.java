@@ -1,5 +1,6 @@
 package Ex3.Alies;
 
+import AgentDMParts.MachineDescriptor;
 import AgentDMParts.SuccessString;
 import Ex3.update.AgentInfo;
 import Logic.Dm.DM;
@@ -16,8 +17,9 @@ public class Alies {
     private String mUser;
     private boolean mReady;
     private eProccessLevel proccessLevel;
-    private String encodedString;
     private String roomName;
+    private String encodedString;
+    private MachineDescriptor machineDescriptor;
     private int port;
 
     public Alies() {
@@ -71,6 +73,9 @@ public class Alies {
 
     public void startProcess() throws IOException {
         //TODO
+        mDm.setTxtToDecipher(encodedString);
+        mDm.setProcessLevel(this.proccessLevel);
+        mDm.setMachineDescriptor(machineDescriptor);
         mDm.startAgents();
     }
 
@@ -93,5 +98,9 @@ public class Alies {
 
     public void setProccessLevel(eProccessLevel proccessLevel) {
         this.proccessLevel = proccessLevel;
+    }
+
+    public void setMachineDescriptor(MachineDescriptor machineDescriptor) {
+        this.machineDescriptor = machineDescriptor;
     }
 }
